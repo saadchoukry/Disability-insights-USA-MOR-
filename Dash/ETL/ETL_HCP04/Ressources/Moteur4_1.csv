@@ -1,7 +1,7 @@
-0,Situation dans la profession,urbain,Rural,
-1,Employeur,"2,9","2,0",
-2,Indépendant,"39,1","48,9",
-3,Salarié,"55,5","30,6",
-4,Aide familiale,"1,6","17,8",
-5,Apprenti,"0,9","0,6",
-6,Non spécifié,-,"0,1",
+Situation dans la profession,urbain,Rural
+Employeur,2938,1722
+Indépendant,39618,42103
+Salarié,56235,26347
+Aide familiale,1621,15326
+Apprenti,911,516
+Non spécifié,0,86

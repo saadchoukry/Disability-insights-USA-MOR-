@@ -4,6 +4,7 @@ from ETL.ETL_HCP04.illiteracySexeEnvirHCP04 import loader3
 from ETL.ETL_HCP04.illiteracySexeAgeHCP04 import loader4
 from ETL.ETL_HCP04.educationEnvirHCP04 import loader5
 from ETL.ETL_HCP04.activityEnvirHCP04 import loader6
+from ETL.ETL_HCP04.activitySexeEnvirHCP04 import loader7
 
 class EtlHcp04:
     extendedDataFrames = []
@@ -14,6 +15,7 @@ class EtlHcp04:
         self.extendedDataFrames.append(loader4.main())
         self.extendedDataFrames.append(loader5.main())
         self.extendedDataFrames.append(loader6.main())
+        self.extendedDataFrames.append(loader7.main())
 
 if __name__ == "__main__":
     res = EtlHcp04()

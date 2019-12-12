@@ -14,8 +14,10 @@ sexeMatri04 = None
 illitSexeEnvir = None
 illitAgeSexe = None
 educaEnvir = None
+actEnv = None
+actSexeEnv = None
 def ETL():
-    global init,dfs,ageSexe04,categToAgeCateg,sexeMatri04,illitSexeEnvir,illitAgeSexe,educaEnvir
+    global init,dfs,ageSexe04,categToAgeCateg,sexeMatri04,illitSexeEnvir,illitAgeSexe,educaEnvir,actEnv,actSexeEnv
     if not init :
         print("--- RUNNING ETL ---")
         ETL = EtlHcp04()
@@ -24,6 +26,8 @@ def ETL():
         illitSexeEnvir = ETL.extendedDataFrames[2]
         illitAgeSexe = ETL.extendedDataFrames[3]
         educaEnvir = ETL.extendedDataFrames[4]
+        actEnv = ETL.extendedDataFrames[5]
+        actSexeEnv = ETL.extendedDataFrames[6]
     else:
         print("Data has already been loaded")
         return dfs
@@ -32,7 +36,7 @@ categToAgeCateg = {ageSexe04["Sensoriel"].df.index.values.tolist().index(categ):
 
 
 
-###Dash CONFIG
+### Dash CONFIG
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
@@ -128,12 +132,29 @@ app.layout=html.Div([
             
             ],className="row"),
 
+        html.Div(style={'padding': 15}),
         html.Div([
             html.Div(dcc.Graph(
             id="educEnvir",
             style={"border":"1px black solid",
             })
             ,className="five columns"),
+
+            html.Div(dcc.Graph(
+            id="activityEnv",
+            style={"border":"1px black solid",
+            })
+            ,className="seven columns")
+
+            ],className="row"),
+        
+        html.Div([
+            html.Div(dcc.Graph(
+            id="activitySexeEnv",
+            style={"border":"1px black solid",
+            })
+            ,className="seven columns")
+
             ],className="row"),
         
         
@@ -149,8 +170,6 @@ app.layout=html.Div([
 
 def updateFigEducEnvir(envir,disType):
     df= dfs_sum([educaEnvir[dis].df for dis in disType])
-    print([df[env].sum() for env in envir] + [df.loc[level][env] for env in envir for level in df.index.values])
-    #print([env for env in envir]+[env+" - "+ level for env in envir for level in df.index.values])
     if len(envir)==1:
         trace = go.Pie(labels=df.index.values, values=df[envir[0]].tolist())
     else:
@@ -224,7 +243,6 @@ def updateFigMatri(statuses,sexe,disType):
 
 def updateFigIllit(sexe,disType,envir):
     df= dfs_sum([illitSexeEnvir[dis].df for dis in disType]).loc[envir][sexe]
-    print(df)
     if len(sexe)==1:
         trace = go.Pie(labels=envir, values=df.loc[envir[0]].tolist() + df.loc[envir[1]].tolist())
     else:
@@ -268,6 +286,60 @@ def updateFigIllitAge(sexe,disType):
                 
             }
         }
+
+@app.callback(
+    Output("activityEnv","figure"),[
+        Input("disType",'value'),
+        Input("envir",'value')
+    ]
+)
+def updateFigActivityEnv(disType,envir):
+    df = dfs_sum([actEnv[dis].df[envir] for dis in disType])
+    if len(envir) == 1:
+        trace=go.Bar( x=df.index.tolist(), y=df[envir[0]].tolist())
+        return {
+        'data':[trace],
+        'layout':{
+
+        }
+    }
+    else:
+        trace1=go.Bar(name="urbain",x=df.index.tolist(),y = df["urbain"] )
+        trace2=go.Bar(name="Rural",x=df.index.tolist(),y = df ["Rural"])
+        return {
+            'data':[trace1,trace2],
+            'layout':{
+
+            }
+        }
+
+@app.callback(
+    Output("activitySexeEnv","figure"),[
+        Input("disType","value"),
+        Input("sexe","value"),
+        Input("envir","value")
+    ]
+)
+
+def updateFigactivitySexeEnv(disType,sexe,envir):
+    df =dfs_sum([actSexeEnv[dis].df for dis in disType])
+    print(df)
+    if len(sexe)==1:
+        trace = go.Pie(labels=envir, values=df.loc[envir[0]].tolist() + df.loc[envir[1]].tolist())
+    else:
+        trace = go.Sunburst(
+            ids= [env for env in envir]+[env+" - "+ sex for env in envir for sex in sexe],
+            labels=[env for env in envir]+[sex for sex in sexe]*2,
+            parents= ["" for i in range(len(envir))] + list(chain.from_iterable((env,env) for env in envir)),
+            values= [df.loc[env].sum() for env in envir] + [df.loc[env][sex] for env in envir for sex in sexe],
+            branchvalues="total",
+        )
+    return {
+        'data':[trace],
+        'layout':{
+
+        }
+    }
 
 if __name__ == '__main__':
     

@@ -1,0 +1,1786 @@
+[
+{
+  "columnname": "B18101_001",
+  "description": "SEX BY AGE BY DISABILITY STATUS for Civilian Noninstitutionalized Population"
+}  ,
+{
+  "columnname": "B18101_002",
+  "description": "SEX BY AGE BY DISABILITY STATUS for Civilian Noninstitutionalized Population% Male:"
+}  ,
+{
+  "columnname": "B18101_003",
+  "description": "SEX BY AGE BY DISABILITY STATUS for Civilian Noninstitutionalized Population% Male:% Under 5 years:"
+}  ,
+{
+  "columnname": "B18101_004",
+  "description": "SEX BY AGE BY DISABILITY STATUS for Civilian Noninstitutionalized Population% Male:% Under 5 years:% With a disability"
+}  ,
+{
+  "columnname": "B18101_005",
+  "description": "SEX BY AGE BY DISABILITY STATUS for Civilian Noninstitutionalized Population% Male:% Under 5 years:% No disability"
+}  ,
+{
+  "columnname": "B18101_006",
+  "description": "SEX BY AGE BY DISABILITY STATUS for Civilian Noninstitutionalized Population% Male:% 5 to 17 years:"
+}  ,
+{
+  "columnname": "B18101_007",
+  "description": "SEX BY AGE BY DISABILITY STATUS for Civilian Noninstitutionalized Population% Male:% 5 to 17 years:% With a disability"
+}  ,
+{
+  "columnname": "B18101_008",
+  "description": "SEX BY AGE BY DISABILITY STATUS for Civilian Noninstitutionalized Population% Male:% 5 to 17 years:% No disability"
+}  ,
+{
+  "columnname": "B18101_009",
+  "description": "SEX BY AGE BY DISABILITY STATUS for Civilian Noninstitutionalized Population% Male:% 18 to 34 years:"
+}  ,
+{
+  "columnname": "B18101_010",
+  "description": "SEX BY AGE BY DISABILITY STATUS for Civilian Noninstitutionalized Population% Male:% 18 to 34 years:% With a disability"
+}  ,
+{
+  "columnname": "B18101_011",
+  "description": "SEX BY AGE BY DISABILITY STATUS for Civilian Noninstitutionalized Population% Male:% 18 to 34 years:% No disability"
+}  ,
+{
+  "columnname": "B18101_012",
+  "description": "SEX BY AGE BY DISABILITY STATUS for Civilian Noninstitutionalized Population% Male:% 35 to 64 years:"
+}  ,
+{
+  "columnname": "B18101_013",
+  "description": "SEX BY AGE BY DISABILITY STATUS for Civilian Noninstitutionalized Population% Male:% 35 to 64 years:% With a disability"
+}  ,
+{
+  "columnname": "B18101_014",
+  "description": "SEX BY AGE BY DISABILITY STATUS for Civilian Noninstitutionalized Population% Male:% 35 to 64 years:% No disability"
+}  ,
+{
+  "columnname": "B18101_015",
+  "description": "SEX BY AGE BY DISABILITY STATUS for Civilian Noninstitutionalized Population% Male:% 65 to 74 years:"
+}  ,
+{
+  "columnname": "B18101_016",
+  "description": "SEX BY AGE BY DISABILITY STATUS for Civilian Noninstitutionalized Population% Male:% 65 to 74 years:% With a disability"
+}  ,
+{
+  "columnname": "B18101_017",
+  "description": "SEX BY AGE BY DISABILITY STATUS for Civilian Noninstitutionalized Population% Male:% 65 to 74 years:% No disability"
+}  ,
+{
+  "columnname": "B18101_018",
+  "description": "SEX BY AGE BY DISABILITY STATUS for Civilian Noninstitutionalized Population% Male:% 75 years and over:"
+}  ,
+{
+  "columnname": "B18101_019",
+  "description": "SEX BY AGE BY DISABILITY STATUS for Civilian Noninstitutionalized Population% Male:% 75 years and over:% With a disability"
+}  ,
+{
+  "columnname": "B18101_020",
+  "description": "SEX BY AGE BY DISABILITY STATUS for Civilian Noninstitutionalized Population% Male:% 75 years and over:% No disability"
+}  ,
+{
+  "columnname": "B18101_021",
+  "description": "SEX BY AGE BY DISABILITY STATUS for Civilian Noninstitutionalized Population% Female:"
+}  ,
+{
+  "columnname": "B18101_022",
+  "description": "SEX BY AGE BY DISABILITY STATUS for Civilian Noninstitutionalized Population% Female:% Under 5 years:"
+}  ,
+{
+  "columnname": "B18101_023",
+  "description": "SEX BY AGE BY DISABILITY STATUS for Civilian Noninstitutionalized Population% Female:% Under 5 years:% With a disability"
+}  ,
+{
+  "columnname": "B18101_024",
+  "description": "SEX BY AGE BY DISABILITY STATUS for Civilian Noninstitutionalized Population% Female:% Under 5 years:% No disability"
+}  ,
+{
+  "columnname": "B18101_025",
+  "description": "SEX BY AGE BY DISABILITY STATUS for Civilian Noninstitutionalized Population% Female:% 5 to 17 years:"
+}  ,
+{
+  "columnname": "B18101_026",
+  "description": "SEX BY AGE BY DISABILITY STATUS for Civilian Noninstitutionalized Population% Female:% 5 to 17 years:% With a disability"
+}  ,
+{
+  "columnname": "B18101_027",
+  "description": "SEX BY AGE BY DISABILITY STATUS for Civilian Noninstitutionalized Population% Female:% 5 to 17 years:% No disability"
+}  ,
+{
+  "columnname": "B18101_028",
+  "description": "SEX BY AGE BY DISABILITY STATUS for Civilian Noninstitutionalized Population% Female:% 18 to 34 years:"
+}  ,
+{
+  "columnname": "B18101_029",
+  "description": "SEX BY AGE BY DISABILITY STATUS for Civilian Noninstitutionalized Population% Female:% 18 to 34 years:% With a disability"
+}  ,
+{
+  "columnname": "B18101_030",
+  "description": "SEX BY AGE BY DISABILITY STATUS for Civilian Noninstitutionalized Population% Female:% 18 to 34 years:% No disability"
+}  ,
+{
+  "columnname": "B18101_031",
+  "description": "SEX BY AGE BY DISABILITY STATUS for Civilian Noninstitutionalized Population% Female:% 35 to 64 years:"
+}  ,
+{
+  "columnname": "B18101_032",
+  "description": "SEX BY AGE BY DISABILITY STATUS for Civilian Noninstitutionalized Population% Female:% 35 to 64 years:% With a disability"
+}  ,
+{
+  "columnname": "B18101_033",
+  "description": "SEX BY AGE BY DISABILITY STATUS for Civilian Noninstitutionalized Population% Female:% 35 to 64 years:% No disability"
+}  ,
+{
+  "columnname": "B18101_034",
+  "description": "SEX BY AGE BY DISABILITY STATUS for Civilian Noninstitutionalized Population% Female:% 65 to 74 years:"
+}  ,
+{
+  "columnname": "B18101_035",
+  "description": "SEX BY AGE BY DISABILITY STATUS for Civilian Noninstitutionalized Population% Female:% 65 to 74 years:% With a disability"
+}  ,
+{
+  "columnname": "B18101_036",
+  "description": "SEX BY AGE BY DISABILITY STATUS for Civilian Noninstitutionalized Population% Female:% 65 to 74 years:% No disability"
+}  ,
+{
+  "columnname": "B18101_037",
+  "description": "SEX BY AGE BY DISABILITY STATUS for Civilian Noninstitutionalized Population% Female:% 75 years and over:"
+}  ,
+{
+  "columnname": "B18101_038",
+  "description": "SEX BY AGE BY DISABILITY STATUS for Civilian Noninstitutionalized Population% Female:% 75 years and over:% With a disability"
+}  ,
+{
+  "columnname": "B18101_039",
+  "description": "SEX BY AGE BY DISABILITY STATUS for Civilian Noninstitutionalized Population% Female:% 75 years and over:% No disability"
+}  ,
+{
+  "columnname": "B18101A_001",
+  "description": "AGE BY DISABILITY STATUS (WHITE ALONE) for White Alone Civilian Noninstitutionalized Population"
+}  ,
+{
+  "columnname": "B18101A_002",
+  "description": "AGE BY DISABILITY STATUS (WHITE ALONE) for White Alone Civilian Noninstitutionalized Population% Under 18 years:"
+}  ,
+{
+  "columnname": "B18101A_003",
+  "description": "AGE BY DISABILITY STATUS (WHITE ALONE) for White Alone Civilian Noninstitutionalized Population% Under 18 years:% With a disability"
+}  ,
+{
+  "columnname": "B18101A_004",
+  "description": "AGE BY DISABILITY STATUS (WHITE ALONE) for White Alone Civilian Noninstitutionalized Population% Under 18 years:% No disability"
+}  ,
+{
+  "columnname": "B18101A_005",
+  "description": "AGE BY DISABILITY STATUS (WHITE ALONE) for White Alone Civilian Noninstitutionalized Population% 18 to 64 years:"
+}  ,
+{
+  "columnname": "B18101A_006",
+  "description": "AGE BY DISABILITY STATUS (WHITE ALONE) for White Alone Civilian Noninstitutionalized Population% 18 to 64 years:% With a disability"
+}  ,
+{
+  "columnname": "B18101A_007",
+  "description": "AGE BY DISABILITY STATUS (WHITE ALONE) for White Alone Civilian Noninstitutionalized Population% 18 to 64 years:% No disability"
+}  ,
+{
+  "columnname": "B18101A_008",
+  "description": "AGE BY DISABILITY STATUS (WHITE ALONE) for White Alone Civilian Noninstitutionalized Population% 65 years and over:"
+}  ,
+{
+  "columnname": "B18101A_009",
+  "description": "AGE BY DISABILITY STATUS (WHITE ALONE) for White Alone Civilian Noninstitutionalized Population% 65 years and over:% With a disability"
+}  ,
+{
+  "columnname": "B18101A_010",
+  "description": "AGE BY DISABILITY STATUS (WHITE ALONE) for White Alone Civilian Noninstitutionalized Population% 65 years and over:% No disability"
+}  ,
+{
+  "columnname": "B18101B_001",
+  "description": "AGE BY DISABILITY STATUS (BLACK OR AFRICAN AMERICAN ALONE) for Black Or African American Alone Civilian Noninstitutionalized Population"
+}  ,
+{
+  "columnname": "B18101B_002",
+  "description": "AGE BY DISABILITY STATUS (BLACK OR AFRICAN AMERICAN ALONE) for Black Or African American Alone Civilian Noninstitutionalized Population% Under 18 years:"
+}  ,
+{
+  "columnname": "B18101B_003",
+  "description": "AGE BY DISABILITY STATUS (BLACK OR AFRICAN AMERICAN ALONE) for Black Or African American Alone Civilian Noninstitutionalized Population% Under 18 years:% With a disability"
+}  ,
+{
+  "columnname": "B18101B_004",
+  "description": "AGE BY DISABILITY STATUS (BLACK OR AFRICAN AMERICAN ALONE) for Black Or African American Alone Civilian Noninstitutionalized Population% Under 18 years:% No disability"
+}  ,
+{
+  "columnname": "B18101B_005",
+  "description": "AGE BY DISABILITY STATUS (BLACK OR AFRICAN AMERICAN ALONE) for Black Or African American Alone Civilian Noninstitutionalized Population% 18 to 64 years:"
+}  ,
+{
+  "columnname": "B18101B_006",
+  "description": "AGE BY DISABILITY STATUS (BLACK OR AFRICAN AMERICAN ALONE) for Black Or African American Alone Civilian Noninstitutionalized Population% 18 to 64 years:% With a disability"
+}  ,
+{
+  "columnname": "B18101B_007",
+  "description": "AGE BY DISABILITY STATUS (BLACK OR AFRICAN AMERICAN ALONE) for Black Or African American Alone Civilian Noninstitutionalized Population% 18 to 64 years:% No disability"
+}  ,
+{
+  "columnname": "B18101B_008",
+  "description": "AGE BY DISABILITY STATUS (BLACK OR AFRICAN AMERICAN ALONE) for Black Or African American Alone Civilian Noninstitutionalized Population% 65 years and over:"
+}  ,
+{
+  "columnname": "B18101B_009",
+  "description": "AGE BY DISABILITY STATUS (BLACK OR AFRICAN AMERICAN ALONE) for Black Or African American Alone Civilian Noninstitutionalized Population% 65 years and over:% With a disability"
+}  ,
+{
+  "columnname": "B18101B_010",
+  "description": "AGE BY DISABILITY STATUS (BLACK OR AFRICAN AMERICAN ALONE) for Black Or African American Alone Civilian Noninstitutionalized Population% 65 years and over:% No disability"
+}  ,
+{
+  "columnname": "B18101C_001",
+  "description": "AGE BY DISABILITY STATUS (AMERICAN INDIAN AND ALASKA NATIVE ALONE) for American Indian And Alaska Native Alone Civilian Noninstitutionalized Population"
+}  ,
+{
+  "columnname": "B18101C_002",
+  "description": "AGE BY DISABILITY STATUS (AMERICAN INDIAN AND ALASKA NATIVE ALONE) for American Indian And Alaska Native Alone Civilian Noninstitutionalized Population% Under 18 years:"
+}  ,
+{
+  "columnname": "B18101C_003",
+  "description": "AGE BY DISABILITY STATUS (AMERICAN INDIAN AND ALASKA NATIVE ALONE) for American Indian And Alaska Native Alone Civilian Noninstitutionalized Population% Under 18 years:% With a disability"
+}  ,
+{
+  "columnname": "B18101C_004",
+  "description": "AGE BY DISABILITY STATUS (AMERICAN INDIAN AND ALASKA NATIVE ALONE) for American Indian And Alaska Native Alone Civilian Noninstitutionalized Population% Under 18 years:% No disability"
+}  ,
+{
+  "columnname": "B18101C_005",
+  "description": "AGE BY DISABILITY STATUS (AMERICAN INDIAN AND ALASKA NATIVE ALONE) for American Indian And Alaska Native Alone Civilian Noninstitutionalized Population% 18 to 64 years:"
+}  ,
+{
+  "columnname": "B18101C_006",
+  "description": "AGE BY DISABILITY STATUS (AMERICAN INDIAN AND ALASKA NATIVE ALONE) for American Indian And Alaska Native Alone Civilian Noninstitutionalized Population% 18 to 64 years:% With a disability"
+}  ,
+{
+  "columnname": "B18101C_007",
+  "description": "AGE BY DISABILITY STATUS (AMERICAN INDIAN AND ALASKA NATIVE ALONE) for American Indian And Alaska Native Alone Civilian Noninstitutionalized Population% 18 to 64 years:% No disability"
+}  ,
+{
+  "columnname": "B18101C_008",
+  "description": "AGE BY DISABILITY STATUS (AMERICAN INDIAN AND ALASKA NATIVE ALONE) for American Indian And Alaska Native Alone Civilian Noninstitutionalized Population% 65 years and over:"
+}  ,
+{
+  "columnname": "B18101C_009",
+  "description": "AGE BY DISABILITY STATUS (AMERICAN INDIAN AND ALASKA NATIVE ALONE) for American Indian And Alaska Native Alone Civilian Noninstitutionalized Population% 65 years and over:% With a disability"
+}  ,
+{
+  "columnname": "B18101C_010",
+  "description": "AGE BY DISABILITY STATUS (AMERICAN INDIAN AND ALASKA NATIVE ALONE) for American Indian And Alaska Native Alone Civilian Noninstitutionalized Population% 65 years and over:% No disability"
+}  ,
+{
+  "columnname": "B18101D_001",
+  "description": "AGE BY DISABILITY STATUS (ASIAN ALONE) for Asian Alone Civilian Noninstitutionalized Population"
+}  ,
+{
+  "columnname": "B18101D_002",
+  "description": "AGE BY DISABILITY STATUS (ASIAN ALONE) for Asian Alone Civilian Noninstitutionalized Population% Under 18 years:"
+}  ,
+{
+  "columnname": "B18101D_003",
+  "description": "AGE BY DISABILITY STATUS (ASIAN ALONE) for Asian Alone Civilian Noninstitutionalized Population% Under 18 years:% With a disability"
+}  ,
+{
+  "columnname": "B18101D_004",
+  "description": "AGE BY DISABILITY STATUS (ASIAN ALONE) for Asian Alone Civilian Noninstitutionalized Population% Under 18 years:% No disability"
+}  ,
+{
+  "columnname": "B18101D_005",
+  "description": "AGE BY DISABILITY STATUS (ASIAN ALONE) for Asian Alone Civilian Noninstitutionalized Population% 18 to 64 years:"
+}  ,
+{
+  "columnname": "B18101D_006",
+  "description": "AGE BY DISABILITY STATUS (ASIAN ALONE) for Asian Alone Civilian Noninstitutionalized Population% 18 to 64 years:% With a disability"
+}  ,
+{
+  "columnname": "B18101D_007",
+  "description": "AGE BY DISABILITY STATUS (ASIAN ALONE) for Asian Alone Civilian Noninstitutionalized Population% 18 to 64 years:% No disability"
+}  ,
+{
+  "columnname": "B18101D_008",
+  "description": "AGE BY DISABILITY STATUS (ASIAN ALONE) for Asian Alone Civilian Noninstitutionalized Population% 65 years and over:"
+}  ,
+{
+  "columnname": "B18101D_009",
+  "description": "AGE BY DISABILITY STATUS (ASIAN ALONE) for Asian Alone Civilian Noninstitutionalized Population% 65 years and over:% With a disability"
+}  ,
+{
+  "columnname": "B18101D_010",
+  "description": "AGE BY DISABILITY STATUS (ASIAN ALONE) for Asian Alone Civilian Noninstitutionalized Population% 65 years and over:% No disability"
+}  ,
+{
+  "columnname": "B18101E_001",
+  "description": "AGE BY DISABILITY STATUS (NATIVE HAWAIIAN AND OTHER PACIFIC ISLANDER ALONE) for Native Hawaiian And Other Pacific Islander Alone Civilian Noninstitutionalized Population"
+}  ,
+{
+  "columnname": "B18101E_002",
+  "description": "AGE BY DISABILITY STATUS (NATIVE HAWAIIAN AND OTHER PACIFIC ISLANDER ALONE) for Native Hawaiian And Other Pacific Islander Alone Civilian Noninstitutionalized Population% Under 18 years:"
+}  ,
+{
+  "columnname": "B18101E_003",
+  "description": "AGE BY DISABILITY STATUS (NATIVE HAWAIIAN AND OTHER PACIFIC ISLANDER ALONE) for Native Hawaiian And Other Pacific Islander Alone Civilian Noninstitutionalized Population% Under 18 years:% With a disability"
+}  ,
+{
+  "columnname": "B18101E_004",
+  "description": "AGE BY DISABILITY STATUS (NATIVE HAWAIIAN AND OTHER PACIFIC ISLANDER ALONE) for Native Hawaiian And Other Pacific Islander Alone Civilian Noninstitutionalized Population% Under 18 years:% No disability"
+}  ,
+{
+  "columnname": "B18101E_005",
+  "description": "AGE BY DISABILITY STATUS (NATIVE HAWAIIAN AND OTHER PACIFIC ISLANDER ALONE) for Native Hawaiian And Other Pacific Islander Alone Civilian Noninstitutionalized Population% 18 to 64 years:"
+}  ,
+{
+  "columnname": "B18101E_006",
+  "description": "AGE BY DISABILITY STATUS (NATIVE HAWAIIAN AND OTHER PACIFIC ISLANDER ALONE) for Native Hawaiian And Other Pacific Islander Alone Civilian Noninstitutionalized Population% 18 to 64 years:% With a disability"
+}  ,
+{
+  "columnname": "B18101E_007",
+  "description": "AGE BY DISABILITY STATUS (NATIVE HAWAIIAN AND OTHER PACIFIC ISLANDER ALONE) for Native Hawaiian And Other Pacific Islander Alone Civilian Noninstitutionalized Population% 18 to 64 years:% No disability"
+}  ,
+{
+  "columnname": "B18101E_008",
+  "description": "AGE BY DISABILITY STATUS (NATIVE HAWAIIAN AND OTHER PACIFIC ISLANDER ALONE) for Native Hawaiian And Other Pacific Islander Alone Civilian Noninstitutionalized Population% 65 years and over:"
+}  ,
+{
+  "columnname": "B18101E_009",
+  "description": "AGE BY DISABILITY STATUS (NATIVE HAWAIIAN AND OTHER PACIFIC ISLANDER ALONE) for Native Hawaiian And Other Pacific Islander Alone Civilian Noninstitutionalized Population% 65 years and over:% With a disability"
+}  ,
+{
+  "columnname": "B18101E_010",
+  "description": "AGE BY DISABILITY STATUS (NATIVE HAWAIIAN AND OTHER PACIFIC ISLANDER ALONE) for Native Hawaiian And Other Pacific Islander Alone Civilian Noninstitutionalized Population% 65 years and over:% No disability"
+}  ,
+{
+  "columnname": "B18101F_001",
+  "description": "AGE BY DISABILITY STATUS (SOME OTHER RACE ALONE) for Some Other Race Alone Civilian Noninstitutionalized Population"
+}  ,
+{
+  "columnname": "B18101F_002",
+  "description": "AGE BY DISABILITY STATUS (SOME OTHER RACE ALONE) for Some Other Race Alone Civilian Noninstitutionalized Population% Under 18 years:"
+}  ,
+{
+  "columnname": "B18101F_003",
+  "description": "AGE BY DISABILITY STATUS (SOME OTHER RACE ALONE) for Some Other Race Alone Civilian Noninstitutionalized Population% Under 18 years:% With a disability"
+}  ,
+{
+  "columnname": "B18101F_004",
+  "description": "AGE BY DISABILITY STATUS (SOME OTHER RACE ALONE) for Some Other Race Alone Civilian Noninstitutionalized Population% Under 18 years:% No disability"
+}  ,
+{
+  "columnname": "B18101F_005",
+  "description": "AGE BY DISABILITY STATUS (SOME OTHER RACE ALONE) for Some Other Race Alone Civilian Noninstitutionalized Population% 18 to 64 years:"
+}  ,
+{
+  "columnname": "B18101F_006",
+  "description": "AGE BY DISABILITY STATUS (SOME OTHER RACE ALONE) for Some Other Race Alone Civilian Noninstitutionalized Population% 18 to 64 years:% With a disability"
+}  ,
+{
+  "columnname": "B18101F_007",
+  "description": "AGE BY DISABILITY STATUS (SOME OTHER RACE ALONE) for Some Other Race Alone Civilian Noninstitutionalized Population% 18 to 64 years:% No disability"
+}  ,
+{
+  "columnname": "B18101F_008",
+  "description": "AGE BY DISABILITY STATUS (SOME OTHER RACE ALONE) for Some Other Race Alone Civilian Noninstitutionalized Population% 65 years and over:"
+}  ,
+{
+  "columnname": "B18101F_009",
+  "description": "AGE BY DISABILITY STATUS (SOME OTHER RACE ALONE) for Some Other Race Alone Civilian Noninstitutionalized Population% 65 years and over:% With a disability"
+}  ,
+{
+  "columnname": "B18101F_010",
+  "description": "AGE BY DISABILITY STATUS (SOME OTHER RACE ALONE) for Some Other Race Alone Civilian Noninstitutionalized Population% 65 years and over:% No disability"
+}  ,
+{
+  "columnname": "B18101G_001",
+  "description": "AGE BY DISABILITY STATUS (TWO OR MORE RACES) for Two Or More Races Civilian Noninstitutionalized Population"
+}  ,
+{
+  "columnname": "B18101G_002",
+  "description": "AGE BY DISABILITY STATUS (TWO OR MORE RACES) for Two Or More Races Civilian Noninstitutionalized Population% Under 18 years:"
+}  ,
+{
+  "columnname": "B18101G_003",
+  "description": "AGE BY DISABILITY STATUS (TWO OR MORE RACES) for Two Or More Races Civilian Noninstitutionalized Population% Under 18 years:% With a disability"
+}  ,
+{
+  "columnname": "B18101G_004",
+  "description": "AGE BY DISABILITY STATUS (TWO OR MORE RACES) for Two Or More Races Civilian Noninstitutionalized Population% Under 18 years:% No disability"
+}  ,
+{
+  "columnname": "B18101G_005",
+  "description": "AGE BY DISABILITY STATUS (TWO OR MORE RACES) for Two Or More Races Civilian Noninstitutionalized Population% 18 to 64 years:"
+}  ,
+{
+  "columnname": "B18101G_006",
+  "description": "AGE BY DISABILITY STATUS (TWO OR MORE RACES) for Two Or More Races Civilian Noninstitutionalized Population% 18 to 64 years:% With a disability"
+}  ,
+{
+  "columnname": "B18101G_007",
+  "description": "AGE BY DISABILITY STATUS (TWO OR MORE RACES) for Two Or More Races Civilian Noninstitutionalized Population% 18 to 64 years:% No disability"
+}  ,
+{
+  "columnname": "B18101G_008",
+  "description": "AGE BY DISABILITY STATUS (TWO OR MORE RACES) for Two Or More Races Civilian Noninstitutionalized Population% 65 years and over:"
+}  ,
+{
+  "columnname": "B18101G_009",
+  "description": "AGE BY DISABILITY STATUS (TWO OR MORE RACES) for Two Or More Races Civilian Noninstitutionalized Population% 65 years and over:% With a disability"
+}  ,
+{
+  "columnname": "B18101G_010",
+  "description": "AGE BY DISABILITY STATUS (TWO OR MORE RACES) for Two Or More Races Civilian Noninstitutionalized Population% 65 years and over:% No disability"
+}  ,
+{
+  "columnname": "B18101H_001",
+  "description": "AGE BY DISABILITY STATUS (WHITE ALONE, NOT HISPANIC OR LATINO) for White Alone, Not Hispanic Or Latino Civilian Noninstitutionalized Population"
+}  ,
+{
+  "columnname": "B18101H_002",
+  "description": "AGE BY DISABILITY STATUS (WHITE ALONE, NOT HISPANIC OR LATINO) for White Alone, Not Hispanic Or Latino Civilian Noninstitutionalized Population% Under 18 years:"
+}  ,
+{
+  "columnname": "B18101H_003",
+  "description": "AGE BY DISABILITY STATUS (WHITE ALONE, NOT HISPANIC OR LATINO) for White Alone, Not Hispanic Or Latino Civilian Noninstitutionalized Population% Under 18 years:% With a disability"
+}  ,
+{
+  "columnname": "B18101H_004",
+  "description": "AGE BY DISABILITY STATUS (WHITE ALONE, NOT HISPANIC OR LATINO) for White Alone, Not Hispanic Or Latino Civilian Noninstitutionalized Population% Under 18 years:% No disability"
+}  ,
+{
+  "columnname": "B18101H_005",
+  "description": "AGE BY DISABILITY STATUS (WHITE ALONE, NOT HISPANIC OR LATINO) for White Alone, Not Hispanic Or Latino Civilian Noninstitutionalized Population% 18 to 64 years:"
+}  ,
+{
+  "columnname": "B18101H_006",
+  "description": "AGE BY DISABILITY STATUS (WHITE ALONE, NOT HISPANIC OR LATINO) for White Alone, Not Hispanic Or Latino Civilian Noninstitutionalized Population% 18 to 64 years:% With a disability"
+}  ,
+{
+  "columnname": "B18101H_007",
+  "description": "AGE BY DISABILITY STATUS (WHITE ALONE, NOT HISPANIC OR LATINO) for White Alone, Not Hispanic Or Latino Civilian Noninstitutionalized Population% 18 to 64 years:% No disability"
+}  ,
+{
+  "columnname": "B18101H_008",
+  "description": "AGE BY DISABILITY STATUS (WHITE ALONE, NOT HISPANIC OR LATINO) for White Alone, Not Hispanic Or Latino Civilian Noninstitutionalized Population% 65 years and over:"
+}  ,
+{
+  "columnname": "B18101H_009",
+  "description": "AGE BY DISABILITY STATUS (WHITE ALONE, NOT HISPANIC OR LATINO) for White Alone, Not Hispanic Or Latino Civilian Noninstitutionalized Population% 65 years and over:% With a disability"
+}  ,
+{
+  "columnname": "B18101H_010",
+  "description": "AGE BY DISABILITY STATUS (WHITE ALONE, NOT HISPANIC OR LATINO) for White Alone, Not Hispanic Or Latino Civilian Noninstitutionalized Population% 65 years and over:% No disability"
+}  ,
+{
+  "columnname": "B18101I_001",
+  "description": "AGE BY DISABILITY STATUS (HISPANIC OR LATINO) for Hispanic Or Latino Civilian Noninstitutionalized Population"
+}  ,
+{
+  "columnname": "B18101I_002",
+  "description": "AGE BY DISABILITY STATUS (HISPANIC OR LATINO) for Hispanic Or Latino Civilian Noninstitutionalized Population% Under 18 years:"
+}  ,
+{
+  "columnname": "B18101I_003",
+  "description": "AGE BY DISABILITY STATUS (HISPANIC OR LATINO) for Hispanic Or Latino Civilian Noninstitutionalized Population% Under 18 years:% With a disability"
+}  ,
+{
+  "columnname": "B18101I_004",
+  "description": "AGE BY DISABILITY STATUS (HISPANIC OR LATINO) for Hispanic Or Latino Civilian Noninstitutionalized Population% Under 18 years:% No disability"
+}  ,
+{
+  "columnname": "B18101I_005",
+  "description": "AGE BY DISABILITY STATUS (HISPANIC OR LATINO) for Hispanic Or Latino Civilian Noninstitutionalized Population% 18 to 64 years:"
+}  ,
+{
+  "columnname": "B18101I_006",
+  "description": "AGE BY DISABILITY STATUS (HISPANIC OR LATINO) for Hispanic Or Latino Civilian Noninstitutionalized Population% 18 to 64 years:% With a disability"
+}  ,
+{
+  "columnname": "B18101I_007",
+  "description": "AGE BY DISABILITY STATUS (HISPANIC OR LATINO) for Hispanic Or Latino Civilian Noninstitutionalized Population% 18 to 64 years:% No disability"
+}  ,
+{
+  "columnname": "B18101I_008",
+  "description": "AGE BY DISABILITY STATUS (HISPANIC OR LATINO) for Hispanic Or Latino Civilian Noninstitutionalized Population% 65 years and over:"
+}  ,
+{
+  "columnname": "B18101I_009",
+  "description": "AGE BY DISABILITY STATUS (HISPANIC OR LATINO) for Hispanic Or Latino Civilian Noninstitutionalized Population% 65 years and over:% With a disability"
+}  ,
+{
+  "columnname": "B18101I_010",
+  "description": "AGE BY DISABILITY STATUS (HISPANIC OR LATINO) for Hispanic Or Latino Civilian Noninstitutionalized Population% 65 years and over:% No disability"
+}  ,
+{
+  "columnname": "B18102_001",
+  "description": "SEX BY AGE BY HEARING DIFFICULTY for Civilian Noninstitutionalized Population"
+}  ,
+{
+  "columnname": "B18102_002",
+  "description": "SEX BY AGE BY HEARING DIFFICULTY for Civilian Noninstitutionalized Population% Male:"
+}  ,
+{
+  "columnname": "B18102_003",
+  "description": "SEX BY AGE BY HEARING DIFFICULTY for Civilian Noninstitutionalized Population% Male:% Under 5 years:"
+}  ,
+{
+  "columnname": "B18102_004",
+  "description": "SEX BY AGE BY HEARING DIFFICULTY for Civilian Noninstitutionalized Population% Male:% Under 5 years:% With a hearing difficulty"
+}  ,
+{
+  "columnname": "B18102_005",
+  "description": "SEX BY AGE BY HEARING DIFFICULTY for Civilian Noninstitutionalized Population% Male:% Under 5 years:% No hearing difficulty"
+}  ,
+{
+  "columnname": "B18102_006",
+  "description": "SEX BY AGE BY HEARING DIFFICULTY for Civilian Noninstitutionalized Population% Male:% 5 to 17 years:"
+}  ,
+{
+  "columnname": "B18102_007",
+  "description": "SEX BY AGE BY HEARING DIFFICULTY for Civilian Noninstitutionalized Population% Male:% 5 to 17 years:% With a hearing difficulty"
+}  ,
+{
+  "columnname": "B18102_008",
+  "description": "SEX BY AGE BY HEARING DIFFICULTY for Civilian Noninstitutionalized Population% Male:% 5 to 17 years:% No hearing difficulty"
+}  ,
+{
+  "columnname": "B18102_009",
+  "description": "SEX BY AGE BY HEARING DIFFICULTY for Civilian Noninstitutionalized Population% Male:% 18 to 34 years:"
+}  ,
+{
+  "columnname": "B18102_010",
+  "description": "SEX BY AGE BY HEARING DIFFICULTY for Civilian Noninstitutionalized Population% Male:% 18 to 34 years:% With a hearing difficulty"
+}  ,
+{
+  "columnname": "B18102_011",
+  "description": "SEX BY AGE BY HEARING DIFFICULTY for Civilian Noninstitutionalized Population% Male:% 18 to 34 years:% No hearing difficulty"
+}  ,
+{
+  "columnname": "B18102_012",
+  "description": "SEX BY AGE BY HEARING DIFFICULTY for Civilian Noninstitutionalized Population% Male:% 35 to 64 years:"
+}  ,
+{
+  "columnname": "B18102_013",
+  "description": "SEX BY AGE BY HEARING DIFFICULTY for Civilian Noninstitutionalized Population% Male:% 35 to 64 years:% With a hearing difficulty"
+}  ,
+{
+  "columnname": "B18102_014",
+  "description": "SEX BY AGE BY HEARING DIFFICULTY for Civilian Noninstitutionalized Population% Male:% 35 to 64 years:% No hearing difficulty"
+}  ,
+{
+  "columnname": "B18102_015",
+  "description": "SEX BY AGE BY HEARING DIFFICULTY for Civilian Noninstitutionalized Population% Male:% 65 to 74 years:"
+}  ,
+{
+  "columnname": "B18102_016",
+  "description": "SEX BY AGE BY HEARING DIFFICULTY for Civilian Noninstitutionalized Population% Male:% 65 to 74 years:% With a hearing difficulty"
+}  ,
+{
+  "columnname": "B18102_017",
+  "description": "SEX BY AGE BY HEARING DIFFICULTY for Civilian Noninstitutionalized Population% Male:% 65 to 74 years:% No hearing difficulty"
+}  ,
+{
+  "columnname": "B18102_018",
+  "description": "SEX BY AGE BY HEARING DIFFICULTY for Civilian Noninstitutionalized Population% Male:% 75 years and over:"
+}  ,
+{
+  "columnname": "B18102_019",
+  "description": "SEX BY AGE BY HEARING DIFFICULTY for Civilian Noninstitutionalized Population% Male:% 75 years and over:% With a hearing difficulty"
+}  ,
+{
+  "columnname": "B18102_020",
+  "description": "SEX BY AGE BY HEARING DIFFICULTY for Civilian Noninstitutionalized Population% Male:% 75 years and over:% No hearing difficulty"
+}  ,
+{
+  "columnname": "B18102_021",
+  "description": "SEX BY AGE BY HEARING DIFFICULTY for Civilian Noninstitutionalized Population% Female:"
+}  ,
+{
+  "columnname": "B18102_022",
+  "description": "SEX BY AGE BY HEARING DIFFICULTY for Civilian Noninstitutionalized Population% Female:% Under 5 years:"
+}  ,
+{
+  "columnname": "B18102_023",
+  "description": "SEX BY AGE BY HEARING DIFFICULTY for Civilian Noninstitutionalized Population% Female:% Under 5 years:% With a hearing difficulty"
+}  ,
+{
+  "columnname": "B18102_024",
+  "description": "SEX BY AGE BY HEARING DIFFICULTY for Civilian Noninstitutionalized Population% Female:% Under 5 years:% No hearing difficulty"
+}  ,
+{
+  "columnname": "B18102_025",
+  "description": "SEX BY AGE BY HEARING DIFFICULTY for Civilian Noninstitutionalized Population% Female:% 5 to 17 years:"
+}  ,
+{
+  "columnname": "B18102_026",
+  "description": "SEX BY AGE BY HEARING DIFFICULTY for Civilian Noninstitutionalized Population% Female:% 5 to 17 years:% With a hearing difficulty"
+}  ,
+{
+  "columnname": "B18102_027",
+  "description": "SEX BY AGE BY HEARING DIFFICULTY for Civilian Noninstitutionalized Population% Female:% 5 to 17 years:% No hearing difficulty"
+}  ,
+{
+  "columnname": "B18102_028",
+  "description": "SEX BY AGE BY HEARING DIFFICULTY for Civilian Noninstitutionalized Population% Female:% 18 to 34 years:"
+}  ,
+{
+  "columnname": "B18102_029",
+  "description": "SEX BY AGE BY HEARING DIFFICULTY for Civilian Noninstitutionalized Population% Female:% 18 to 34 years:% With a hearing difficulty"
+}  ,
+{
+  "columnname": "B18102_030",
+  "description": "SEX BY AGE BY HEARING DIFFICULTY for Civilian Noninstitutionalized Population% Female:% 18 to 34 years:% No hearing difficulty"
+}  ,
+{
+  "columnname": "B18102_031",
+  "description": "SEX BY AGE BY HEARING DIFFICULTY for Civilian Noninstitutionalized Population% Female:% 35 to 64 years:"
+}  ,
+{
+  "columnname": "B18102_032",
+  "description": "SEX BY AGE BY HEARING DIFFICULTY for Civilian Noninstitutionalized Population% Female:% 35 to 64 years:% With a hearing difficulty"
+}  ,
+{
+  "columnname": "B18102_033",
+  "description": "SEX BY AGE BY HEARING DIFFICULTY for Civilian Noninstitutionalized Population% Female:% 35 to 64 years:% No hearing difficulty"
+}  ,
+{
+  "columnname": "B18102_034",
+  "description": "SEX BY AGE BY HEARING DIFFICULTY for Civilian Noninstitutionalized Population% Female:% 65 to 74 years:"
+}  ,
+{
+  "columnname": "B18102_035",
+  "description": "SEX BY AGE BY HEARING DIFFICULTY for Civilian Noninstitutionalized Population% Female:% 65 to 74 years:% With a hearing difficulty"
+}  ,
+{
+  "columnname": "B18102_036",
+  "description": "SEX BY AGE BY HEARING DIFFICULTY for Civilian Noninstitutionalized Population% Female:% 65 to 74 years:% No hearing difficulty"
+}  ,
+{
+  "columnname": "B18102_037",
+  "description": "SEX BY AGE BY HEARING DIFFICULTY for Civilian Noninstitutionalized Population% Female:% 75 years and over:"
+}  ,
+{
+  "columnname": "B18102_038",
+  "description": "SEX BY AGE BY HEARING DIFFICULTY for Civilian Noninstitutionalized Population% Female:% 75 years and over:% With a hearing difficulty"
+}  ,
+{
+  "columnname": "B18102_039",
+  "description": "SEX BY AGE BY HEARING DIFFICULTY for Civilian Noninstitutionalized Population% Female:% 75 years and over:% No hearing difficulty"
+}  ,
+{
+  "columnname": "B18103_001",
+  "description": "SEX BY AGE BY VISION DIFFICULTY for Civilian Noninstitutionalized Population"
+}  ,
+{
+  "columnname": "B18103_002",
+  "description": "SEX BY AGE BY VISION DIFFICULTY for Civilian Noninstitutionalized Population% Male:"
+}  ,
+{
+  "columnname": "B18103_003",
+  "description": "SEX BY AGE BY VISION DIFFICULTY for Civilian Noninstitutionalized Population% Male:% Under 5 years:"
+}  ,
+{
+  "columnname": "B18103_004",
+  "description": "SEX BY AGE BY VISION DIFFICULTY for Civilian Noninstitutionalized Population% Male:% Under 5 years:% With a vision difficulty"
+}  ,
+{
+  "columnname": "B18103_005",
+  "description": "SEX BY AGE BY VISION DIFFICULTY for Civilian Noninstitutionalized Population% Male:% Under 5 years:% No vision difficulty"
+}  ,
+{
+  "columnname": "B18103_006",
+  "description": "SEX BY AGE BY VISION DIFFICULTY for Civilian Noninstitutionalized Population% Male:% 5 to 17 years:"
+}  ,
+{
+  "columnname": "B18103_007",
+  "description": "SEX BY AGE BY VISION DIFFICULTY for Civilian Noninstitutionalized Population% Male:% 5 to 17 years:% With a vision difficulty"
+}  ,
+{
+  "columnname": "B18103_008",
+  "description": "SEX BY AGE BY VISION DIFFICULTY for Civilian Noninstitutionalized Population% Male:% 5 to 17 years:% No vision difficulty"
+}  ,
+{
+  "columnname": "B18103_009",
+  "description": "SEX BY AGE BY VISION DIFFICULTY for Civilian Noninstitutionalized Population% Male:% 18 to 34 years:"
+}  ,
+{
+  "columnname": "B18103_010",
+  "description": "SEX BY AGE BY VISION DIFFICULTY for Civilian Noninstitutionalized Population% Male:% 18 to 34 years:% With a vision difficulty"
+}  ,
+{
+  "columnname": "B18103_011",
+  "description": "SEX BY AGE BY VISION DIFFICULTY for Civilian Noninstitutionalized Population% Male:% 18 to 34 years:% No vision difficulty"
+}  ,
+{
+  "columnname": "B18103_012",
+  "description": "SEX BY AGE BY VISION DIFFICULTY for Civilian Noninstitutionalized Population% Male:% 35 to 64 years:"
+}  ,
+{
+  "columnname": "B18103_013",
+  "description": "SEX BY AGE BY VISION DIFFICULTY for Civilian Noninstitutionalized Population% Male:% 35 to 64 years:% With a vision difficulty"
+}  ,
+{
+  "columnname": "B18103_014",
+  "description": "SEX BY AGE BY VISION DIFFICULTY for Civilian Noninstitutionalized Population% Male:% 35 to 64 years:% No vision difficulty"
+}  ,
+{
+  "columnname": "B18103_015",
+  "description": "SEX BY AGE BY VISION DIFFICULTY for Civilian Noninstitutionalized Population% Male:% 65 to 74 years:"
+}  ,
+{
+  "columnname": "B18103_016",
+  "description": "SEX BY AGE BY VISION DIFFICULTY for Civilian Noninstitutionalized Population% Male:% 65 to 74 years:% With a vision difficulty"
+}  ,
+{
+  "columnname": "B18103_017",
+  "description": "SEX BY AGE BY VISION DIFFICULTY for Civilian Noninstitutionalized Population% Male:% 65 to 74 years:% No vision difficulty"
+}  ,
+{
+  "columnname": "B18103_018",
+  "description": "SEX BY AGE BY VISION DIFFICULTY for Civilian Noninstitutionalized Population% Male:% 75 years and over:"
+}  ,
+{
+  "columnname": "B18103_019",
+  "description": "SEX BY AGE BY VISION DIFFICULTY for Civilian Noninstitutionalized Population% Male:% 75 years and over:% With a vision difficulty"
+}  ,
+{
+  "columnname": "B18103_020",
+  "description": "SEX BY AGE BY VISION DIFFICULTY for Civilian Noninstitutionalized Population% Male:% 75 years and over:% No vision difficulty"
+}  ,
+{
+  "columnname": "B18103_021",
+  "description": "SEX BY AGE BY VISION DIFFICULTY for Civilian Noninstitutionalized Population% Female:"
+}  ,
+{
+  "columnname": "B18103_022",
+  "description": "SEX BY AGE BY VISION DIFFICULTY for Civilian Noninstitutionalized Population% Female:% Under 5 years:"
+}  ,
+{
+  "columnname": "B18103_023",
+  "description": "SEX BY AGE BY VISION DIFFICULTY for Civilian Noninstitutionalized Population% Female:% Under 5 years:% With a vision difficulty"
+}  ,
+{
+  "columnname": "B18103_024",
+  "description": "SEX BY AGE BY VISION DIFFICULTY for Civilian Noninstitutionalized Population% Female:% Under 5 years:% No vision difficulty"
+}  ,
+{
+  "columnname": "B18103_025",
+  "description": "SEX BY AGE BY VISION DIFFICULTY for Civilian Noninstitutionalized Population% Female:% 5 to 17 years:"
+}  ,
+{
+  "columnname": "B18103_026",
+  "description": "SEX BY AGE BY VISION DIFFICULTY for Civilian Noninstitutionalized Population% Female:% 5 to 17 years:% With a vision difficulty"
+}  ,
+{
+  "columnname": "B18103_027",
+  "description": "SEX BY AGE BY VISION DIFFICULTY for Civilian Noninstitutionalized Population% Female:% 5 to 17 years:% No vision difficulty"
+}  ,
+{
+  "columnname": "B18103_028",
+  "description": "SEX BY AGE BY VISION DIFFICULTY for Civilian Noninstitutionalized Population% Female:% 18 to 34 years:"
+}  ,
+{
+  "columnname": "B18103_029",
+  "description": "SEX BY AGE BY VISION DIFFICULTY for Civilian Noninstitutionalized Population% Female:% 18 to 34 years:% With a vision difficulty"
+}  ,
+{
+  "columnname": "B18103_030",
+  "description": "SEX BY AGE BY VISION DIFFICULTY for Civilian Noninstitutionalized Population% Female:% 18 to 34 years:% No vision difficulty"
+}  ,
+{
+  "columnname": "B18103_031",
+  "description": "SEX BY AGE BY VISION DIFFICULTY for Civilian Noninstitutionalized Population% Female:% 35 to 64 years:"
+}  ,
+{
+  "columnname": "B18103_032",
+  "description": "SEX BY AGE BY VISION DIFFICULTY for Civilian Noninstitutionalized Population% Female:% 35 to 64 years:% With a vision difficulty"
+}  ,
+{
+  "columnname": "B18103_033",
+  "description": "SEX BY AGE BY VISION DIFFICULTY for Civilian Noninstitutionalized Population% Female:% 35 to 64 years:% No vision difficulty"
+}  ,
+{
+  "columnname": "B18103_034",
+  "description": "SEX BY AGE BY VISION DIFFICULTY for Civilian Noninstitutionalized Population% Female:% 65 to 74 years:"
+}  ,
+{
+  "columnname": "B18103_035",
+  "description": "SEX BY AGE BY VISION DIFFICULTY for Civilian Noninstitutionalized Population% Female:% 65 to 74 years:% With a vision difficulty"
+}  ,
+{
+  "columnname": "B18103_036",
+  "description": "SEX BY AGE BY VISION DIFFICULTY for Civilian Noninstitutionalized Population% Female:% 65 to 74 years:% No vision difficulty"
+}  ,
+{
+  "columnname": "B18103_037",
+  "description": "SEX BY AGE BY VISION DIFFICULTY for Civilian Noninstitutionalized Population% Female:% 75 years and over:"
+}  ,
+{
+  "columnname": "B18103_038",
+  "description": "SEX BY AGE BY VISION DIFFICULTY for Civilian Noninstitutionalized Population% Female:% 75 years and over:% With a vision difficulty"
+}  ,
+{
+  "columnname": "B18103_039",
+  "description": "SEX BY AGE BY VISION DIFFICULTY for Civilian Noninstitutionalized Population% Female:% 75 years and over:% No vision difficulty"
+}  ,
+{
+  "columnname": "B18104_001",
+  "description": "SEX BY AGE BY COGNITIVE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over"
+}  ,
+{
+  "columnname": "B18104_002",
+  "description": "SEX BY AGE BY COGNITIVE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:"
+}  ,
+{
+  "columnname": "B18104_003",
+  "description": "SEX BY AGE BY COGNITIVE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 5 to 17 years:"
+}  ,
+{
+  "columnname": "B18104_004",
+  "description": "SEX BY AGE BY COGNITIVE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 5 to 17 years:% With a cognitive difficulty"
+}  ,
+{
+  "columnname": "B18104_005",
+  "description": "SEX BY AGE BY COGNITIVE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 5 to 17 years:% No cognitive difficulty"
+}  ,
+{
+  "columnname": "B18104_006",
+  "description": "SEX BY AGE BY COGNITIVE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 18 to 34 years:"
+}  ,
+{
+  "columnname": "B18104_007",
+  "description": "SEX BY AGE BY COGNITIVE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 18 to 34 years:% With a cognitive difficulty"
+}  ,
+{
+  "columnname": "B18104_008",
+  "description": "SEX BY AGE BY COGNITIVE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 18 to 34 years:% No cognitive difficulty"
+}  ,
+{
+  "columnname": "B18104_009",
+  "description": "SEX BY AGE BY COGNITIVE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 35 to 64 years:"
+}  ,
+{
+  "columnname": "B18104_010",
+  "description": "SEX BY AGE BY COGNITIVE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 35 to 64 years:% With a cognitive difficulty"
+}  ,
+{
+  "columnname": "B18104_011",
+  "description": "SEX BY AGE BY COGNITIVE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 35 to 64 years:% No cognitive difficulty"
+}  ,
+{
+  "columnname": "B18104_012",
+  "description": "SEX BY AGE BY COGNITIVE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 65 to 74 years:"
+}  ,
+{
+  "columnname": "B18104_013",
+  "description": "SEX BY AGE BY COGNITIVE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 65 to 74 years:% With a cognitive difficulty"
+}  ,
+{
+  "columnname": "B18104_014",
+  "description": "SEX BY AGE BY COGNITIVE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 65 to 74 years:% No cognitive difficulty"
+}  ,
+{
+  "columnname": "B18104_015",
+  "description": "SEX BY AGE BY COGNITIVE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 75 years and over:"
+}  ,
+{
+  "columnname": "B18104_016",
+  "description": "SEX BY AGE BY COGNITIVE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 75 years and over:% With a cognitive difficulty"
+}  ,
+{
+  "columnname": "B18104_017",
+  "description": "SEX BY AGE BY COGNITIVE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 75 years and over:% No cognitive difficulty"
+}  ,
+{
+  "columnname": "B18104_018",
+  "description": "SEX BY AGE BY COGNITIVE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:"
+}  ,
+{
+  "columnname": "B18104_019",
+  "description": "SEX BY AGE BY COGNITIVE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 5 to 17 years:"
+}  ,
+{
+  "columnname": "B18104_020",
+  "description": "SEX BY AGE BY COGNITIVE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 5 to 17 years:% With a cognitive difficulty"
+}  ,
+{
+  "columnname": "B18104_021",
+  "description": "SEX BY AGE BY COGNITIVE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 5 to 17 years:% No cognitive difficulty"
+}  ,
+{
+  "columnname": "B18104_022",
+  "description": "SEX BY AGE BY COGNITIVE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 18 to 34 years:"
+}  ,
+{
+  "columnname": "B18104_023",
+  "description": "SEX BY AGE BY COGNITIVE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 18 to 34 years:% With a cognitive difficulty"
+}  ,
+{
+  "columnname": "B18104_024",
+  "description": "SEX BY AGE BY COGNITIVE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 18 to 34 years:% No cognitive difficulty"
+}  ,
+{
+  "columnname": "B18104_025",
+  "description": "SEX BY AGE BY COGNITIVE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 35 to 64 years:"
+}  ,
+{
+  "columnname": "B18104_026",
+  "description": "SEX BY AGE BY COGNITIVE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 35 to 64 years:% With a cognitive difficulty"
+}  ,
+{
+  "columnname": "B18104_027",
+  "description": "SEX BY AGE BY COGNITIVE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 35 to 64 years:% No cognitive difficulty"
+}  ,
+{
+  "columnname": "B18104_028",
+  "description": "SEX BY AGE BY COGNITIVE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 65 to 74 years:"
+}  ,
+{
+  "columnname": "B18104_029",
+  "description": "SEX BY AGE BY COGNITIVE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 65 to 74 years:% With a cognitive difficulty"
+}  ,
+{
+  "columnname": "B18104_030",
+  "description": "SEX BY AGE BY COGNITIVE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 65 to 74 years:% No cognitive difficulty"
+}  ,
+{
+  "columnname": "B18104_031",
+  "description": "SEX BY AGE BY COGNITIVE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 75 years and over:"
+}  ,
+{
+  "columnname": "B18104_032",
+  "description": "SEX BY AGE BY COGNITIVE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 75 years and over:% With a cognitive difficulty"
+}  ,
+{
+  "columnname": "B18104_033",
+  "description": "SEX BY AGE BY COGNITIVE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 75 years and over:% No cognitive difficulty"
+}  ,
+{
+  "columnname": "B18105_001",
+  "description": "SEX BY AGE BY AMBULATORY DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over"
+}  ,
+{
+  "columnname": "B18105_002",
+  "description": "SEX BY AGE BY AMBULATORY DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:"
+}  ,
+{
+  "columnname": "B18105_003",
+  "description": "SEX BY AGE BY AMBULATORY DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 5 to 17 years:"
+}  ,
+{
+  "columnname": "B18105_004",
+  "description": "SEX BY AGE BY AMBULATORY DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 5 to 17 years:% With an ambulatory difficulty"
+}  ,
+{
+  "columnname": "B18105_005",
+  "description": "SEX BY AGE BY AMBULATORY DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 5 to 17 years:% No ambulatory difficulty"
+}  ,
+{
+  "columnname": "B18105_006",
+  "description": "SEX BY AGE BY AMBULATORY DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 18 to 34 years:"
+}  ,
+{
+  "columnname": "B18105_007",
+  "description": "SEX BY AGE BY AMBULATORY DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 18 to 34 years:% With an ambulatory difficulty"
+}  ,
+{
+  "columnname": "B18105_008",
+  "description": "SEX BY AGE BY AMBULATORY DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 18 to 34 years:% No ambulatory difficulty"
+}  ,
+{
+  "columnname": "B18105_009",
+  "description": "SEX BY AGE BY AMBULATORY DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 35 to 64 years:"
+}  ,
+{
+  "columnname": "B18105_010",
+  "description": "SEX BY AGE BY AMBULATORY DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 35 to 64 years:% With an ambulatory difficulty"
+}  ,
+{
+  "columnname": "B18105_011",
+  "description": "SEX BY AGE BY AMBULATORY DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 35 to 64 years:% No ambulatory difficulty"
+}  ,
+{
+  "columnname": "B18105_012",
+  "description": "SEX BY AGE BY AMBULATORY DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 65 to 74 years:"
+}  ,
+{
+  "columnname": "B18105_013",
+  "description": "SEX BY AGE BY AMBULATORY DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 65 to 74 years:% With an ambulatory difficulty"
+}  ,
+{
+  "columnname": "B18105_014",
+  "description": "SEX BY AGE BY AMBULATORY DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 65 to 74 years:% No ambulatory difficulty"
+}  ,
+{
+  "columnname": "B18105_015",
+  "description": "SEX BY AGE BY AMBULATORY DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 75 years and over:"
+}  ,
+{
+  "columnname": "B18105_016",
+  "description": "SEX BY AGE BY AMBULATORY DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 75 years and over:% With an ambulatory difficulty"
+}  ,
+{
+  "columnname": "B18105_017",
+  "description": "SEX BY AGE BY AMBULATORY DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 75 years and over:% No ambulatory difficulty"
+}  ,
+{
+  "columnname": "B18105_018",
+  "description": "SEX BY AGE BY AMBULATORY DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:"
+}  ,
+{
+  "columnname": "B18105_019",
+  "description": "SEX BY AGE BY AMBULATORY DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 5 to 17 years:"
+}  ,
+{
+  "columnname": "B18105_020",
+  "description": "SEX BY AGE BY AMBULATORY DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 5 to 17 years:% With an ambulatory difficulty"
+}  ,
+{
+  "columnname": "B18105_021",
+  "description": "SEX BY AGE BY AMBULATORY DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 5 to 17 years:% No ambulatory difficulty"
+}  ,
+{
+  "columnname": "B18105_022",
+  "description": "SEX BY AGE BY AMBULATORY DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 18 to 34 years:"
+}  ,
+{
+  "columnname": "B18105_023",
+  "description": "SEX BY AGE BY AMBULATORY DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 18 to 34 years:% With an ambulatory difficulty"
+}  ,
+{
+  "columnname": "B18105_024",
+  "description": "SEX BY AGE BY AMBULATORY DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 18 to 34 years:% No ambulatory difficulty"
+}  ,
+{
+  "columnname": "B18105_025",
+  "description": "SEX BY AGE BY AMBULATORY DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 35 to 64 years:"
+}  ,
+{
+  "columnname": "B18105_026",
+  "description": "SEX BY AGE BY AMBULATORY DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 35 to 64 years:% With an ambulatory difficulty"
+}  ,
+{
+  "columnname": "B18105_027",
+  "description": "SEX BY AGE BY AMBULATORY DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 35 to 64 years:% No ambulatory difficulty"
+}  ,
+{
+  "columnname": "B18105_028",
+  "description": "SEX BY AGE BY AMBULATORY DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 65 to 74 years:"
+}  ,
+{
+  "columnname": "B18105_029",
+  "description": "SEX BY AGE BY AMBULATORY DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 65 to 74 years:% With an ambulatory difficulty"
+}  ,
+{
+  "columnname": "B18105_030",
+  "description": "SEX BY AGE BY AMBULATORY DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 65 to 74 years:% No ambulatory difficulty"
+}  ,
+{
+  "columnname": "B18105_031",
+  "description": "SEX BY AGE BY AMBULATORY DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 75 years and over:"
+}  ,
+{
+  "columnname": "B18105_032",
+  "description": "SEX BY AGE BY AMBULATORY DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 75 years and over:% With an ambulatory difficulty"
+}  ,
+{
+  "columnname": "B18105_033",
+  "description": "SEX BY AGE BY AMBULATORY DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 75 years and over:% No ambulatory difficulty"
+}  ,
+{
+  "columnname": "B18106_001",
+  "description": "SEX BY AGE BY SELF-CARE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over"
+}  ,
+{
+  "columnname": "B18106_002",
+  "description": "SEX BY AGE BY SELF-CARE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:"
+}  ,
+{
+  "columnname": "B18106_003",
+  "description": "SEX BY AGE BY SELF-CARE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 5 to 17 years:"
+}  ,
+{
+  "columnname": "B18106_004",
+  "description": "SEX BY AGE BY SELF-CARE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 5 to 17 years:% With a self-care difficulty"
+}  ,
+{
+  "columnname": "B18106_005",
+  "description": "SEX BY AGE BY SELF-CARE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 5 to 17 years:% No self-care difficulty"
+}  ,
+{
+  "columnname": "B18106_006",
+  "description": "SEX BY AGE BY SELF-CARE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 18 to 34 years:"
+}  ,
+{
+  "columnname": "B18106_007",
+  "description": "SEX BY AGE BY SELF-CARE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 18 to 34 years:% With a self-care difficulty"
+}  ,
+{
+  "columnname": "B18106_008",
+  "description": "SEX BY AGE BY SELF-CARE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 18 to 34 years:% No self-care difficulty"
+}  ,
+{
+  "columnname": "B18106_009",
+  "description": "SEX BY AGE BY SELF-CARE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 35 to 64 years:"
+}  ,
+{
+  "columnname": "B18106_010",
+  "description": "SEX BY AGE BY SELF-CARE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 35 to 64 years:% With a self-care difficulty"
+}  ,
+{
+  "columnname": "B18106_011",
+  "description": "SEX BY AGE BY SELF-CARE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 35 to 64 years:% No self-care difficulty"
+}  ,
+{
+  "columnname": "B18106_012",
+  "description": "SEX BY AGE BY SELF-CARE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 65 to 74 years:"
+}  ,
+{
+  "columnname": "B18106_013",
+  "description": "SEX BY AGE BY SELF-CARE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 65 to 74 years:% With a self-care difficulty"
+}  ,
+{
+  "columnname": "B18106_014",
+  "description": "SEX BY AGE BY SELF-CARE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 65 to 74 years:% No self-care difficulty"
+}  ,
+{
+  "columnname": "B18106_015",
+  "description": "SEX BY AGE BY SELF-CARE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 75 years and over:"
+}  ,
+{
+  "columnname": "B18106_016",
+  "description": "SEX BY AGE BY SELF-CARE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 75 years and over:% With a self-care difficulty"
+}  ,
+{
+  "columnname": "B18106_017",
+  "description": "SEX BY AGE BY SELF-CARE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Male:% 75 years and over:% No self-care difficulty"
+}  ,
+{
+  "columnname": "B18106_018",
+  "description": "SEX BY AGE BY SELF-CARE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:"
+}  ,
+{
+  "columnname": "B18106_019",
+  "description": "SEX BY AGE BY SELF-CARE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 5 to 17 years:"
+}  ,
+{
+  "columnname": "B18106_020",
+  "description": "SEX BY AGE BY SELF-CARE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 5 to 17 years:% With a self-care difficulty"
+}  ,
+{
+  "columnname": "B18106_021",
+  "description": "SEX BY AGE BY SELF-CARE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 5 to 17 years:% No self-care difficulty"
+}  ,
+{
+  "columnname": "B18106_022",
+  "description": "SEX BY AGE BY SELF-CARE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 18 to 34 years:"
+}  ,
+{
+  "columnname": "B18106_023",
+  "description": "SEX BY AGE BY SELF-CARE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 18 to 34 years:% With a self-care difficulty"
+}  ,
+{
+  "columnname": "B18106_024",
+  "description": "SEX BY AGE BY SELF-CARE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 18 to 34 years:% No self-care difficulty"
+}  ,
+{
+  "columnname": "B18106_025",
+  "description": "SEX BY AGE BY SELF-CARE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 35 to 64 years:"
+}  ,
+{
+  "columnname": "B18106_026",
+  "description": "SEX BY AGE BY SELF-CARE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 35 to 64 years:% With a self-care difficulty"
+}  ,
+{
+  "columnname": "B18106_027",
+  "description": "SEX BY AGE BY SELF-CARE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 35 to 64 years:% No self-care difficulty"
+}  ,
+{
+  "columnname": "B18106_028",
+  "description": "SEX BY AGE BY SELF-CARE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 65 to 74 years:"
+}  ,
+{
+  "columnname": "B18106_029",
+  "description": "SEX BY AGE BY SELF-CARE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 65 to 74 years:% With a self-care difficulty"
+}  ,
+{
+  "columnname": "B18106_030",
+  "description": "SEX BY AGE BY SELF-CARE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 65 to 74 years:% No self-care difficulty"
+}  ,
+{
+  "columnname": "B18106_031",
+  "description": "SEX BY AGE BY SELF-CARE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 75 years and over:"
+}  ,
+{
+  "columnname": "B18106_032",
+  "description": "SEX BY AGE BY SELF-CARE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 75 years and over:% With a self-care difficulty"
+}  ,
+{
+  "columnname": "B18106_033",
+  "description": "SEX BY AGE BY SELF-CARE DIFFICULTY for Civilian Noninstitutionalized Population 5 Years And Over% Female:% 75 years and over:% No self-care difficulty"
+}  ,
+{
+  "columnname": "B18107_001",
+  "description": "SEX BY AGE BY INDEPENDENT LIVING DIFFICULTY for Civilian Noninstitutionalized Population 18 Years And Over"
+}  ,
+{
+  "columnname": "B18107_002",
+  "description": "SEX BY AGE BY INDEPENDENT LIVING DIFFICULTY for Civilian Noninstitutionalized Population 18 Years And Over% Male:"
+}  ,
+{
+  "columnname": "B18107_003",
+  "description": "SEX BY AGE BY INDEPENDENT LIVING DIFFICULTY for Civilian Noninstitutionalized Population 18 Years And Over% Male:% 18 to 34 years:"
+}  ,
+{
+  "columnname": "B18107_004",
+  "description": "SEX BY AGE BY INDEPENDENT LIVING DIFFICULTY for Civilian Noninstitutionalized Population 18 Years And Over% Male:% 18 to 34 years:% With an independent living difficulty"
+}  ,
+{
+  "columnname": "B18107_005",
+  "description": "SEX BY AGE BY INDEPENDENT LIVING DIFFICULTY for Civilian Noninstitutionalized Population 18 Years And Over% Male:% 18 to 34 years:% No independent living difficulty"
+}  ,
+{
+  "columnname": "B18107_006",
+  "description": "SEX BY AGE BY INDEPENDENT LIVING DIFFICULTY for Civilian Noninstitutionalized Population 18 Years And Over% Male:% 35 to 64 years:"
+}  ,
+{
+  "columnname": "B18107_007",
+  "description": "SEX BY AGE BY INDEPENDENT LIVING DIFFICULTY for Civilian Noninstitutionalized Population 18 Years And Over% Male:% 35 to 64 years:% With an independent living difficulty"
+}  ,
+{
+  "columnname": "B18107_008",
+  "description": "SEX BY AGE BY INDEPENDENT LIVING DIFFICULTY for Civilian Noninstitutionalized Population 18 Years And Over% Male:% 35 to 64 years:% No independent living difficulty"
+}  ,
+{
+  "columnname": "B18107_009",
+  "description": "SEX BY AGE BY INDEPENDENT LIVING DIFFICULTY for Civilian Noninstitutionalized Population 18 Years And Over% Male:% 65 to 74 years:"
+}  ,
+{
+  "columnname": "B18107_010",
+  "description": "SEX BY AGE BY INDEPENDENT LIVING DIFFICULTY for Civilian Noninstitutionalized Population 18 Years And Over% Male:% 65 to 74 years:% With an independent living difficulty"
+}  ,
+{
+  "columnname": "B18107_011",
+  "description": "SEX BY AGE BY INDEPENDENT LIVING DIFFICULTY for Civilian Noninstitutionalized Population 18 Years And Over% Male:% 65 to 74 years:% No independent living difficulty"
+}  ,
+{
+  "columnname": "B18107_012",
+  "description": "SEX BY AGE BY INDEPENDENT LIVING DIFFICULTY for Civilian Noninstitutionalized Population 18 Years And Over% Male:% 75 years and over:"
+}  ,
+{
+  "columnname": "B18107_013",
+  "description": "SEX BY AGE BY INDEPENDENT LIVING DIFFICULTY for Civilian Noninstitutionalized Population 18 Years And Over% Male:% 75 years and over:% With an independent living difficulty"
+}  ,
+{
+  "columnname": "B18107_014",
+  "description": "SEX BY AGE BY INDEPENDENT LIVING DIFFICULTY for Civilian Noninstitutionalized Population 18 Years And Over% Male:% 75 years and over:% No independent living difficulty"
+}  ,
+{
+  "columnname": "B18107_015",
+  "description": "SEX BY AGE BY INDEPENDENT LIVING DIFFICULTY for Civilian Noninstitutionalized Population 18 Years And Over% Female:"
+}  ,
+{
+  "columnname": "B18107_016",
+  "description": "SEX BY AGE BY INDEPENDENT LIVING DIFFICULTY for Civilian Noninstitutionalized Population 18 Years And Over% Female:% 18 to 34 years:"
+}  ,
+{
+  "columnname": "B18107_017",
+  "description": "SEX BY AGE BY INDEPENDENT LIVING DIFFICULTY for Civilian Noninstitutionalized Population 18 Years And Over% Female:% 18 to 34 years:% With an independent living difficulty"
+}  ,
+{
+  "columnname": "B18107_018",
+  "description": "SEX BY AGE BY INDEPENDENT LIVING DIFFICULTY for Civilian Noninstitutionalized Population 18 Years And Over% Female:% 18 to 34 years:% No independent living difficulty"
+}  ,
+{
+  "columnname": "B18107_019",
+  "description": "SEX BY AGE BY INDEPENDENT LIVING DIFFICULTY for Civilian Noninstitutionalized Population 18 Years And Over% Female:% 35 to 64 years:"
+}  ,
+{
+  "columnname": "B18107_020",
+  "description": "SEX BY AGE BY INDEPENDENT LIVING DIFFICULTY for Civilian Noninstitutionalized Population 18 Years And Over% Female:% 35 to 64 years:% With an independent living difficulty"
+}  ,
+{
+  "columnname": "B18107_021",
+  "description": "SEX BY AGE BY INDEPENDENT LIVING DIFFICULTY for Civilian Noninstitutionalized Population 18 Years And Over% Female:% 35 to 64 years:% No independent living difficulty"
+}  ,
+{
+  "columnname": "B18107_022",
+  "description": "SEX BY AGE BY INDEPENDENT LIVING DIFFICULTY for Civilian Noninstitutionalized Population 18 Years And Over% Female:% 65 to 74 years:"
+}  ,
+{
+  "columnname": "B18107_023",
+  "description": "SEX BY AGE BY INDEPENDENT LIVING DIFFICULTY for Civilian Noninstitutionalized Population 18 Years And Over% Female:% 65 to 74 years:% With an independent living difficulty"
+}  ,
+{
+  "columnname": "B18107_024",
+  "description": "SEX BY AGE BY INDEPENDENT LIVING DIFFICULTY for Civilian Noninstitutionalized Population 18 Years And Over% Female:% 65 to 74 years:% No independent living difficulty"
+}  ,
+{
+  "columnname": "B18107_025",
+  "description": "SEX BY AGE BY INDEPENDENT LIVING DIFFICULTY for Civilian Noninstitutionalized Population 18 Years And Over% Female:% 75 years and over:"
+}  ,
+{
+  "columnname": "B18107_026",
+  "description": "SEX BY AGE BY INDEPENDENT LIVING DIFFICULTY for Civilian Noninstitutionalized Population 18 Years And Over% Female:% 75 years and over:% With an independent living difficulty"
+}  ,
+{
+  "columnname": "B18107_027",
+  "description": "SEX BY AGE BY INDEPENDENT LIVING DIFFICULTY for Civilian Noninstitutionalized Population 18 Years And Over% Female:% 75 years and over:% No independent living difficulty"
+}  ,
+{
+  "columnname": "B18135_001",
+  "description": "AGE BY DISABILITY STATUS BY HEALTH INSURANCE COVERAGE STATUS for Civilian Noninstitutionalized Population"
+}  ,
+{
+  "columnname": "B18135_002",
+  "description": "AGE BY DISABILITY STATUS BY HEALTH INSURANCE COVERAGE STATUS for Civilian Noninstitutionalized Population% Under 18 years:"
+}  ,
+{
+  "columnname": "B18135_003",
+  "description": "AGE BY DISABILITY STATUS BY HEALTH INSURANCE COVERAGE STATUS for Civilian Noninstitutionalized Population% Under 18 years:% With a disability:"
+}  ,
+{
+  "columnname": "B18135_004",
+  "description": "AGE BY DISABILITY STATUS BY HEALTH INSURANCE COVERAGE STATUS for Civilian Noninstitutionalized Population% Under 18 years:% With a disability:% With health insurance coverage:"
+}  ,
+{
+  "columnname": "B18135_005",
+  "description": "AGE BY DISABILITY STATUS BY HEALTH INSURANCE COVERAGE STATUS for Civilian Noninstitutionalized Population%With private health insurance coverage"
+}  ,
+{
+  "columnname": "B18135_006",
+  "description": "AGE BY DISABILITY STATUS BY HEALTH INSURANCE COVERAGE STATUS for Civilian Noninstitutionalized Population%With public health coverage"
+}  ,
+{
+  "columnname": "B18135_007",
+  "description": "AGE BY DISABILITY STATUS BY HEALTH INSURANCE COVERAGE STATUS for Civilian Noninstitutionalized Population% Under 18 years:% With a disability:% No health insurance coverage"
+}  ,
+{
+  "columnname": "B18135_008",
+  "description": "AGE BY DISABILITY STATUS BY HEALTH INSURANCE COVERAGE STATUS for Civilian Noninstitutionalized Population% Under 18 years:% No disability:"
+}  ,
+{
+  "columnname": "B18135_009",
+  "description": "AGE BY DISABILITY STATUS BY HEALTH INSURANCE COVERAGE STATUS for Civilian Noninstitutionalized Population% Under 18 years:% No disability:% With health insurance coverage:"
+}  ,
+{
+  "columnname": "B18135_010",
+  "description": "AGE BY DISABILITY STATUS BY HEALTH INSURANCE COVERAGE STATUS for Civilian Noninstitutionalized Population%With private health insurance coverage"
+}  ,
+{
+  "columnname": "B18135_011",
+  "description": "AGE BY DISABILITY STATUS BY HEALTH INSURANCE COVERAGE STATUS for Civilian Noninstitutionalized Population%With public health coverage"
+}  ,
+{
+  "columnname": "B18135_012",
+  "description": "AGE BY DISABILITY STATUS BY HEALTH INSURANCE COVERAGE STATUS for Civilian Noninstitutionalized Population% Under 18 years:% No disability:% No health insurance coverage"
+}  ,
+{
+  "columnname": "B18135_013",
+  "description": "AGE BY DISABILITY STATUS BY HEALTH INSURANCE COVERAGE STATUS for Civilian Noninstitutionalized Population% 18 to 64 years:"
+}  ,
+{
+  "columnname": "B18135_014",
+  "description": "AGE BY DISABILITY STATUS BY HEALTH INSURANCE COVERAGE STATUS for Civilian Noninstitutionalized Population% 18 to 64 years:% With a disability:"
+}  ,
+{
+  "columnname": "B18135_015",
+  "description": "AGE BY DISABILITY STATUS BY HEALTH INSURANCE COVERAGE STATUS for Civilian Noninstitutionalized Population% 18 to 64 years:% With a disability:% With health insurance coverage:"
+}  ,
+{
+  "columnname": "B18135_016",
+  "description": "AGE BY DISABILITY STATUS BY HEALTH INSURANCE COVERAGE STATUS for Civilian Noninstitutionalized Population%With private health insurance coverage"
+}  ,
+{
+  "columnname": "B18135_017",
+  "description": "AGE BY DISABILITY STATUS BY HEALTH INSURANCE COVERAGE STATUS for Civilian Noninstitutionalized Population%With public health coverage"
+}  ,
+{
+  "columnname": "B18135_018",
+  "description": "AGE BY DISABILITY STATUS BY HEALTH INSURANCE COVERAGE STATUS for Civilian Noninstitutionalized Population% 18 to 64 years:% With a disability:% No health insurance coverage"
+}  ,
+{
+  "columnname": "B18135_019",
+  "description": "AGE BY DISABILITY STATUS BY HEALTH INSURANCE COVERAGE STATUS for Civilian Noninstitutionalized Population% 18 to 64 years:% No disability:"
+}  ,
+{
+  "columnname": "B18135_020",
+  "description": "AGE BY DISABILITY STATUS BY HEALTH INSURANCE COVERAGE STATUS for Civilian Noninstitutionalized Population% 18 to 64 years:% No disability:% With health insurance coverage:"
+}  ,
+{
+  "columnname": "B18135_021",
+  "description": "AGE BY DISABILITY STATUS BY HEALTH INSURANCE COVERAGE STATUS for Civilian Noninstitutionalized Population%With private health insurance coverage"
+}  ,
+{
+  "columnname": "B18135_022",
+  "description": "AGE BY DISABILITY STATUS BY HEALTH INSURANCE COVERAGE STATUS for Civilian Noninstitutionalized Population%With public health coverage"
+}  ,
+{
+  "columnname": "B18135_023",
+  "description": "AGE BY DISABILITY STATUS BY HEALTH INSURANCE COVERAGE STATUS for Civilian Noninstitutionalized Population% 18 to 64 years:% No disability:% No health insurance coverage"
+}  ,
+{
+  "columnname": "B18135_024",
+  "description": "AGE BY DISABILITY STATUS BY HEALTH INSURANCE COVERAGE STATUS for Civilian Noninstitutionalized Population% 65 years and over:"
+}  ,
+{
+  "columnname": "B18135_025",
+  "description": "AGE BY DISABILITY STATUS BY HEALTH INSURANCE COVERAGE STATUS for Civilian Noninstitutionalized Population% 65 years and over:% With a disability:"
+}  ,
+{
+  "columnname": "B18135_026",
+  "description": "AGE BY DISABILITY STATUS BY HEALTH INSURANCE COVERAGE STATUS for Civilian Noninstitutionalized Population% 65 years and over:% With a disability:% With health insurance coverage:"
+}  ,
+{
+  "columnname": "B18135_027",
+  "description": "AGE BY DISABILITY STATUS BY HEALTH INSURANCE COVERAGE STATUS for Civilian Noninstitutionalized Population%With private health insurance coverage"
+}  ,
+{
+  "columnname": "B18135_028",
+  "description": "AGE BY DISABILITY STATUS BY HEALTH INSURANCE COVERAGE STATUS for Civilian Noninstitutionalized Population%With public health coverage"
+}  ,
+{
+  "columnname": "B18135_029",
+  "description": "AGE BY DISABILITY STATUS BY HEALTH INSURANCE COVERAGE STATUS for Civilian Noninstitutionalized Population% 65 years and over:% With a disability:% No health insurance coverage"
+}  ,
+{
+  "columnname": "B18135_030",
+  "description": "AGE BY DISABILITY STATUS BY HEALTH INSURANCE COVERAGE STATUS for Civilian Noninstitutionalized Population% 65 years and over:% No disability:"
+}  ,
+{
+  "columnname": "B18135_031",
+  "description": "AGE BY DISABILITY STATUS BY HEALTH INSURANCE COVERAGE STATUS for Civilian Noninstitutionalized Population% 65 years and over:% No disability:% With health insurance coverage:"
+}  ,
+{
+  "columnname": "B18135_032",
+  "description": "AGE BY DISABILITY STATUS BY HEALTH INSURANCE COVERAGE STATUS for Civilian Noninstitutionalized Population%With private health insurance coverage"
+}  ,
+{
+  "columnname": "B18135_033",
+  "description": "AGE BY DISABILITY STATUS BY HEALTH INSURANCE COVERAGE STATUS for Civilian Noninstitutionalized Population%With public health coverage"
+}  ,
+{
+  "columnname": "B18135_034",
+  "description": "AGE BY DISABILITY STATUS BY HEALTH INSURANCE COVERAGE STATUS for Civilian Noninstitutionalized Population% 65 years and over:% No disability:% No health insurance coverage"
+}  ,
+{
+  "columnname": "B18140_001",
+  "description": "MEDIAN EARNINGS IN THE PAST 12 MONTHS (IN 2015 INFLATION-ADJUSTED DOLLARS) BY DISABILITY STATUS BY SEX FOR THE CIVILIAN NONINSTITUTIONALIZED POPULATION 16 YEARS AND OVER WITH EARNINGS for Civilian Noninstitutionalized Population 16 Years And Over With Earnings In The Past 12 Months"
+}  ,
+{
+  "columnname": "B18140_002",
+  "description": "MEDIAN EARNINGS IN THE PAST 12 MONTHS (IN 2015 INFLATION-ADJUSTED DOLLARS) BY DISABILITY STATUS BY SEX FOR THE CIVILIAN NONINSTITUTIONALIZED POPULATION 16 YEARS AND OVER WITH EARNINGS for Civilian Noninstitutionalized Population 16 Years And Over With Earnings In The Past 12 Months%With a disability:"
+}  ,
+{
+  "columnname": "B18140_003",
+  "description": "MEDIAN EARNINGS IN THE PAST 12 MONTHS (IN 2015 INFLATION-ADJUSTED DOLLARS) BY DISABILITY STATUS BY SEX FOR THE CIVILIAN NONINSTITUTIONALIZED POPULATION 16 YEARS AND OVER WITH EARNINGS for Civilian Noninstitutionalized Population 16 Years And Over With Earnings In The Past 12 Months%Male"
+}  ,
+{
+  "columnname": "B18140_004",
+  "description": "MEDIAN EARNINGS IN THE PAST 12 MONTHS (IN 2015 INFLATION-ADJUSTED DOLLARS) BY DISABILITY STATUS BY SEX FOR THE CIVILIAN NONINSTITUTIONALIZED POPULATION 16 YEARS AND OVER WITH EARNINGS for Civilian Noninstitutionalized Population 16 Years And Over With Earnings In The Past 12 Months%Female"
+}  ,
+{
+  "columnname": "B18140_005",
+  "description": "MEDIAN EARNINGS IN THE PAST 12 MONTHS (IN 2015 INFLATION-ADJUSTED DOLLARS) BY DISABILITY STATUS BY SEX FOR THE CIVILIAN NONINSTITUTIONALIZED POPULATION 16 YEARS AND OVER WITH EARNINGS for Civilian Noninstitutionalized Population 16 Years And Over With Earnings In The Past 12 Months%No disability:"
+}  ,
+{
+  "columnname": "B18140_006",
+  "description": "MEDIAN EARNINGS IN THE PAST 12 MONTHS (IN 2015 INFLATION-ADJUSTED DOLLARS) BY DISABILITY STATUS BY SEX FOR THE CIVILIAN NONINSTITUTIONALIZED POPULATION 16 YEARS AND OVER WITH EARNINGS for Civilian Noninstitutionalized Population 16 Years And Over With Earnings In The Past 12 Months%Male"
+}  ,
+{
+  "columnname": "B18140_007",
+  "description": "MEDIAN EARNINGS IN THE PAST 12 MONTHS (IN 2015 INFLATION-ADJUSTED DOLLARS) BY DISABILITY STATUS BY SEX FOR THE CIVILIAN NONINSTITUTIONALIZED POPULATION 16 YEARS AND OVER WITH EARNINGS for Civilian Noninstitutionalized Population 16 Years And Over With Earnings In The Past 12 Months%Female"
+}  ,
+{
+  "columnname": "C18108_001",
+  "description": "AGE BY NUMBER OF DISABILITIES for Civilian Noninstitutionalized Population"
+}  ,
+{
+  "columnname": "C18108_002",
+  "description": "AGE BY NUMBER OF DISABILITIES for Civilian Noninstitutionalized Population% Under 18 years:"
+}  ,
+{
+  "columnname": "C18108_003",
+  "description": "AGE BY NUMBER OF DISABILITIES for Civilian Noninstitutionalized Population% Under 18 years:% With one type of disability"
+}  ,
+{
+  "columnname": "C18108_004",
+  "description": "AGE BY NUMBER OF DISABILITIES for Civilian Noninstitutionalized Population% Under 18 years:% With two or more types of disability"
+}  ,
+{
+  "columnname": "C18108_005",
+  "description": "AGE BY NUMBER OF DISABILITIES for Civilian Noninstitutionalized Population% Under 18 years:% No disability"
+}  ,
+{
+  "columnname": "C18108_006",
+  "description": "AGE BY NUMBER OF DISABILITIES for Civilian Noninstitutionalized Population% 18 to 64 years:"
+}  ,
+{
+  "columnname": "C18108_007",
+  "description": "AGE BY NUMBER OF DISABILITIES for Civilian Noninstitutionalized Population% 18 to 64 years:% With one type of disability"
+}  ,
+{
+  "columnname": "C18108_008",
+  "description": "AGE BY NUMBER OF DISABILITIES for Civilian Noninstitutionalized Population% 18 to 64 years:% With two or more types of disability"
+}  ,
+{
+  "columnname": "C18108_009",
+  "description": "AGE BY NUMBER OF DISABILITIES for Civilian Noninstitutionalized Population% 18 to 64 years:% No disability"
+}  ,
+{
+  "columnname": "C18108_010",
+  "description": "AGE BY NUMBER OF DISABILITIES for Civilian Noninstitutionalized Population% 65 years and over:"
+}  ,
+{
+  "columnname": "C18108_011",
+  "description": "AGE BY NUMBER OF DISABILITIES for Civilian Noninstitutionalized Population% 65 years and over:% With one type of disability"
+}  ,
+{
+  "columnname": "C18108_012",
+  "description": "AGE BY NUMBER OF DISABILITIES for Civilian Noninstitutionalized Population% 65 years and over:% With two or more types of disability"
+}  ,
+{
+  "columnname": "C18108_013",
+  "description": "AGE BY NUMBER OF DISABILITIES for Civilian Noninstitutionalized Population% 65 years and over:% No disability"
+}  ,
+{
+  "columnname": "C18120_001",
+  "description": "EMPLOYMENT STATUS BY DISABILITY STATUS for Civilian Noninstitutionalized Population 18 To 64 Years"
+}  ,
+{
+  "columnname": "C18120_002",
+  "description": "EMPLOYMENT STATUS BY DISABILITY STATUS for Civilian Noninstitutionalized Population 18 To 64 Years% In the labor force:"
+}  ,
+{
+  "columnname": "C18120_003",
+  "description": "EMPLOYMENT STATUS BY DISABILITY STATUS for Civilian Noninstitutionalized Population 18 To 64 Years% In the labor force:% Employed:"
+}  ,
+{
+  "columnname": "C18120_004",
+  "description": "EMPLOYMENT STATUS BY DISABILITY STATUS for Civilian Noninstitutionalized Population 18 To 64 Years% In the labor force:% Employed:% With a disability"
+}  ,
+{
+  "columnname": "C18120_005",
+  "description": "EMPLOYMENT STATUS BY DISABILITY STATUS for Civilian Noninstitutionalized Population 18 To 64 Years% In the labor force:% Employed:% No disability"
+}  ,
+{
+  "columnname": "C18120_006",
+  "description": "EMPLOYMENT STATUS BY DISABILITY STATUS for Civilian Noninstitutionalized Population 18 To 64 Years% In the labor force:% Unemployed:"
+}  ,
+{
+  "columnname": "C18120_007",
+  "description": "EMPLOYMENT STATUS BY DISABILITY STATUS for Civilian Noninstitutionalized Population 18 To 64 Years% In the labor force:% Unemployed:% With a disability"
+}  ,
+{
+  "columnname": "C18120_008",
+  "description": "EMPLOYMENT STATUS BY DISABILITY STATUS for Civilian Noninstitutionalized Population 18 To 64 Years% In the labor force:% Unemployed:% No disability"
+}  ,
+{
+  "columnname": "C18120_009",
+  "description": "EMPLOYMENT STATUS BY DISABILITY STATUS for Civilian Noninstitutionalized Population 18 To 64 Years% Not in labor force:"
+}  ,
+{
+  "columnname": "C18120_010",
+  "description": "EMPLOYMENT STATUS BY DISABILITY STATUS for Civilian Noninstitutionalized Population 18 To 64 Years% Not in labor force:% With a disability"
+}  ,
+{
+  "columnname": "C18120_011",
+  "description": "EMPLOYMENT STATUS BY DISABILITY STATUS for Civilian Noninstitutionalized Population 18 To 64 Years% Not in labor force:% No disability"
+}  ,
+{
+  "columnname": "C18121_001",
+  "description": "WORK EXPERIENCE BY DISABILITY STATUS for Civilian Noninstitutionalized Population 18 To 64 Years"
+}  ,
+{
+  "columnname": "C18121_002",
+  "description": "WORK EXPERIENCE BY DISABILITY STATUS for Civilian Noninstitutionalized Population 18 To 64 Years% Worked full-time, year round:"
+}  ,
+{
+  "columnname": "C18121_003",
+  "description": "WORK EXPERIENCE BY DISABILITY STATUS for Civilian Noninstitutionalized Population 18 To 64 Years% Worked full-time, year round:% With a disability"
+}  ,
+{
+  "columnname": "C18121_004",
+  "description": "WORK EXPERIENCE BY DISABILITY STATUS for Civilian Noninstitutionalized Population 18 To 64 Years% Worked full-time, year round:% No disability"
+}  ,
+{
+  "columnname": "C18121_005",
+  "description": "WORK EXPERIENCE BY DISABILITY STATUS for Civilian Noninstitutionalized Population 18 To 64 Years% Worked less than full-time, year round:"
+}  ,
+{
+  "columnname": "C18121_006",
+  "description": "WORK EXPERIENCE BY DISABILITY STATUS for Civilian Noninstitutionalized Population 18 To 64 Years% Worked less than full-time, year round:% With a disability"
+}  ,
+{
+  "columnname": "C18121_007",
+  "description": "WORK EXPERIENCE BY DISABILITY STATUS for Civilian Noninstitutionalized Population 18 To 64 Years% Worked less than full-time, year round:% No disability"
+}  ,
+{
+  "columnname": "C18121_008",
+  "description": "WORK EXPERIENCE BY DISABILITY STATUS for Civilian Noninstitutionalized Population 18 To 64 Years% Did not work:"
+}  ,
+{
+  "columnname": "C18121_009",
+  "description": "WORK EXPERIENCE BY DISABILITY STATUS for Civilian Noninstitutionalized Population 18 To 64 Years% Did not work:% With a disability"
+}  ,
+{
+  "columnname": "C18121_010",
+  "description": "WORK EXPERIENCE BY DISABILITY STATUS for Civilian Noninstitutionalized Population 18 To 64 Years% Did not work:% No disability"
+}  ,
+{
+  "columnname": "C18130_001",
+  "description": "AGE BY DISABILITY STATUS BY POVERTY STATUS for Civilian Noninstitutionalized Population For Whom Poverty Status Is Determined"
+}  ,
+{
+  "columnname": "C18130_002",
+  "description": "AGE BY DISABILITY STATUS BY POVERTY STATUS for Civilian Noninstitutionalized Population For Whom Poverty Status Is Determined% Under 18 years:"
+}  ,
+{
+  "columnname": "C18130_003",
+  "description": "AGE BY DISABILITY STATUS BY POVERTY STATUS for Civilian Noninstitutionalized Population For Whom Poverty Status Is Determined% Under 18 years:% With a disability:"
+}  ,
+{
+  "columnname": "C18130_004",
+  "description": "AGE BY DISABILITY STATUS BY POVERTY STATUS for Civilian Noninstitutionalized Population For Whom Poverty Status Is Determined% Under 18 years:% With a disability:% Income in the past 12-months below poverty level"
+}  ,
+{
+  "columnname": "C18130_005",
+  "description": "AGE BY DISABILITY STATUS BY POVERTY STATUS for Civilian Noninstitutionalized Population For Whom Poverty Status Is Determined% Under 18 years:% With a disability:% Income in the past 12-months at or above poverty level"
+}  ,
+{
+  "columnname": "C18130_006",
+  "description": "AGE BY DISABILITY STATUS BY POVERTY STATUS for Civilian Noninstitutionalized Population For Whom Poverty Status Is Determined% Under 18 years:% No disability:"
+}  ,
+{
+  "columnname": "C18130_007",
+  "description": "AGE BY DISABILITY STATUS BY POVERTY STATUS for Civilian Noninstitutionalized Population For Whom Poverty Status Is Determined% Under 18 years:% No disability:% Income in the past 12-months below poverty level"
+}  ,
+{
+  "columnname": "C18130_008",
+  "description": "AGE BY DISABILITY STATUS BY POVERTY STATUS for Civilian Noninstitutionalized Population For Whom Poverty Status Is Determined% Under 18 years:% No disability:% Income in the past 12-months at or above poverty level"
+}  ,
+{
+  "columnname": "C18130_009",
+  "description": "AGE BY DISABILITY STATUS BY POVERTY STATUS for Civilian Noninstitutionalized Population For Whom Poverty Status Is Determined% 18 to 64 years:"
+}  ,
+{
+  "columnname": "C18130_010",
+  "description": "AGE BY DISABILITY STATUS BY POVERTY STATUS for Civilian Noninstitutionalized Population For Whom Poverty Status Is Determined% 18 to 64 years:% With a disability:"
+}  ,
+{
+  "columnname": "C18130_011",
+  "description": "AGE BY DISABILITY STATUS BY POVERTY STATUS for Civilian Noninstitutionalized Population For Whom Poverty Status Is Determined% 18 to 64 years:% With a disability:% Income in the past 12-months below poverty level"
+}  ,
+{
+  "columnname": "C18130_012",
+  "description": "AGE BY DISABILITY STATUS BY POVERTY STATUS for Civilian Noninstitutionalized Population For Whom Poverty Status Is Determined% 18 to 64 years:% With a disability:% Income in the past 12-months at or above poverty level"
+}  ,
+{
+  "columnname": "C18130_013",
+  "description": "AGE BY DISABILITY STATUS BY POVERTY STATUS for Civilian Noninstitutionalized Population For Whom Poverty Status Is Determined% 18 to 64 years:% No disability:"
+}  ,
+{
+  "columnname": "C18130_014",
+  "description": "AGE BY DISABILITY STATUS BY POVERTY STATUS for Civilian Noninstitutionalized Population For Whom Poverty Status Is Determined% 18 to 64 years:% No disability:% Income in the past 12-months below poverty level"
+}  ,
+{
+  "columnname": "C18130_015",
+  "description": "AGE BY DISABILITY STATUS BY POVERTY STATUS for Civilian Noninstitutionalized Population For Whom Poverty Status Is Determined% 18 to 64 years:% No disability:% Income in the past 12-months at or above poverty level"
+}  ,
+{
+  "columnname": "C18130_016",
+  "description": "AGE BY DISABILITY STATUS BY POVERTY STATUS for Civilian Noninstitutionalized Population For Whom Poverty Status Is Determined% 65 years and over:"
+}  ,
+{
+  "columnname": "C18130_017",
+  "description": "AGE BY DISABILITY STATUS BY POVERTY STATUS for Civilian Noninstitutionalized Population For Whom Poverty Status Is Determined% 65 years and over:% With a disability:"
+}  ,
+{
+  "columnname": "C18130_018",
+  "description": "AGE BY DISABILITY STATUS BY POVERTY STATUS for Civilian Noninstitutionalized Population For Whom Poverty Status Is Determined% 65 years and over:% With a disability:% Income in the past 12-months below poverty level"
+}  ,
+{
+  "columnname": "C18130_019",
+  "description": "AGE BY DISABILITY STATUS BY POVERTY STATUS for Civilian Noninstitutionalized Population For Whom Poverty Status Is Determined% 65 years and over:% With a disability:% Income in the past 12-months at or above poverty level"
+}  ,
+{
+  "columnname": "C18130_020",
+  "description": "AGE BY DISABILITY STATUS BY POVERTY STATUS for Civilian Noninstitutionalized Population For Whom Poverty Status Is Determined% 65 years and over:% No disability:"
+}  ,
+{
+  "columnname": "C18130_021",
+  "description": "AGE BY DISABILITY STATUS BY POVERTY STATUS for Civilian Noninstitutionalized Population For Whom Poverty Status Is Determined% 65 years and over:% No disability:% Income in the past 12-months below poverty level"
+}  ,
+{
+  "columnname": "C18130_022",
+  "description": "AGE BY DISABILITY STATUS BY POVERTY STATUS for Civilian Noninstitutionalized Population For Whom Poverty Status Is Determined% 65 years and over:% No disability:% Income in the past 12-months at or above poverty level"
+}  ,
+{
+  "columnname": "C18131_001",
+  "description": "RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS BY DISABILITY STATUS for Civilian Noninstitutionalized Population For Whom Poverty Status Is Determined"
+}  ,
+{
+  "columnname": "C18131_002",
+  "description": "RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS BY DISABILITY STATUS for Civilian Noninstitutionalized Population For Whom Poverty Status Is Determined% Under .50:"
+}  ,
+{
+  "columnname": "C18131_003",
+  "description": "RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS BY DISABILITY STATUS for Civilian Noninstitutionalized Population For Whom Poverty Status Is Determined% Under .50:% With a disability"
+}  ,
+{
+  "columnname": "C18131_004",
+  "description": "RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS BY DISABILITY STATUS for Civilian Noninstitutionalized Population For Whom Poverty Status Is Determined% Under .50:% No disability"
+}  ,
+{
+  "columnname": "C18131_005",
+  "description": "RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS BY DISABILITY STATUS for Civilian Noninstitutionalized Population For Whom Poverty Status Is Determined% .50 to .99:"
+}  ,
+{
+  "columnname": "C18131_006",
+  "description": "RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS BY DISABILITY STATUS for Civilian Noninstitutionalized Population For Whom Poverty Status Is Determined% .50 to .99:% With a disability"
+}  ,
+{
+  "columnname": "C18131_007",
+  "description": "RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS BY DISABILITY STATUS for Civilian Noninstitutionalized Population For Whom Poverty Status Is Determined% .50 to .99:% No disability"
+}  ,
+{
+  "columnname": "C18131_008",
+  "description": "RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS BY DISABILITY STATUS for Civilian Noninstitutionalized Population For Whom Poverty Status Is Determined% 1.00 to 1.49:"
+}  ,
+{
+  "columnname": "C18131_009",
+  "description": "RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS BY DISABILITY STATUS for Civilian Noninstitutionalized Population For Whom Poverty Status Is Determined% 1.00 to 1.49:% With a disability"
+}  ,
+{
+  "columnname": "C18131_010",
+  "description": "RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS BY DISABILITY STATUS for Civilian Noninstitutionalized Population For Whom Poverty Status Is Determined% 1.00 to 1.49:% No disability"
+}  ,
+{
+  "columnname": "C18131_011",
+  "description": "RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS BY DISABILITY STATUS for Civilian Noninstitutionalized Population For Whom Poverty Status Is Determined% 1.50 to 1.99:"
+}  ,
+{
+  "columnname": "C18131_012",
+  "description": "RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS BY DISABILITY STATUS for Civilian Noninstitutionalized Population For Whom Poverty Status Is Determined% 1.50 to 1.99:% With a disability"
+}  ,
+{
+  "columnname": "C18131_013",
+  "description": "RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS BY DISABILITY STATUS for Civilian Noninstitutionalized Population For Whom Poverty Status Is Determined% 1.50 to 1.99:% No disability"
+}  ,
+{
+  "columnname": "C18131_014",
+  "description": "RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS BY DISABILITY STATUS for Civilian Noninstitutionalized Population For Whom Poverty Status Is Determined% 2.00 and over:"
+}  ,
+{
+  "columnname": "C18131_015",
+  "description": "RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS BY DISABILITY STATUS for Civilian Noninstitutionalized Population For Whom Poverty Status Is Determined% 2.00 and over:% With a disability"
+}  ,
+{
+  "columnname": "C18131_016",
+  "description": "RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS BY DISABILITY STATUS for Civilian Noninstitutionalized Population For Whom Poverty Status Is Determined% 2.00 and over:% No disability"
+}
+]

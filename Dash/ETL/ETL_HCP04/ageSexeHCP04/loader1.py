@@ -45,4 +45,5 @@ def main():
     return {disType:AgeSexeTypeHCP04(disType) for disType in ["Sensoriel","Chronique","Moteur","Mental"]}
 
 if __name__ == "__main__":
-    main()
+    for r in main().values():
+        print(r)

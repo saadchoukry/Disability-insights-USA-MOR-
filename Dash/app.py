@@ -43,7 +43,6 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
 
 app.layout=html.Div([
-    ## Filters' Div
     html.Div([
         html.Div(dcc.Dropdown(
             id="sexe",
@@ -57,7 +56,7 @@ app.layout=html.Div([
         html.Div(dcc.Dropdown(
             id="matri",
             options=[{"label":matri,"value":matri} for matri in sexeMatri04["Sensoriel"].df.index],
-            value=["Célibataire","Marié"],
+            value=["Célibataire","Marié","Veuf","Divorcé"],
             multi=True,
             clearable=False,
             placeholder="Statut matrimonial",
@@ -67,7 +66,7 @@ app.layout=html.Div([
         html.Div(dcc.Dropdown(
             id="disType",
             options=[{"label":disType,"value":disType} for disType in list(sexeMatri04.keys())],
-            value=["Sensoriel","Chronique"],
+            value=["Sensoriel","Chronique","Moteur","Mental"],
             multi=True,
             clearable=False,
             placeholder="Type d'handicap",
@@ -84,41 +83,71 @@ app.layout=html.Div([
             style={'width':'13vw','display': 'inline-block'}
             ),
             className="one column",)
-        
-        
     ],className="row"),
-    
-    
-    ## Figures' Div
-    html.Div([
-        html.Div(dcc.Graph(
-            id="ageSexe",
-            style={"border":"1px black solid",
-            }),
-            className="seven columns"
-        ),
-        
-        html.Div(dcc.Graph(
-            id="sexeMatri",
-            style={"border":"1px black solid",
-            }),
-            className="five columns"
-        )
-        ],className="row"),
-        
-        html.Div(
-            html.Div(dcc.RangeSlider(
-                id="age",
-                min=0,
-                max=len(ageSexe04["Sensoriel"].df.index),
-                marks=categToAgeCateg,
-                value=[3,6],
-        ),className="ten columns offset-by-one column"),
-        className="row"
-        ),
 
+
+    dcc.Tabs([
+
+        dcc.Tab(label='Statistiques générales', children=[
+            html.Div([
+                html.Div(dcc.Graph(
+                    id="sexeMatri",
+                    style={"border":"1px black solid",
+                    }),
+                    className="five columns"
+                ),
+                html.Div(dcc.Graph(
+                    id="PrevSexe",
+                    style={"border":"1px black solid",
+                    }),
+                    className="five columns"
+                ),
+        ],className="row"),
+
+        html.Div([
+                html.Div(dcc.Graph(
+                    id="PrevDisType",
+                    style={"border":"1px black solid",
+                    }),
+                    className="five columns"
+                ),
+                html.Div(dcc.Graph(
+                    id="PrevEnvir",
+                    style={"border":"1px black solid",
+                    }),
+                    className="five columns"
+                ),
+        ],className="row")
+        
+        ]),
+
+
+
+
+
+
+        dcc.Tab(label='Statistiques avancées', children=[
+              
         html.Div(style={'padding': 15}),
         html.Div([
+            html.Div([
+                html.Div(dcc.Graph(
+                    id="ageSexe",
+                    style={"border":"1px black solid",
+                    }),
+                    className="seven columns"
+                ),
+                ],className="row"),
+                html.Div(
+                    html.Div(dcc.RangeSlider(
+                        id="age",
+                        min=0,
+                        max=len(ageSexe04["Sensoriel"].df.index),
+                        marks=categToAgeCateg,
+                        value=[3,6],
+                ),className="ten columns offset-by-one column"),
+                className="row"),
+                 html.Div(style={'padding': 15}),
             html.Div(dcc.Graph(
             id="illitSexe",
             style={"border":"1px black solid",
@@ -148,19 +177,87 @@ app.layout=html.Div([
 
             ],className="row"),
         
-        html.Div([
-            html.Div(dcc.Graph(
-            id="activitySexeEnv",
-            style={"border":"1px black solid",
-            })
-            ,className="seven columns")
+        ]),
 
-            ],className="row"),
+        # Custom
+        dcc.Tab(label='Personnalisé', children=[
+
+        ]),
         
+
+
+
+    ]),
+  
+    
+    ## Figures' Div
+
+        
+      
         
     ])
 
 ## CALLBACKS
+
+## General Stats
+@app.callback(
+       Output('PrevSexe','figure'),
+    [Input('sexe','value'),
+    ]
+)
+def updatePrevSexe(sexe):
+    df = dfs_sum([illitAgeSexe[dis].df for dis in ["Sensoriel","Chronique","Moteur","Mental"] ])
+    trace = [
+        go.Bar( x=[s for s in sexe ],y=[df[s].sum()/df["Ensemble"].sum() for s in sexe])
+    ]
+    return {
+        'data':trace,
+        'layout':{
+
+        }
+    }
+
+@app.callback(
+       Output('PrevEnvir','figure'),
+    [Input('envir','value'),
+    ]
+)
+def updatePrevEnvir(envir):
+    df = dfs_sum([illitSexeEnvir[dis].df for dis in ["Sensoriel","Chronique","Moteur","Mental"] ])
+    print(envir)
+    trace = [
+        go.Bar( x=[e for e in envir ],y=[df.loc[e]["Ensemble"]/df["Ensemble"].sum() for e in envir])
+    ]
+    return {
+        'data':trace,
+        'layout':{
+
+        }
+    }
+
+
+@app.callback(
+       Output('PrevDisType','figure'),
+    [Input('disType','value'),
+    ]
+)
+def updatePrevDisType(disType):
+    ensembleDesEnsembles = 0
+    for dis in disType:
+        ensembleDesEnsembles += illitAgeSexe[dis].df["Ensemble"].sum()
+    trace = [
+        go.Bar( x=[dis for dis in disType ],y=[illitAgeSexe[dis].df["Ensemble"].sum()/ensembleDesEnsembles for dis in disType])
+    ]
+
+    return {
+        'data':trace,
+        'layout':{
+
+        }
+    }
+
+
+## Advanced Stats
 
 @app.callback(
     Output('educEnvir','figure'),
@@ -172,6 +269,13 @@ def updateFigEducEnvir(envir,disType):
     df= dfs_sum([educaEnvir[dis].df for dis in disType])
     if len(envir)==1:
         trace = go.Pie(labels=df.index.values, values=df[envir[0]].tolist())
+        return {
+        'data':[trace],
+        'layout':{
+            'title':"Niveau d'éducation dans le monde "+envir[0].lower(),
+            }
+
+        }
     else:
         trace = go.Sunburst(
             ids= [env for env in envir]+[env+" - "+ level for env in envir for level in df.index.values],
@@ -180,15 +284,14 @@ def updateFigEducEnvir(envir,disType):
             values= [df[env].sum() for env in envir] + [df.loc[level][env] for env in envir for level in df.index.values],
             branchvalues="total",
         )
-        
-    #trace  = go.Pie(labels=envir, values=df[sexe[0]].tolist())
-    return {
+        return {
         'data':[trace],
         'layout':{
-            
+            'title':"Niveau d'éducation par environment",
             }
 
         }
+    
     
 
 @app.callback(
@@ -230,6 +333,7 @@ def updateFigMatri(statuses,sexe,disType):
     return {
         "data":[trace],
         'layout':{
+            'title':"Prévalence selon la situation matrimoniale",
             
         }
     }
@@ -309,37 +413,11 @@ def updateFigActivityEnv(disType,envir):
         return {
             'data':[trace1,trace2],
             'layout':{
-
+                
             }
         }
 
-@app.callback(
-    Output("activitySexeEnv","figure"),[
-        Input("disType","value"),
-        Input("sexe","value"),
-        Input("envir","value")
-    ]
-)
 
-def updateFigactivitySexeEnv(disType,sexe,envir):
-    df =dfs_sum([actSexeEnv[dis].df for dis in disType])
-    print(df)
-    if len(sexe)==1:
-        trace = go.Pie(labels=envir, values=df.loc[envir[0]].tolist() + df.loc[envir[1]].tolist())
-    else:
-        trace = go.Sunburst(
-            ids= [env for env in envir]+[env+" - "+ sex for env in envir for sex in sexe],
-            labels=[env for env in envir]+[sex for sex in sexe]*2,
-            parents= ["" for i in range(len(envir))] + list(chain.from_iterable((env,env) for env in envir)),
-            values= [df.loc[env].sum() for env in envir] + [df.loc[env][sex] for env in envir for sex in sexe],
-            branchvalues="total",
-        )
-    return {
-        'data':[trace],
-        'layout':{
-
-        }
-    }
 
 if __name__ == '__main__':
     

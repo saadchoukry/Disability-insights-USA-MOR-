@@ -1,0 +1,2 @@
+['AGE', ['Under 18 years', '18 to 64 years', '65 years and over']]
+['NUMBER OF DISABILITIES', ['With one type of disability', 'With two or more types of disability', 'No disability']]

@@ -61,7 +61,7 @@ def columnSelector(columns,*stringsToCheck):
 
 
 def routing(dimension,option,year):
-    rootPath = str(Path(os.path.realpath(__file__)).parent) + "\\dispatchedRessources\\"+year+"\\"
+    rootPath = str(Path(os.path.realpath(__file__)).parent) + "\\dispatchedRessources\\year\\"+year+"\\"
     folderName=dimension
     if not os.path.isdir(rootPath+folderName):
         os.mkdir(rootPath+folderName)
@@ -140,3 +140,49 @@ def getDimensionsOptions(dimOptions):
         dimensions.append(item[0])
         options.append(item[1])
     return {'dimensions':dimensions,'options':options}
+
+def metaWriter(path,index,columns):
+    with open(path,'w') as metaFile:
+        metaFile.write(str(index))
+        metaFile.write('\n')
+        metaFile.write(str(columns))
+    
+
+## LOADER
+def getDimensionsOptionsStateLoader(relativePath,delimiter):
+    path = relativePath
+    dimensions = []
+    options = []
+    counter = 0
+    while delimiter in path:
+        splittedPath = path.split('\\',maxsplit=1)
+        if counter % 2 == 0:
+            dimensions.append(splittedPath[0])
+        else:
+            options.append(splittedPath[0])
+        counter +=1
+        try:
+            path = splittedPath[1]
+        except:
+            pass
+
+    return {"dimensions":dimensions,"options":options,"state":path.split('.')[0]}
+
+"""
+print(
+getDimensionsOptionsStateLoader("year\\16\\VISION DIFFICULTY\\With a vision difficulty\\Wyoming.csv","\\")
+)  
+"""
+
+def metaReader(path):
+    meta = []
+    with open(path,'r') as metaFile:
+        s = metaFile.read().split('\n',maxsplit=1)
+    for element in s:
+        meta.append(element.split(',',maxsplit=1)[0][2:-1])
+    return meta
+"""
+print(
+metaReader("c:\\Users\\Saad\\Desktop\\SAAD\\Stud\\BI\\Projet_BI\\Dash\\ETL\\ETL_USA\\dispatchedRessources\year\\16\\POPULATION\\ Civilian Noninstitutionalized Population For Whom Poverty Status Is Determined\\meta.txt")
+)
+"""

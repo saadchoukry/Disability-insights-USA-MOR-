@@ -23,30 +23,29 @@ class UsaExtractTransform:
                     newColumnsRaw.append(col)
             dimOptions = myToolz.dataFrameCreator(newColumns)
             sample = newColumns[0]['options'][-1]
-            dfIndex = list(dimOptions.popitem(last=False)[-1])
-            dfColumns = list(dimOptions.popitem(last=False)[-1])
-            while len(dimOptions)> 0 :
-                remainingDimsOpts =myToolz.getDimensionsOptions(dimOptions)
-                dimensions = remainingDimsOpts['dimensions']
-                options = remainingDimsOpts['options']
-                for i in range(len(dimensions)):
-                    newDf = pd.DataFrame(index=dfIndex , columns=dfColumns)
-                    for option in options[i]:
-                        csvPath = myToolz.routing(dimensions[i],option,self.year)
-                        for state in self.dfUs.index:
-                            for row in newDf.index:
-                                for col in newDf.columns:
-                                    #print(myToolz.columnSelector(newColumnsRaw,row,col,sample,option,dimensions[i]))
-                                    if dimensions[i] == 'POPULATION':
-                                        newDf.loc[row][col] = self.dfUs.loc[state][myToolz.columnSelector(newColumnsRaw,row,col,sample,option)]
-                                        myToolz.csvCreator(newDf,state,csvPath) 
-                                    else:
-                                        newDf.loc[row][col] = self.dfUs.loc[state][myToolz.columnSelector(newColumnsRaw,row,col,sample,option,dimensions[i])]
-                                        myToolz.csvCreator(newDf,state,csvPath)
-                print(newDf)
-                        
-                                                
-                    
+            index = list(dimOptions.popitem(last=False))
+            columns = list(dimOptions.popitem(last=False))
+            dfIndex = index[-1]
+            dfColumns = columns[-1]
+            remainingDimsOpts =myToolz.getDimensionsOptions(dimOptions)
+            dimensions = remainingDimsOpts['dimensions']
+            options = remainingDimsOpts['options']
+            for i in range(len(dimensions)):
+                newDf = pd.DataFrame(index=dfIndex , columns=dfColumns)
+                for option in options[i]:
+                    csvPath = myToolz.routing(dimensions[i],option,self.year)
+                    for state in self.dfUs.index:
+                        for row in newDf.index:
+                            for col in newDf.columns:
+                                #print(myToolz.columnSelector(newColumnsRaw,row,col,sample,option,dimensions[i]))
+                                if dimensions[i] == 'POPULATION':
+                                    newDf.loc[row][col] = self.dfUs.loc[state][myToolz.columnSelector(newColumnsRaw,row,col,sample,option)]
+                                    myToolz.csvCreator(newDf,state,csvPath) 
+                                else:
+                                    newDf.loc[row][col] = self.dfUs.loc[state][myToolz.columnSelector(newColumnsRaw,row,col,sample,option,dimensions[i])]
+                                    myToolz.csvCreator(newDf,state,csvPath)
+                    myToolz.metaWriter(csvPath+"\\meta.txt",index,columns)   
+                    print(csvPath+"\\meta.txt")  
             self.dfUs = self.dfUs.drop(columns =newColumnsRaw ,axis=1)        
             
             

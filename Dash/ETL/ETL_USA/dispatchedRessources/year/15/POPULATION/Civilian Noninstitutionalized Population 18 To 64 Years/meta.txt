@@ -1,0 +1,2 @@
+['WORK EXPERIENCE', ['Worked full-time, year round', 'Worked less than full-time, year round', 'Did not work']]
+['DISABILITY STATUS', ['With a disability', 'No disability']]

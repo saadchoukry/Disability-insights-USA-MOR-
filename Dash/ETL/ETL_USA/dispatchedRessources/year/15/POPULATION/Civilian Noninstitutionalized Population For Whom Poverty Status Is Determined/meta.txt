@@ -1,2 +1,0 @@
-['RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS', ['Under .50', '.50 to .99', '1.00 to 1.49', '1.50 to 1.99', '2.00 and over']]
-['DISABILITY STATUS', ['With a disability', 'No disability']]

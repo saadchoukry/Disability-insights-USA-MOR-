@@ -43,7 +43,53 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
 
 app.layout=html.Div([
-    html.Div([
+
+    dcc.Tabs([
+
+        dcc.Tab(label='Statistiques générales', children=[
+            html.Div([
+                
+                html.Div(dcc.Graph(
+                    id="sexeMatri",
+                    style={"border":"1px black solid",
+                    }),
+                    className="five columns"
+                ),
+                html.Div(dcc.Graph(
+                    id="PrevSexe",
+                    style={"border":"1px black solid",
+                    }),
+                    className="five columns"
+                ),
+        ],className="row"),
+
+        html.Div([
+                html.Div(dcc.Graph(
+                    id="PrevDisType",
+                    style={"border":"1px black solid",
+                    }),
+                    className="five columns"
+                ),
+                html.Div(dcc.Graph(
+                    id="PrevEnvir",
+                    style={"border":"1px black solid",
+                    }),
+                    className="five columns"
+                ),
+        ],className="row")
+        
+        ]),
+
+
+
+
+
+
+        dcc.Tab(label='Statistiques avancées (MAR)', children=[
+              
+        html.Div(style={'padding': 15}),
+        html.Div([
+            html.Div([
         html.Div(dcc.Dropdown(
             id="sexe",
             options=[{"label":"Masculin","value":"Masculin"},{"label":"Féminin","value":"Féminin"}],
@@ -84,52 +130,6 @@ app.layout=html.Div([
             ),
             className="one column",)
     ],className="row"),
-
-
-    dcc.Tabs([
-
-        dcc.Tab(label='Statistiques générales', children=[
-            html.Div([
-                html.Div(dcc.Graph(
-                    id="sexeMatri",
-                    style={"border":"1px black solid",
-                    }),
-                    className="five columns"
-                ),
-                html.Div(dcc.Graph(
-                    id="PrevSexe",
-                    style={"border":"1px black solid",
-                    }),
-                    className="five columns"
-                ),
-        ],className="row"),
-
-        html.Div([
-                html.Div(dcc.Graph(
-                    id="PrevDisType",
-                    style={"border":"1px black solid",
-                    }),
-                    className="five columns"
-                ),
-                html.Div(dcc.Graph(
-                    id="PrevEnvir",
-                    style={"border":"1px black solid",
-                    }),
-                    className="five columns"
-                ),
-        ],className="row")
-        
-        ]),
-
-
-
-
-
-
-        dcc.Tab(label='Statistiques avancées', children=[
-              
-        html.Div(style={'padding': 15}),
-        html.Div([
             html.Div([
                 html.Div(dcc.Graph(
                     id="ageSexe",
@@ -180,7 +180,7 @@ app.layout=html.Div([
         ]),
 
         # Custom
-        dcc.Tab(label='Personnalisé', children=[
+        dcc.Tab(label='Statistiques avancées (USA)', children=[
 
         ]),
         

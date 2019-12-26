@@ -1,4 +1,5 @@
 from re import split as reSplitter
+from re import sub as reSubber
 from pprint import pprint
 import numpy as np
 from collections import OrderedDict
@@ -13,20 +14,50 @@ def stringCleaner(s):
         s = s[:-1]
     return s
 
+def usefulColumn(columnName):
+    splittedCol = columnName.split('%')
+    if "With" in splittedCol[-1]:
+        if "No" in splittedCol[-2]:
+            return False
+        else :
+            return True
+
+def usefulColumnCleaner(usefulColumn):
+    column = usefulColumn
+    if "% With a disability" in usefulColumn:
+        usefulColumn= reSubber(r'BY DISABILITY STATUS.*for ','for ',usefulColumn)
+        usefulColumn= reSubber(r'% With a disability','',usefulColumn)
+        return {column:usefulColumn}
+    else:
+        return usefulColumn
+
+def dfColRenamer(df,usefulColumns):
+    for col in usefulColumns:
+        cleaned = usefulColumnCleaner(col)
+        if type(cleaned) == dict:
+            df.rename(columns=cleaned,inplace=True)
+
+
+
+
 def columnSplitter(columnName):
     splittedColumn = OrderedDict()
     splittedColumn['dimensions'] = [stringCleaner(s) for s in reSplitter('BY | for',columnName.split('%',maxsplit=1)[0])[:-1] ]
     splittedColumn['options'] = [stringCleaner(s) for s in (columnName.split('%',maxsplit=1)[1]).split('%')]
     splittedColumn['dimensions'].append('POPULATION')
     splittedColumn['options'].append(reSplitter('for|%',columnName)[1])
-    splittedColumn['rawColumn'] = columnName.split("%",maxsplit=1)[0]
+    splittedColumn['rawDimFromRawCol'] = columnName.split("%",maxsplit=1)[0]
     return splittedColumn
-
+"""
+print(
+    columnSplitter("SEX BY AGE BY DISABILITY STATUS for Civilian Noninstitutionalized Population")
+)
+"""
 
 def unique(x):
   return list(dict.fromkeys(x))
 
-def dataFrameCreator(splittedColumns):
+def getDimOptions(splittedColumns):
     dikt = OrderedDict()
     for s in splittedColumns[0]['dimensions']:
         dikt[s] = []
@@ -60,51 +91,18 @@ def columnSelector(columns,*stringsToCheck):
     return False
 
 
-def routing(dimension,option,year):
+def routing(remainingDimensions,option,year,dfIndexlabel,dfColumnslabel):
     rootPath = str(Path(os.path.realpath(__file__)).parent) + "\\dispatchedRessources\\year\\"+year+"\\"
-    folderName=dimension
+    folderName=dfIndexlabel + " BY " + dfColumnslabel
     if not os.path.isdir(rootPath+folderName):
         os.mkdir(rootPath+folderName)
-    folderName += "\\" + option
-    if not os.path.isdir(rootPath+folderName):
-        os.mkdir(rootPath+folderName)
+    if not option == " " :    
+        folderName += "\\" + option
+        if not os.path.isdir(rootPath+folderName):
+            os.mkdir(rootPath+folderName)
     return rootPath+folderName
 
 ###[('DISABILITY STATUS', ['With a disability', 'No disability']), ('sample', [' Civilian Noninstitutionalized Population'])])
-
-def folderCreator(dimensions,sample,disability):
-    rootPath = str(Path(os.path.realpath(__file__)).parent) + "\\Ressources\\"
-    ## NESTING LVL 1 
-    folderName = dimensions[0]
-    for dimension in dimensions[1:]:
-        folderName +=" BY "+ dimension
-
-    if not os.path.isdir(rootPath+folderName):
-        os.mkdir(rootPath+folderName)
-
-
-    ## NESTING LVL 2
-    folderName +="\\" +  sample
-    if not os.path.isdir(rootPath+folderName):
-        os.mkdir(rootPath+folderName)
-
-
-    ## NESTING LVL 3
-    if "No disability" == disability or "With a disability" == disability:
-        folderName += "\\General"
-        if not os.path.isdir(rootPath+folderName):
-            os.mkdir(rootPath+folderName)
-    else:                
-        folderName += "\\Specific"
-        if not os.path.isdir(rootPath+folderName):
-            os.mkdir(rootPath+folderName)        
-
-    ## NESTING LVL 4
-    folderName +="\\" +  disability
-    if not os.path.isdir(rootPath+folderName):
-        os.mkdir(rootPath+folderName)
-    
-    return rootPath+folderName
 
 
 def csvCreator(df,state,path):
@@ -148,6 +146,26 @@ def metaWriter(path,index,columns):
         metaFile.write(str(columns))
     
 
+def dataFrameCreator(UsaExtTransObject,sample,dfIndex,dfColumns,dimensions,options,index,columns,newColumnsRaw,dfIndexlabel,dfColumnslabel):
+    for i in range(len(dimensions)):
+        newDf = pd.DataFrame(index=dfIndex , columns=dfColumns)
+        for option in options[i]:
+            #print(type(option))
+            csvPath = routing(dimensions[i],option,UsaExtTransObject.year,dfIndexlabel,dfColumnslabel)
+            for state in UsaExtTransObject.dfUs.index:
+                for row in newDf.index:
+                    for col in newDf.columns:
+                        #print(myToolz.columnSelector(newColumnsRaw,row,col,sample,option,dimensions[i]))
+                        if dimensions[i] == 'POPULATION':
+                            newDf.loc[row][col] = UsaExtTransObject.dfUs.loc[state][columnSelector(newColumnsRaw,row,col,sample,option)]
+                            csvCreator(newDf,state,csvPath) 
+                        else:
+                            newDf.loc[row][col] = UsaExtTransObject.dfUs.loc[state][columnSelector(newColumnsRaw,row,col,sample,option,dimensions[i])]
+                            csvCreator(newDf,state,csvPath)
+            metaWriter(csvPath+"\\meta.txt",index,columns)   
+            #print(csvPath+"\\meta.txt")  
+
+
 ## LOADER
 def getDimensionsOptionsStateLoader(relativePath,delimiter):
     path = relativePath
@@ -186,3 +204,14 @@ print(
 metaReader("c:\\Users\\Saad\\Desktop\\SAAD\\Stud\\BI\\Projet_BI\\Dash\\ETL\\ETL_USA\\dispatchedRessources\year\\16\\POPULATION\\ Civilian Noninstitutionalized Population For Whom Poverty Status Is Determined\\meta.txt")
 )
 """
+
+def metaCreator(ExtendedDf,relativePath):
+    meta = {}
+    subDirectories = relativePath.split('\\')
+    for subDir in subDirectories:
+        if "difficulty" in subDir:
+            difficulty= ""
+            for s in subDir.split(" ")[2:-1]:
+                difficulty += s +" " 
+            ExtendedDf["meta"]["difficulty"] =difficulty
+    return meta

@@ -14,39 +14,35 @@ class UsaExtractTransform:
         while len(self.dfUs.columns) > 0 :
             newColumns = []
             newColumnsRaw = []
-            workingSheet = myToolz.columnSplitter(self.dfUs.columns[1])["rawColumn"]
+            workingSheet = myToolz.columnSplitter(self.dfUs.columns[1])
             for col in self.dfUs.columns:
                 ## Grouping columns with the same dimensions
-                if workingSheet in col:
+                if workingSheet["rawDimFromRawCol"] in col:
                     newCol = myToolz.columnSplitter(col)
                     newColumns.append(newCol)
                     newColumnsRaw.append(col)
-            dimOptions = myToolz.dataFrameCreator(newColumns)
+            dimOptions = myToolz.getDimOptions(newColumns)
+            #print(dimOptions)
             sample = newColumns[0]['options'][-1]
+
             index = list(dimOptions.popitem(last=False))
             columns = list(dimOptions.popitem(last=False))
+
             dfIndex = index[-1]
             dfColumns = columns[-1]
+
             remainingDimsOpts =myToolz.getDimensionsOptions(dimOptions)
+            print(remainingDimsOpts)
             dimensions = remainingDimsOpts['dimensions']
+            dimensions.insert(0,index[0])
+
             options = remainingDimsOpts['options']
-            for i in range(len(dimensions)):
-                newDf = pd.DataFrame(index=dfIndex , columns=dfColumns)
-                for option in options[i]:
-                    csvPath = myToolz.routing(dimensions[i],option,self.year)
-                    for state in self.dfUs.index:
-                        for row in newDf.index:
-                            for col in newDf.columns:
-                                #print(myToolz.columnSelector(newColumnsRaw,row,col,sample,option,dimensions[i]))
-                                if dimensions[i] == 'POPULATION':
-                                    newDf.loc[row][col] = self.dfUs.loc[state][myToolz.columnSelector(newColumnsRaw,row,col,sample,option)]
-                                    myToolz.csvCreator(newDf,state,csvPath) 
-                                else:
-                                    newDf.loc[row][col] = self.dfUs.loc[state][myToolz.columnSelector(newColumnsRaw,row,col,sample,option,dimensions[i])]
-                                    myToolz.csvCreator(newDf,state,csvPath)
-                    myToolz.metaWriter(csvPath+"\\meta.txt",index,columns)   
-                    print(csvPath+"\\meta.txt")  
-            self.dfUs = self.dfUs.drop(columns =newColumnsRaw ,axis=1)        
+            options.insert(0," ")
+
+        
+            myToolz.dataFrameCreator(self,sample,dfIndex,dfColumns,dimensions,options,index,columns,newColumnsRaw,index[0],columns[0])
+            
+            self.dfUs = self.dfUs.drop(columns =newColumnsRaw ,axis=1)       
             
             
           
@@ -66,11 +62,14 @@ class UsaExtractTransform:
         self.dfUs.set_index("AreaName",inplace=True)
 
         ## Eliminating columns containing totals/sub-totals
-        noTotalColumns= []
+        usefulColumns= []
         for col in self.dfUs.columns:
-            if col.count("BY")+1 ==  col.count("%"):
-                 noTotalColumns.append(col)
-        self.dfUs = self.dfUs[noTotalColumns]
-        self.dispatcher()
+            if col.count("BY")+1 ==  col.count("%") and myToolz.usefulColumn(col):
+                 usefulColumns.append(col)
+        self.dfUs = self.dfUs[usefulColumns]
+        myToolz.dfColRenamer(self.dfUs,usefulColumns)
+        #pprint(self.dfUs.columns)
+        #pprint(usefulColumns)
+        
     
  

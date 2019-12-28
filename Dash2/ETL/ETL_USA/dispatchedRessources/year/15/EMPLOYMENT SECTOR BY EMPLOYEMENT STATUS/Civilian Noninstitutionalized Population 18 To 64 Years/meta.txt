@@ -1,0 +1,2 @@
+['EMPLOYMENT SECTOR', ['In the labor force']]
+['EMPLOYEMENT STATUS', ['Employed', 'Unemployed']]

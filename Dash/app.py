@@ -1,5 +1,6 @@
 import dash
 import dash_core_components as dcc
+print(dash.__version__)
 import dash_html_components as html
 from ETL.loader import EtlHcp04 
 from pandasTesting import dfs_sum

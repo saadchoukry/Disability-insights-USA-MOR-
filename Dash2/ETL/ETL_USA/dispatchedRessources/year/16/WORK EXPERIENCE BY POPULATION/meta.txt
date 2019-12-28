@@ -1,0 +1,2 @@
+['WORK EXPERIENCE', ['Worked full-time, year round', 'Worked less than full-time, year round', 'Did not work']]
+['POPULATION', [' Civilian Noninstitutionalized Population 18 To 64 Years']]

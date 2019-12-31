@@ -22,6 +22,10 @@ import plotly.express as px
 
 
 
+## Colors
+my_colors = ['rgb(136, 207, 241)', 'rgb(255, 184, 199)']
+my_line_colors = ['rgb(26, 154, 216)', 'rgb(255, 96, 130)']
+
 ## ETLs
 init= False
 dfs = None
@@ -81,7 +85,39 @@ points = pickle.load(open(DATA_PATH.joinpath("points.pkl"), "rb"))
 ## General stats
 
 def getDisTypeGeneral():
-    pass
+    global ageSexe04, usaData
+    df = pd.DataFrame(index=[disType for disType in ageSexe04.keys()], columns=['Morocco', 'Usa'])
+    sumMar = pd.Series(index=[disType for disType in ageSexe04.keys()],
+                       data=[ageSexe04[disType].df['Ensemble'].sum() for disType in ageSexe04.keys()]).sum()
+    for disType in ageSexe04.keys():
+        df.loc[disType, 'Morocco'] = (ageSexe04[disType].df['Ensemble'].sum()) / sumMar
+
+    sumUsa = 0
+    usefulDfs = toolz.dfSelector(toolz.dfSelector(usaData.dfsArray, 'difficulty',
+                                                  ['independent living ', 'self-care ', 'vision ', 'hearing ',
+                                                   'cognitive ', 'ambulatory ']), 'year', ['16'])
+    for tmpDf in usefulDfs:
+        sumUsa += tmpDf['dataFrame'].sum().sum()
+
+    convDict = {
+        "Sensoriel": toolz.dfSelector(toolz.dfSelector(usaData.dfsArray, 'difficulty', ['vision ', 'hearing ']), 'year',
+                                      ['16']),
+        "Moteur": toolz.dfSelector(
+            toolz.dfSelector(usaData.dfsArray, 'difficulty', ['independent living ', 'self-care ']), 'year', ['16']),
+        "Chronique": toolz.dfSelector(toolz.dfSelector(usaData.dfsArray, 'difficulty', ['ambulatory ']), 'year',
+                                      ['16']),
+        "Mental": toolz.dfSelector(toolz.dfSelector(usaData.dfsArray, 'difficulty', ['cognitive ']), 'year', ['16'])}
+    for disType in df.index.tolist():
+        tmpSum = 0
+        for tmpExtDf in convDict[disType]:
+            tmpSum += tmpExtDf['dataFrame'].sum().sum()
+        df.loc[disType, 'Usa'] = tmpSum / sumUsa
+    return df
+
+
+generalPolar = getDisTypeGeneral()
+dfMorocco = pd.DataFrame(dict(r=generalPolar["Morocco"].tolist(), theta=generalPolar.index.tolist()))
+dfUsa = pd.DataFrame(dict(r=generalPolar["Usa"].tolist(), theta=generalPolar.index.tolist()))
 # Create global chart template
 
 layout = dict(
@@ -95,318 +131,315 @@ layout = dict(
 
 # Create app layout
 app.layout = html.Div([
-        dcc.Store(id="aggregate_data"),
-        # empty Div to trigger javascript file for graph resizing
-        html.Div(id="output-clientside"),
+    dcc.Store(id="aggregate_data"),
+    # empty Div to trigger javascript file for graph resizing
+    html.Div(id="output-clientside"),
+    html.Div([
+        html.Div([
+            html.Img(
+                src=app.get_asset_url("LOGO.png"),
+                id="plotly-image",
+                style={
+                    "height": "60px",
+                    "width": "auto",
+                    "margin-bottom": "0px",
+                },
+            )], className="one-third column"),
         html.Div([
             html.Div([
-                html.Img(
-                    src=app.get_asset_url("LOGO.png"),
-                    id="plotly-image",
-                    style={
-                        "height": "60px",
-                        "width": "auto",
-                        "margin-bottom": "0px",
-                    },
-            )],className="one-third column"),
-            html.Div([
-                html.Div([
-                    html.H3(
-                        "Disability statistics",
-                        style={"margin-bottom": "0px"},
-                    ),
-                    html.H5(
-                        "Morocco - United States Of America", style={"margin-top": "0px"}
-                    ),
-                ])
-            ],className="one-half column",id="title",),
-                
-        ],id="header",className="row flex-display",style={"margin-bottom": "25px"}),
-        
-        
-        dcc.Tabs([
-            dcc.Tab(label='Statistiques générales', children=[
-            html.Div([
-                html.Div([
-                    dcc.Graph(id="disTypeGenGraph")
-                    ],
-                    id="disTypeGenGraphDiv",
-                    className="pretty_container seven columns",
-                    )
-            ])    
-                ]),
-            dcc.Tab(label='Statistiques avancées (MAR)', children=[
-                html.Div([
-                    html.Div([
-                        html.P(
-                            "Filter par années",
-                            className="control_label",
-                        ),
-                        dcc.Dropdown(
-                            id="yearMar",
-                            options=[{'label':'2004','value':'2004'},{'label':'2014','value':'2014'}],
-                            multi=True,
-                            value=["2004"],
-                            className="dcc_control",
-                        ),
-                        html.P(
-                            "Filter par catégories d'âge",
-                            className="control_label",
-                        ),
-                        dcc.RangeSlider(
-                            id="ageMar",
-                            min=0,
-                            max=len(ageSexe04["Sensoriel"].df.index),
-                            marks=categToAgeCateg,
-                            value=[3,6],
-                            className="dcc_control"
-                        ),
-                        html.Div(style={'padding': 15}),
-                        html.P(
-                            "Filtrer par situation matrimoniale",
-                            className="control_label",
-                        ),
-                        dcc.Dropdown(
-                            id="matri",
-                            options=[{"label":matri,"value":matri} for matri in sexeMatri04["Sensoriel"].df.index],
-                            value=["Célibataire","Marié","Veuf","Divorcé"],
-                            multi=True,
-                            clearable=False,
-                            style={'width':'24vw','display': 'inline-block'}
-                            ),
-                        html.P(
-                            "Filtrer par sexes",
-                            className="control_label",
-                        ),
-                        dcc.Dropdown(
-                            id="sexe",
-                            options=[{"label":"Masculin","value":"Masculin"},{"label":"Féminin","value":"Féminin"}],
-                            value=["Masculin","Féminin"],
-                            clearable=False,
-                            multi =True,
-                            placeholder="Sexe",
-                            className="dcc_control"
-                        ),
-                        html.P(
-                            "Filtrer par types d'handicap",
-                            className="control_label",
-                        ),
-                        dcc.Dropdown(
-                            id="disType",
-                            options=[{"label":disType,"value":disType} for disType in list(sexeMatri04.keys())],
-                            value=["Sensoriel","Chronique","Moteur","Mental"],
-                            multi=True,
-                            clearable=False,
-                            placeholder="Type d'handicap",
-                            className='dcc_control'
-                        ),   
-                        html.P(
-                            "Filtrer par environnement",
-                            className="control_label",
-                        ),
-                        dcc.Dropdown(
-                            id="envir",
-                            options=[{"label":envir,"value":envir} for envir in illitSexeEnvir["Sensoriel"].df.index],
-                            value=["Rural","urbain"],
-                            multi=True,
-                            clearable=False,
-                            className='dcc_control'
-                        ),   
-                    ],className="pretty_container four columns",id="cross-filter-options"), 
-                    html.Div([
-                            html.Div([
-                                html.Div(
-                                    [html.H6(id="t23"), html.P("No. of Wells")],
-                                    id="wells1",
-                                    className="mini_container",
-                                ),
-                                html.Div(
-                                    [html.H6(id="t24"), html.P("Gas")],
-                                    id="gas1",
-                                    className="mini_container",
-                                ),
-                                html.Div(
-                                    [html.H6(id="t25"), html.P("Oil")],
-                                    id="oil1",
-                                    className="mini_container",
-                                ),
-                                html.Div(
-                                    [html.H6(id="t26"), html.P("Water")],
-                                    id="water1",
-                                    className="mini_container",
-                                ),
-                            ],
-                    id="info-container3",
-                    className="row container-display",
-                            ),
-                            html.Div(
-                                [dcc.Graph(id="ageSexeMar")],
-                                id="countGraphContainer",
-                                className="pretty_container",
-                            ),
-                        ],
-                        id="right-column1",
-                        className="eight columns",
-                    ),
-                ],
-                className="row flex-display",),
-                    html.Div([
-                            html.Div(
-                                [dcc.Graph(id="educEnvir")],
-                                className="pretty_container seven columns",
-                            ),
-                            html.Div(
-                                [dcc.Graph(id="illitSexe")],
-                                className="pretty_container five columns",
-                            ),
-                        ],
-                        className="row flex-display",
-                    ),
-                    html.Div([
-                            html.Div(
-                                [dcc.Graph(id="sexeMatri")],
-                                className="pretty_container seven columns",
-                            ),
-                            html.Div(
-                                [dcc.Graph(id="illitAge")],
-                                className="pretty_container five columns",
-                            ),
-                        ],
-                        className="row flex-display",
-                        ),
-            ]),
-            dcc.Tab(label='Statistiques avancées (USA)', children=[
-                html.Div([
-                    html.Div([
-                        html.P(
-                            "Filter by year",
-                            className="control_label",
-                        ),
-                        dcc.Dropdown(
-                            id="year",
-                            options=[{'label':'2015','value':'15'},{'label':'2016','value':'16'}],
-                            multi=True,
-                            placeholder="Select states",
-                            value=["15"],
-                            className="dcc_control",
-                        ),
-                        html.P(
-                            "Filter by age categories",
-                            className="control_label",
-                        ),
-                        dcc.RangeSlider(
-                            id="ageUsa",
-                            min=0,
-                            max=len(toolz.getAgeCategories(usaData.dfsArray))-1,
-                            marks={toolz.getAgeCategories(usaData.dfsArray).index(ageCateg):'{}'.format(ageCateg) for ageCateg in toolz.getAgeCategories(usaData.dfsArray)},
-                            value=[1,4],
-                            className="dcc_control"
-                        ),
-                        html.Div(style={'padding': 15}),
-                        html.P(
-                            "Filter by states",
-                            className="control_label",
-                        ),
-                        dcc.Dropdown(
-                            id="states",
-                            options=[{'label':state,'value':state} for state in toolz.getAllStatesArray(usaData.dfsArray)
-                            ],
-                            multi=True,
-                            value=["Alabama"],
-                            className="dcc_control"
-                        ),
-                        html.P(
-                            "Filter by gender",
-                            className="control_label",
-                        ),
-                        dcc.Dropdown(
-                            id="sex",
-                            options=[{"label":"Male","value":"male"},{"label":"Female","value":"female"}],
-                            value=["male","female"],
-                            clearable=False,
-                            multi =True,
-                            className="dcc_control"
-                        ),
-                        html.P(
-                            "Filter by disability types",
-                            className="control_label",
-                        ),
-                        dcc.Dropdown(
-                            id="difTypes",
-                            options=[{"label":"{}".format(difType),"value":"{}".format(difType)} for difType in toolz.getDifficultyTypes(usaData.dfsArray) ],
-                            value=[ difType for difType in toolz.getDifficultyTypes(usaData.dfsArray) ],
-                            clearable=False,
-                            multi =True,
-                            className='dcc_control'
-                        ),   
-                    ],
-                className="pretty_container four columns",
-                id="cross-filter-options2"),
-                    html.Div([
-                            html.Div([
-                                html.Div(
-                                    [html.H6(id="t233"), html.P("No. of Wells")],
-                                    id="wells",
-                                    className="mini_container",
-                                ),
-                                html.Div(
-                                    [html.H6(id="t243"), html.P("Gas")],
-                                    id="gas",
-                                    className="mini_container",
-                                ),
-                                html.Div(
-                                    [html.H6(id="t253"), html.P("Oil")],
-                                    id="oil",
-                                    className="mini_container",
-                                ),
-                                html.Div(
-                                    [html.H6(id="t263"), html.P("Water")],
-                                    id="water",
-                                    className="mini_container",
-                                ),
-                            ],
-                    id="info-container",
-                    className="row container-display",
-                            ),
-                            html.Div(
-                                [dcc.Graph(id="sexAge")],
-                                id="countGraphContainer1651",
-                                className="pretty_container",
-                            ),
-                        ],
-                        id="right-column2",
-                        className="eight columns",
-                    ),
-                ],
-                className="row flex-display",),
-                    html.Div([
-                            html.Div(
-                                [dcc.Graph(id="workExp")],
-                                className="pretty_container seven columns",
-                            ),
-                            html.Div(
-                                [dcc.Graph(id="emplStatus")],
-                                className="pretty_container five columns",
-                            ),
-                        ],
-                        className="row flex-display",
-                    ),
-                    html.Div([
-                            html.Div(
-                                [dcc.Graph(id="ageDisNumber")],
-                                className="pretty_container seven columns",
-                            ),
-                            html.Div(
-                                [dcc.Graph(id="healthIns")],
-                                className="pretty_container five columns",
-                            ),
-                        ],
-                        className="row flex-display",
-                        ),
-            ]), 
-        ]),        
-        ],id="mainContainer", style={"display": "flex", "flex-direction": "column"})
+                html.H3(
+                    "Disability statistics",
+                    style={"margin-bottom": "0px"},
+                ),
+                html.H5(
+                    "Morocco - United States Of America", style={"margin-top": "0px"}
+                ),
+            ])
+        ], className="one-half column", id="title", ),
 
+    ], id="header", className="row flex-display", style={"margin-bottom": "25px"}),
+
+    dcc.Tabs([
+        dcc.Tab(label='Statistiques générales', children=[
+            html.Div([dcc.Graph(id="generalDisType"),
+                      ],
+                     id="disTypeGenGraphDiv",
+                     className="pretty_container seven columns",
+                     )
+        ]),
+        dcc.Tab(label='Statistiques avancées (MAR)', children=[
+            html.Div([
+                html.Div([
+                    html.P(
+                        "Filter par années",
+                        className="control_label",
+                    ),
+                    dcc.Dropdown(
+                        id="yearMar",
+                        options=[{'label': '2004', 'value': '2004'}, {'label': '2014', 'value': '2014'}],
+                        multi=True,
+                        value=["2004"],
+                        className="dcc_control",
+                    ),
+                    html.P(
+                        "Filter par catégories d'âge",
+                        className="control_label",
+                    ),
+                    dcc.RangeSlider(
+                        id="ageMar",
+                        min=0,
+                        max=len(ageSexe04["Sensoriel"].df.index),
+                        marks=categToAgeCateg,
+                        value=[3, 6],
+                        className="dcc_control"
+                    ),
+                    html.Div(style={'padding': 15}),
+                    html.P(
+                        "Filtrer par situation matrimoniale",
+                        className="control_label",
+                    ),
+                    dcc.Dropdown(
+                        id="matri",
+                        options=[{"label": matri, "value": matri} for matri in sexeMatri04["Sensoriel"].df.index],
+                        value=["Célibataire", "Marié", "Veuf", "Divorcé"],
+                        multi=True,
+                        clearable=False,
+                        style={'width': '24vw', 'display': 'inline-block'}
+                    ),
+                    html.P(
+                        "Filtrer par sexes",
+                        className="control_label",
+                    ),
+                    dcc.Dropdown(
+                        id="sexe",
+                        options=[{"label": "Masculin", "value": "Masculin"}, {"label": "Féminin", "value": "Féminin"}],
+                        value=["Masculin", "Féminin"],
+                        clearable=False,
+                        multi=True,
+                        placeholder="Sexe",
+                        className="dcc_control"
+                    ),
+                    html.P(
+                        "Filtrer par types d'handicap",
+                        className="control_label",
+                    ),
+                    dcc.Dropdown(
+                        id="disType",
+                        options=[{"label": disType, "value": disType} for disType in list(sexeMatri04.keys())],
+                        value=["Sensoriel", "Chronique", "Moteur", "Mental"],
+                        multi=True,
+                        clearable=False,
+                        placeholder="Type d'handicap",
+                        className='dcc_control'
+                    ),
+                    html.P(
+                        "Filtrer par environnement",
+                        className="control_label",
+                    ),
+                    dcc.Dropdown(
+                        id="envir",
+                        options=[{"label": envir, "value": envir} for envir in illitSexeEnvir["Sensoriel"].df.index],
+                        value=["Rural", "urbain"],
+                        multi=True,
+                        clearable=False,
+                        className='dcc_control'
+                    ),
+                ], className="pretty_container four columns", id="cross-filter-options"),
+                html.Div([
+                    html.Div([
+                        html.Div(
+                            [html.H6(id="t23"), html.P("No. of Wells")],
+                            id="wells1",
+                            className="mini_container",
+                        ),
+                        html.Div(
+                            [html.H6(id="t24"), html.P("Gas")],
+                            id="gas1",
+                            className="mini_container",
+                        ),
+                        html.Div(
+                            [html.H6(id="t25"), html.P("Oil")],
+                            id="oil1",
+                            className="mini_container",
+                        ),
+                        html.Div(
+                            [html.H6(id="t26"), html.P("Water")],
+                            id="water1",
+                            className="mini_container",
+                        ),
+                    ],
+                        id="info-container3",
+                        className="row container-display",
+                    ),
+                    html.Div(
+                        [dcc.Graph(id="ageSexeMar")],
+                        id="countGraphContainer",
+                        className="pretty_container",
+                    ),
+                ],
+                    id="right-column1",
+                    className="eight columns",
+                ),
+            ],
+                className="row flex-display", ),
+            html.Div([
+                html.Div(
+                    [dcc.Graph(id="educEnvir")],
+                    className="pretty_container seven columns",
+                ),
+                html.Div(
+                    [dcc.Graph(id="illitSexe")],
+                    className="pretty_container five columns",
+                ),
+            ],
+                className="row flex-display",
+            ),
+            html.Div([
+                html.Div(
+                    [dcc.Graph(id="sexeMatri")],
+                    className="pretty_container seven columns",
+                ),
+                html.Div(
+                    [dcc.Graph(id="illitAge")],
+                    className="pretty_container five columns",
+                ),
+            ],
+                className="row flex-display",
+            ),
+        ]),
+        dcc.Tab(label='Statistiques avancées (USA)', children=[
+            html.Div([
+                html.Div([
+                    html.P(
+                        "Filter by year",
+                        className="control_label",
+                    ),
+                    dcc.Dropdown(
+                        id="year",
+                        options=[{'label': '2015', 'value': '15'}, {'label': '2016', 'value': '16'}],
+                        multi=True,
+                        placeholder="Select states",
+                        value=["15"],
+                        className="dcc_control",
+                    ),
+                    html.P(
+                        "Filter by age categories",
+                        className="control_label",
+                    ),
+                    dcc.RangeSlider(
+                        id="ageUsa",
+                        min=0,
+                        max=len(toolz.getAgeCategories(usaData.dfsArray)) - 1,
+                        marks={toolz.getAgeCategories(usaData.dfsArray).index(ageCateg): '{}'.format(ageCateg) for
+                               ageCateg in toolz.getAgeCategories(usaData.dfsArray)},
+                        value=[1, 4],
+                        className="dcc_control"
+                    ),
+                    html.Div(style={'padding': 15}),
+                    html.P(
+                        "Filter by states",
+                        className="control_label",
+                    ),
+                    dcc.Dropdown(
+                        id="states",
+                        options=[{'label': state, 'value': state} for state in toolz.getAllStatesArray(usaData.dfsArray)
+                                 ],
+                        multi=True,
+                        value=["Alabama"],
+                        className="dcc_control"
+                    ),
+                    html.P(
+                        "Filter by gender",
+                        className="control_label",
+                    ),
+                    dcc.Dropdown(
+                        id="sex",
+                        options=[{"label": "Male", "value": "male"}, {"label": "Female", "value": "female"}],
+                        value=["male", "female"],
+                        clearable=False,
+                        multi=True,
+                        className="dcc_control"
+                    ),
+                    html.P(
+                        "Filter by disability types",
+                        className="control_label",
+                    ),
+                    dcc.Dropdown(
+                        id="difTypes",
+                        options=[{"label": "{}".format(difType), "value": "{}".format(difType)} for difType in
+                                 toolz.getDifficultyTypes(usaData.dfsArray)],
+                        value=[difType for difType in toolz.getDifficultyTypes(usaData.dfsArray)],
+                        clearable=False,
+                        multi=True,
+                        className='dcc_control'
+                    ),
+                ],
+                    className="pretty_container four columns",
+                    id="cross-filter-options2"),
+                html.Div([
+                    html.Div([
+                        html.Div(
+                            [html.H6(id="t233"), html.P("No. of Wells")],
+                            id="wells",
+                            className="mini_container",
+                        ),
+                        html.Div(
+                            [html.H6(id="t243"), html.P("Gas")],
+                            id="gas",
+                            className="mini_container",
+                        ),
+                        html.Div(
+                            [html.H6(id="t253"), html.P("Oil")],
+                            id="oil",
+                            className="mini_container",
+                        ),
+                        html.Div(
+                            [html.H6(id="t263"), html.P("Water")],
+                            id="water",
+                            className="mini_container",
+                        ),
+                    ],
+                        id="info-container",
+                        className="row container-display",
+                    ),
+                    html.Div(
+                        [dcc.Graph(id="sexAge")],
+                        id="countGraphContainer1651",
+                        className="pretty_container",
+                    ),
+                ],
+                    id="right-column2",
+                    className="eight columns",
+                ),
+            ],
+                className="row flex-display", ),
+            html.Div([
+                html.Div(
+                    [dcc.Graph(id="workExp")],
+                    className="pretty_container seven columns",
+                ),
+                html.Div(
+                    [dcc.Graph(id="emplStatus")],
+                    className="pretty_container five columns",
+                ),
+            ],
+                className="row flex-display",
+            ),
+            html.Div([
+                html.Div(
+                    [dcc.Graph(id="ageDisNumber")],
+                    className="pretty_container seven columns",
+                ),
+                html.Div(
+                    [dcc.Graph(id="healthIns")],
+                    className="pretty_container five columns",
+                ),
+            ],
+                className="row flex-display",
+            ),
+        ]),
+    ]),
+], id="mainContainer", style={"display": "flex", "flex-direction": "column"})
 
 # Create callbacks
 app.clientside_callback(
@@ -427,21 +460,24 @@ app.clientside_callback(
     ]
 )
 def updateFigAge(ageCateg,states,sex,difTypes,year):
-    global layout
+    global layout, my_colors, my_line_colors
     layout1  = copy.deepcopy(layout)
     layout1['title'] = "PREVALENCE BY AGE".title()
     if len(year) == 1:
         selectedExtendedDfs = toolz.dfSelector(toolz.dfSelector(toolz.dfSelector(toolz.dfSelector(usaData.dfsArray,'index',['SEX']),'state',states),'difficulty',difTypes),'year',year)
         df = dfs_sum([df['dataFrame'] for df in selectedExtendedDfs])[toolz.getAgeOptions(usaData.dfsArray,ageCateg)]
         if len(sex) == 2:
-            trace1=go.Bar( x=df.columns.tolist(), y=df.loc["Male"].tolist(),name='Male')
-            trace2=go.Bar( x=df.columns.tolist(), y=df.loc["Female"].tolist(),name='Female')
+            trace1=go.Bar( x=df.columns.tolist(), y=df.loc["Male"].tolist(),name='Male',
+                           marker_color=my_colors[0],marker_line_color=my_line_colors[0],marker_line_width=1.5, opacity=0.6)
+            trace2=go.Bar( x=df.columns.tolist(), y=df.loc["Female"].tolist(),name='Female',
+                           marker_color=my_colors[1],marker_line_color=my_line_colors[1],marker_line_width=1.5, opacity=0.6)
             return {
                 'data':[trace1,trace2],
                 'layout':layout1
                 }
         else:
-            trace=go.Bar( x=df.columns.tolist(), y=df.loc[sex[0].title()].tolist(),name=sex[0].title())
+            trace=go.Bar( x=df.columns.tolist(), y=df.loc[sex[0].title()].tolist(),name=sex[0].title(),
+                           marker_color=my_colors[0],marker_line_color=my_line_colors[0],marker_line_width=1.5, opacity=0.6)
             return {
                 'data':[trace],
                 'layout':layout1
@@ -479,20 +515,38 @@ def updateFigAge(ageCateg,states,sex,difTypes,year):
 )
 
 def updateFigWorkExp(states,years):
-    global layout
+    global layout,my_colors
     layout1  = copy.deepcopy(layout)
     layout1['title'] = "WORK EXPERIENCE".title()
     #layout['margin']=go.Margin(b=300)
 
     traces = []
     for year in years:
+        selectedExtendedDfs = toolz.dfSelector(
+            toolz.dfSelector(toolz.dfSelector(usaData.dfsArray, 'index', ['WORK EXPERIENCE']), 'state', states),
+            'year', [year])
+        df = dfs_sum([df['dataFrame'] for df in selectedExtendedDfs])
+        traces.append(go.Scatterpolar(r=df.iloc[:, 0], theta=df.index, fill='toself',
+                                name=df.columns.tolist()[0] + ' (20' + year + ')',
+                                line=dict(color=my_colors[years.index(year)])))
+        layout1['polar'] = dict(radialaxis=dict(visible=True))
+        layout1['showlegend'] = True
+    return {
+        'data': traces,
+        'layout': layout1
+    }
+
+    """
+    for year in years:
         selectedExtendedDfs = toolz.dfSelector(toolz.dfSelector(toolz.dfSelector(usaData.dfsArray,'index',['WORK EXPERIENCE']),'state',states),'year',[year])
         df = dfs_sum([df['dataFrame'] for df in selectedExtendedDfs])
         traces.append(go.Bar( x=df.index.tolist(), y=df.iloc[:,0].tolist(),name="20"+year,width=0.4))
+    
     return {
         'data':traces,
         'layout':layout1
     }
+    """
 
 @app.callback(
     Output("healthIns","figure"),[
@@ -502,7 +556,7 @@ def updateFigWorkExp(states,years):
     ]
 )
 def updateFigHealthIns(states,ageCateg,year):
-    global layout
+    global layout, my_colors, my_line_colors
     layout1  = copy.deepcopy(layout)
     layout1['title'] = "PREVALENCE OF INSURED DISABLED PEOPLE".title()
     if len(year)>1:
@@ -510,8 +564,10 @@ def updateFigHealthIns(states,ageCateg,year):
         selectedExtendedDfsForYear2 = toolz.dfSelector(toolz.dfSelector(toolz.dfSelector(toolz.dfSelector(usaData.dfsArray,'index',['AGE']),'state',states),"columns",["POPULATION"]),'year',[year[1]])
         dfYear1 = dfs_sum([df['dataFrame'] for df in selectedExtendedDfsForYear1])
         dfYear2 = dfs_sum([df['dataFrame'] for df in selectedExtendedDfsForYear2])
-        trace1=go.Bar( x=[index[:-1] for index in dfYear1.index.tolist()], y=dfYear1.iloc[:,0].tolist(),name="20"+year[0])
-        trace2=go.Bar( x=[index[:-1] for index in dfYear2.index.tolist()], y=dfYear2.iloc[:,0].tolist(),name="20"+year[1])
+        trace1=go.Bar( x=[index[:-1] for index in dfYear1.index.tolist()], y=dfYear1.iloc[:,0].tolist(),name="20"+year[0],
+                           marker_color=my_colors[0],marker_line_color=my_line_colors[0],marker_line_width=1.5, opacity=0.6)
+        trace2=go.Bar( x=[index[:-1] for index in dfYear2.index.tolist()], y=dfYear2.iloc[:,0].tolist(),name="20"+year[1],
+                           marker_color=my_colors[1],marker_line_color=my_line_colors[1],marker_line_width=1.5, opacity=0.6)
         return {
             'data':[trace1,trace2],
             'layout':layout1
@@ -519,7 +575,8 @@ def updateFigHealthIns(states,ageCateg,year):
     else:
         selectedExtendedDfs = toolz.dfSelector(toolz.dfSelector(toolz.dfSelector(toolz.dfSelector(usaData.dfsArray,'index',['AGE']),'state',states),"columns",["POPULATION"]),'year',[year[0]])
         df = dfs_sum([df['dataFrame'] for df in selectedExtendedDfs])
-        trace = go.Bar( x=[index[:-1] for index in df.index.tolist()], y=df.iloc[:,0].tolist())
+        trace = go.Bar( x=[index[:-1] for index in df.index.tolist()], y=df.iloc[:,0].tolist(),
+                           marker_color=my_colors[0],marker_line_color=my_line_colors[0],marker_line_width=1.5, opacity=0.6)
         return {
             'data':[trace],
             'layout':layout1
@@ -533,7 +590,7 @@ def updateFigHealthIns(states,ageCateg,year):
     ]
 )
 def updateFigAgeDisNumber(states,ageCateg,year):
-    global layout
+    global layout, my_colors, my_line_colors
     layout1  = copy.deepcopy(layout)
     layout1['title'] = "AGE BY NUMBER OF DISABILITIES".title()
     if len(year)>1 :
@@ -556,8 +613,10 @@ def updateFigAgeDisNumber(states,ageCateg,year):
     else:
         selectedExtendedDfs = toolz.dfSelector(toolz.dfSelector(toolz.dfSelector(usaData.dfsArray,'index',['AGE']),'state',states),"columns",["NUMBER OF DISABILITIES"])
         df = dfs_sum([df['dataFrame'] for df in selectedExtendedDfs])
-        trace1=go.Bar( x=[index[:-1] for index in df.index.tolist()], y=df.iloc[:,0].tolist(),name=df.columns.tolist()[0].title())
-        trace2=go.Bar( x=[index[:-1] for index in df.index.tolist()], y=df.iloc[:,1].tolist(),name=df.columns.tolist()[1].title())
+        trace1=go.Bar( x=[index[:-1] for index in df.index.tolist()], y=df.iloc[:,0].tolist(),name=df.columns.tolist()[0].title(),
+                           marker_color=my_colors[0],marker_line_color=my_line_colors[0],marker_line_width=1.5, opacity=0.6)
+        trace2=go.Bar( x=[index[:-1] for index in df.index.tolist()], y=df.iloc[:,1].tolist(),name=df.columns.tolist()[1].title(),
+                           marker_color=my_colors[1],marker_line_color=my_line_colors[1],marker_line_width=1.5, opacity=0.6)
 
         return {
             'data':[trace1,trace2],
@@ -571,7 +630,8 @@ def updateFigAgeDisNumber(states,ageCateg,year):
     ]
 )
 def updateFigEmplStatus(states,years):
-    global layout
+    global layout, my_colors, my_line_colors
+    my_colors1 = copy.deepcopy(my_colors).extend(my_line_colors)
     layout1  = copy.deepcopy(layout)
     layout1['title'] =  "EMPLOYMENT STATUS".title()
     if len(years)>1:
@@ -585,6 +645,9 @@ def updateFigEmplStatus(states,years):
             parents= ["" for i in range(len(years))] + list(chain.from_iterable(("20"+year,"20"+year) for year in years)),
             values= [dfYear1.iloc[0,:].sum(),dfYear2.iloc[0,:].sum()] + [dfYear1.iloc[0,0],dfYear1.iloc[0,1],dfYear2.iloc[0,0],dfYear2.iloc[0,1]],
             branchvalues="total",
+            marker=dict(
+                colors=my_colors,
+                autocolorscale = True)
         )
         return {
             'data':[trace],
@@ -593,7 +656,8 @@ def updateFigEmplStatus(states,years):
     else:
         selectedExtendedDfs = toolz.dfSelector(toolz.dfSelector(toolz.dfSelector(usaData.dfsArray,'index',['EMPLOYMENT SECTOR']),'state',states),'year',[years[0]])
         df = dfs_sum([df['dataFrame'] for df in selectedExtendedDfs])
-        trace = go.Pie(labels= df.columns.tolist(), values=df.iloc[0].tolist())
+        trace = go.Pie(labels=df.columns.tolist(), values=df.iloc[0].tolist()
+                       , marker_colors=my_colors, hole=.3, opacity=0.7)
         return {
             'data':[trace],
             'layout':layout1
@@ -763,6 +827,26 @@ def updateFigActivityEnv(disType,envir):
         }
 
 """
+
+@app.callback(
+    Output('generalDisType','figure'),[
+    Input("ageUsa",'value')
+])
+
+def updateFigGeneralDisType(fakeCallback):
+    global layout
+    layout1  = copy.deepcopy(layout)
+    layout1['title'] = "DISABILITY TYPES BY COUNTRY".title()
+    layout1['margin']['t']=80
+    traces = [go.Scatterpolar(r=generalPolar["Usa"], theta=generalPolar.index,fill='toself',name='Maroc'),
+              go.Scatterpolar(r=generalPolar["Morocco"], theta=generalPolar.index,fill='toself',name='États-unis'),]
+    return {
+        'data':traces,
+        'layout':layout1
+    }
+
+
+
 
 # Main
 if __name__ == "__main__":

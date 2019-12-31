@@ -16,13 +16,11 @@ from itertools import chain
 from ETL.ETL_USA.usaLoader import UsaLoader as loader
 import appToolz as toolz
 from plotly.subplots import make_subplots
+from ETL.ETL_HCP14.SexeEnvDisType import SexeEnvDisType_HCP14
+from ETL.ETL_HCP14.Matrimonial import Matrimonial_HCP14
+import plotly.express as px
 
-# Multi-dropdown options
-from controls import COUNTIES, WELL_STATUSES, WELL_TYPES, WELL_COLORS
 
-# get relative data folder
-PATH = pathlib.Path(__file__).parent
-DATA_PATH = PATH.joinpath("data").resolve()
 
 ## ETLs
 init= False
@@ -34,6 +32,8 @@ illitAgeSexe = None
 educaEnvir = None
 actEnv = None
 actSexeEnv = None
+sexeEnvDisType_HCP14= None
+matrimonial_HCP14 = None
 usaData = None
 
 def ETL():
@@ -49,6 +49,8 @@ def ETL():
         educaEnvir = ETL.extendedDataFrames[4]
         actEnv = ETL.extendedDataFrames[5]
         actSexeEnv = ETL.extendedDataFrames[6]
+        sexeEnvDisType_HCP14 = SexeEnvDisType_HCP14()
+        matrimonial_HCP14 = Matrimonial_HCP14()
         init=True
     else:
         print("Data has already been loaded")
@@ -76,7 +78,10 @@ dataset = trim.to_dict(orient="index")
 
 points = pickle.load(open(DATA_PATH.joinpath("points.pkl"), "rb"))
 """
+## General stats
 
+def getDisTypeGeneral():
+    pass
 # Create global chart template
 
 layout = dict(
@@ -86,9 +91,7 @@ layout = dict(
     hovermode="closest",
     plot_bgcolor="#F9F9F9",
     paper_bgcolor="#F9F9F9",
-    legend=dict(font=dict(size=10), orientation="h"),
-
-)
+    legend=dict(font=dict(size=10), orientation="h"),)
 
 # Create app layout
 app.layout = html.Div([
@@ -122,7 +125,16 @@ app.layout = html.Div([
         
         
         dcc.Tabs([
-            dcc.Tab(label='Statistiques générales', children=[]),
+            dcc.Tab(label='Statistiques générales', children=[
+            html.Div([
+                html.Div([
+                    dcc.Graph(id="disTypeGenGraph")
+                    ],
+                    id="disTypeGenGraphDiv",
+                    className="pretty_container seven columns",
+                    )
+            ])    
+                ]),
             dcc.Tab(label='Statistiques avancées (MAR)', children=[
                 html.Div([
                     html.Div([
@@ -700,8 +712,7 @@ def updateFigIllit(sexe,disType,envir):
 
 @app.callback( Output("illitAge","figure"),
     [Input("sexe","value"),
-    Input("disType","value")]
-)
+    Input("disType","value")])
 def updateFigIllitAge(sexe,disType):
     global layout
     layout1  = copy.deepcopy(layout)

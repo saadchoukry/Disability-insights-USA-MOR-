@@ -115,6 +115,31 @@ def getDisTypeGeneral():
     return df
 
 
+def getSexGeneral():
+    global ageSexe04, usaData
+    df = pd.DataFrame(index=['Male', 'Female'], columns=['Morocco', 'Usa'], data=[[0, 0], [0, 0]])
+    SexeMar = [ageSexe04[disType].df[['Masculin', 'Féminin']] for disType in ageSexe04.keys()]
+    sumUsa = 0
+    usefulDfs = toolz.dfSelector(toolz.dfSelector(toolz.dfSelector(usaData.dfsArray, 'index',
+                                                                   ['SEX']), 'year', ['16']), 'difficulty',
+                                 ['self-care ', 'vision ', 'hearing ',
+                                  'cognitive ', 'ambulatory '])
+
+    for tmpExtDf in usefulDfs:
+        for option in ['Male', 'Female']:
+            df.loc[option]['Usa'] += tmpExtDf['dataFrame'].loc[option].sum()
+
+    for tmpDf in SexeMar:
+        for option in ['Masculin', 'Féminin']:
+            if option == 'Masculin':
+                df.loc['Male']['Morocco'] += tmpDf[option].sum()
+            elif option == 'Féminin':
+                df.loc['Female']['Morocco'] += tmpDf[option].sum()
+    return df
+
+
+SexGeneral = getSexGeneral()
+
 generalPolar = getDisTypeGeneral()
 dfMorocco = pd.DataFrame(dict(r=generalPolar["Morocco"].tolist(), theta=generalPolar.index.tolist()))
 dfUsa = pd.DataFrame(dict(r=generalPolar["Usa"].tolist(), theta=generalPolar.index.tolist()))
@@ -136,16 +161,6 @@ app.layout = html.Div([
     html.Div(id="output-clientside"),
     html.Div([
         html.Div([
-            html.Img(
-                src=app.get_asset_url("LOGO.png"),
-                id="plotly-image",
-                style={
-                    "height": "60px",
-                    "width": "auto",
-                    "margin-bottom": "0px",
-                },
-            )], className="one-third column"),
-        html.Div([
             html.Div([
                 html.H3(
                     "Disability statistics",
@@ -155,18 +170,25 @@ app.layout = html.Div([
                     "Morocco - United States Of America", style={"margin-top": "0px"}
                 ),
             ])
-        ], className="one-half column", id="title", ),
+        ], className="twelve column", id="title",),
 
-    ], id="header", className="row flex-display", style={"margin-bottom": "25px"}),
+    ], id="header", className="row flex-display"),
 
     dcc.Tabs([
         dcc.Tab(label='Statistiques générales', children=[
-            html.Div([dcc.Graph(id="generalDisType"),
-                      ],
-                     id="disTypeGenGraphDiv",
-                     className="pretty_container seven columns",
-                     )
-        ]),
+            html.Div([
+                html.Div(
+                    [dcc.Graph(id="generalSexe")],
+                    className="pretty_container seven columns",
+                ),
+                html.Div(
+                    [dcc.Graph(id="generalDisType")],
+                    className="pretty_container five columns",
+                )],
+                id="disTypeGenGraphDiv",
+                className="row flex-display",
+            )
+        ], className="row flex-display"),
         dcc.Tab(label='Statistiques avancées (MAR)', children=[
             html.Div([
                 html.Div([
@@ -395,7 +417,7 @@ app.layout = html.Div([
         "background": '#f9f9f9'
     }
     ),
-], id="mainContainer", style={"display": "flex", "flex-direction": "column"})
+], id="mainContainer", style={"display": "flex", "flex-direction": "column", 'margin': '0px 0px 0px 0px'})
 
 # Create callbacks
 app.clientside_callback(
@@ -572,17 +594,16 @@ def updateFigAgeDisNumber(states,ageCateg,year):
                              name=dfYear1.columns.tolist()[1].title(),
                            marker_color=my_colors[1],marker_line_color=my_line_colors[1],marker_line_width=1.5, opacity=0.6),
                       row=1, col=1)
-        fig.add_trace(go.Bar(x=[index[:-1] for index in dfYear1.index.tolist()], y=dfYear2.iloc[:, 0].tolist(),
+        fig.add_trace(go.Bar(x=[index[:-1] for index in dfYear2.index.tolist()], y=dfYear2.iloc[:, 0].tolist(),
                              name=dfYear2.columns.tolist()[0].title(),
                            marker_color=my_colors[0],marker_line_color=my_line_colors[0],marker_line_width=1.5, opacity=0.6,
                              showlegend=False),
                       row=1, col=2)
-        fig.add_trace(go.Bar(x=[index[:-1] for index in dfYear1.index.tolist()], y=dfYear2.iloc[:, 1].tolist(),
+        fig.add_trace(go.Bar(x=[index[:-1] for index in dfYear2.index.tolist()], y=dfYear2.iloc[:, 1].tolist(),
                              name=dfYear2.columns.tolist()[1].title(),
                            marker_color=my_colors[1],marker_line_color=my_line_colors[1],marker_line_width=1.5, opacity=0.6,
                              showlegend=False),
                       row=1, col=2)
-        fig.update_layout(title="Prevalence By Number Of Disabilities")
         fig.update_layout(barmode='stack')
         fig.update_layout(autosize=True)
         fig.update_layout(margin=dict(l=30, r=30, b=20, t=40))
@@ -591,6 +612,7 @@ def updateFigAgeDisNumber(states,ageCateg,year):
         fig.update_layout(paper_bgcolor="#F9F9F9")
         fig.update_layout(legend=dict(font=dict(size=10), orientation="h"))
         fig.update_layout(yaxis=go.YAxis(showticklabels=False))
+        fig.update_layout(title=dict(text='Prevalence By Number Of Disabilities',  x=0.5, xanchor='center'))
         return fig
 
     
@@ -841,7 +863,6 @@ def updateFigActivityEnv(disType,envir):
         }
 
 """
-
 @app.callback(
     Output('generalDisType','figure'),[
     Input("ageUsa",'value')
@@ -861,7 +882,24 @@ def updateFigGeneralDisType(fakeCallback):
         'layout':layout1
     }
 
+@app.callback(
+    Output('generalSexe','figure'),[
+    Input("ageUsa",'value')
+])
 
+def updateFigGeneralSexe(fakeCallback):
+    global layout, my_colors, my_line_colors,SexGeneral
+    layout1  = copy.deepcopy(layout)
+    layout1['title'] = "PREVALENCE BY SEXE/COUNTRY".title()
+    layout1['margin']['t']=80
+    traces = trace=[go.Bar(name="Male" , x=SexGeneral.columns.tolist(),y=SexGeneral.loc["Male"],
+                      marker_color=my_colors[0],marker_line_color=my_line_colors[0],marker_line_width=1.5, opacity=0.6),
+        go.Bar(name="Female", x=SexGeneral.columns.tolist(),y=SexGeneral.loc["Female"],
+               marker_color=my_colors[1], marker_line_color=my_line_colors[1], marker_line_width=1.5, opacity=0.6)]
+    return {
+        'data':traces,
+        'layout':layout1
+    }
 
 
 # Main

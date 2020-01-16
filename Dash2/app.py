@@ -246,31 +246,6 @@ app.layout = html.Div([
                     ),
                 ], className="pretty_container four columns", id="cross-filter-options"),
                 html.Div([
-                    html.Div([
-                        html.Div(
-                            [html.H6(id="t23"), html.P("No. of Wells")],
-                            id="wells1",
-                            className="mini_container",
-                        ),
-                        html.Div(
-                            [html.H6(id="t24"), html.P("Gas")],
-                            id="gas1",
-                            className="mini_container",
-                        ),
-                        html.Div(
-                            [html.H6(id="t25"), html.P("Oil")],
-                            id="oil1",
-                            className="mini_container",
-                        ),
-                        html.Div(
-                            [html.H6(id="t26"), html.P("Water")],
-                            id="water1",
-                            className="mini_container",
-                        ),
-                    ],
-                        id="info-container3",
-                        className="row container-display",
-                    ),
                     html.Div(
                         [dcc.Graph(id="ageSexeMar")],
                         id="countGraphContainer",
@@ -376,32 +351,8 @@ app.layout = html.Div([
                 ],
                     className="pretty_container four columns",
                     id="cross-filter-options2"),
+
                 html.Div([
-                    html.Div([
-                        html.Div(
-                            [html.H6(id="t233"), html.P("No. of Wells")],
-                            id="wells",
-                            className="mini_container",
-                        ),
-                        html.Div(
-                            [html.H6(id="t243"), html.P("Gas")],
-                            id="gas",
-                            className="mini_container",
-                        ),
-                        html.Div(
-                            [html.H6(id="t253"), html.P("Oil")],
-                            id="oil",
-                            className="mini_container",
-                        ),
-                        html.Div(
-                            [html.H6(id="t263"), html.P("Water")],
-                            id="water",
-                            className="mini_container",
-                        ),
-                    ],
-                        id="info-container",
-                        className="row container-display",
-                    ),
                     html.Div(
                         [dcc.Graph(id="sexAge")],
                         id="countGraphContainer1651",
@@ -438,7 +389,12 @@ app.layout = html.Div([
                 className="row flex-display",
             ),
         ]),
-    ]),
+    ],colors={
+        "border": '#f9f9f9',
+        "primary": '#88cff1',
+        "background": '#f9f9f9'
+    }
+    ),
 ], id="mainContainer", style={"display": "flex", "flex-direction": "column"})
 
 # Create callbacks
@@ -490,10 +446,14 @@ def updateFigAge(ageCateg,states,sex,difTypes,year):
         dfYear2 = dfs_sum([df['dataFrame'] for df in selectedExtendedDfsForYear2])[toolz.getAgeOptions(usaData.dfsArray,ageCateg)]
         
         if len(sex) == 2:
-            trace1=go.Bar( x=dfYear1.columns.tolist(), y=dfYear1.loc["Male"].tolist(),name='Male (20'+year[0]+")", width=0.15)
-            trace2=go.Bar( x=dfYear1.columns.tolist(), y=dfYear1.loc["Female"].tolist(),name='Female (20'+year[0]+")", width=0.15)
-            trace3=go.Bar( x=dfYear1.columns.tolist(), y=dfYear2.loc["Male"].tolist(),name='Male (20'+year[1]+")", width=0.15)
-            trace4=go.Bar( x=dfYear1.columns.tolist(), y=dfYear2.loc["Female"].tolist(),name='Female (20'+year[1]+")", width=0.15)
+            trace1=go.Bar( x=dfYear1.columns.tolist(), y=dfYear1.loc["Male"].tolist(),name='Male (20'+year[0]+")", width=0.15,
+                           marker_color=my_colors[0],marker_line_color=my_line_colors[0],marker_line_width=1.5, opacity=0.6)
+            trace2=go.Bar( x=dfYear1.columns.tolist(), y=dfYear1.loc["Female"].tolist(),name='Female (20'+year[0]+")", width=0.15,
+                           marker_color=my_colors[1],marker_line_color=my_line_colors[1],marker_line_width=1.5, opacity=0.6)
+            trace3=go.Bar( x=dfYear1.columns.tolist(), y=dfYear2.loc["Male"].tolist(),name='Male (20'+year[1]+")", width=0.15,
+                           marker_color=my_colors[0],marker_line_color=my_line_colors[0],marker_line_width=1.5, opacity=0.6)
+            trace4=go.Bar( x=dfYear1.columns.tolist(), y=dfYear2.loc["Female"].tolist(),name='Female (20'+year[1]+")", width=0.15,
+                           marker_color=my_colors[1],marker_line_color=my_line_colors[1],marker_line_width=1.5, opacity=0.6)
             
             return {
             'data':[trace1,trace2,trace3,trace4],
@@ -558,7 +518,7 @@ def updateFigWorkExp(states,years):
 def updateFigHealthIns(states,ageCateg,year):
     global layout, my_colors, my_line_colors
     layout1  = copy.deepcopy(layout)
-    layout1['title'] = "PREVALENCE OF INSURED DISABLED PEOPLE".title()
+    layout1['title'] = "Health Insurance Coverage".title()
     if len(year)>1:
         selectedExtendedDfsForYear1 = toolz.dfSelector(toolz.dfSelector(toolz.dfSelector(toolz.dfSelector(usaData.dfsArray,'index',['AGE']),'state',states),"columns",["POPULATION"]),'year',[year[0]])
         selectedExtendedDfsForYear2 = toolz.dfSelector(toolz.dfSelector(toolz.dfSelector(toolz.dfSelector(usaData.dfsArray,'index',['AGE']),'state',states),"columns",["POPULATION"]),'year',[year[1]])
@@ -592,26 +552,50 @@ def updateFigHealthIns(states,ageCateg,year):
 def updateFigAgeDisNumber(states,ageCateg,year):
     global layout, my_colors, my_line_colors
     layout1  = copy.deepcopy(layout)
-    layout1['title'] = "AGE BY NUMBER OF DISABILITIES".title()
+    layout1['title'] = "Prevalence BY NUMBER OF DISABILITIES".title()
     if len(year)>1 :
-        selectedExtendedDfsForYear1 = toolz.dfSelector(toolz.dfSelector(toolz.dfSelector(toolz.dfSelector(usaData.dfsArray,'index',['AGE']),'state',states),"columns",["NUMBER OF DISABILITIES"]),'year',[year[0]])
-        selectedExtendedDfsForYear2 = toolz.dfSelector(toolz.dfSelector(toolz.dfSelector(toolz.dfSelector(usaData.dfsArray,'index',['AGE']),'state',states),"columns",["NUMBER OF DISABILITIES"]),'year',[year[1]])
+        selectedExtendedDfsForYear1 = toolz.dfSelector(
+            toolz.dfSelector(toolz.dfSelector(toolz.dfSelector(usaData.dfsArray, 'index', ['AGE']), 'state', states),
+                             "columns", ["NUMBER OF DISABILITIES"]), 'year', [year[0]])
+        selectedExtendedDfsForYear2 = toolz.dfSelector(
+            toolz.dfSelector(toolz.dfSelector(toolz.dfSelector(usaData.dfsArray, 'index', ['AGE']), 'state', states),
+                             "columns", ["NUMBER OF DISABILITIES"]), 'year', [year[1]])
         dfYear1 = dfs_sum([df['dataFrame'] for df in selectedExtendedDfsForYear1])
         dfYear2 = dfs_sum([df['dataFrame'] for df in selectedExtendedDfsForYear2])
         fig = make_subplots(rows=1, cols=2,
-        subplot_titles=("20"+str(year[0]),"20"+str(year[1])))
-        fig.add_trace(go.Bar( x=[index[:-1] for index in dfYear1.index.tolist()], y=dfYear1.iloc[:,0].tolist(),name=dfYear1.columns.tolist()[0].title()), 
-        row=1, col=1)
-        fig.add_trace(go.Bar( x=[index[:-1] for index in dfYear1.index.tolist()], y=dfYear1.iloc[:,1].tolist(),name=dfYear1.columns.tolist()[1].title()), 
-        row=1, col=1)
-        fig.add_trace(go.Bar( x=[index[:-1] for index in dfYear1.index.tolist()], y=dfYear2.iloc[:,0].tolist(),name=dfYear2.columns.tolist()[0].title()), 
-        row=1, col=2)
-        fig.add_trace(go.Bar( x=[index[:-1] for index in dfYear1.index.tolist()], y=dfYear2.iloc[:,1].tolist(),name=dfYear2.columns.tolist()[1].title()), 
-        row=1, col=2)
+                            subplot_titles=("20" + str(year[0]), "20" + str(year[1])))
+        fig.add_trace(go.Bar(x=[index[:-1] for index in dfYear1.index.tolist()], y=dfYear1.iloc[:, 0].tolist(),
+                             name=dfYear1.columns.tolist()[0].title(),
+                           marker_color=my_colors[0],marker_line_color=my_line_colors[0],marker_line_width=1.5, opacity=0.6),
+                      row=1, col=1)
+        fig.add_trace(go.Bar(x=[index[:-1] for index in dfYear1.index.tolist()], y=dfYear1.iloc[:, 1].tolist(),
+                             name=dfYear1.columns.tolist()[1].title(),
+                           marker_color=my_colors[1],marker_line_color=my_line_colors[1],marker_line_width=1.5, opacity=0.6),
+                      row=1, col=1)
+        fig.add_trace(go.Bar(x=[index[:-1] for index in dfYear1.index.tolist()], y=dfYear2.iloc[:, 0].tolist(),
+                             name=dfYear2.columns.tolist()[0].title(),
+                           marker_color=my_colors[0],marker_line_color=my_line_colors[0],marker_line_width=1.5, opacity=0.6,
+                             showlegend=False),
+                      row=1, col=2)
+        fig.add_trace(go.Bar(x=[index[:-1] for index in dfYear1.index.tolist()], y=dfYear2.iloc[:, 1].tolist(),
+                             name=dfYear2.columns.tolist()[1].title(),
+                           marker_color=my_colors[1],marker_line_color=my_line_colors[1],marker_line_width=1.5, opacity=0.6,
+                             showlegend=False),
+                      row=1, col=2)
+        fig.update_layout(title="Prevalence By Number Of Disabilities")
+        fig.update_layout(barmode='stack')
+        fig.update_layout(autosize=True)
+        fig.update_layout(margin=dict(l=30, r=30, b=20, t=40))
+        fig.update_layout(hovermode="closest")
+        fig.update_layout(plot_bgcolor="#F9F9F9")
+        fig.update_layout(paper_bgcolor="#F9F9F9")
+        fig.update_layout(legend=dict(font=dict(size=10), orientation="h"))
+        fig.update_layout(yaxis=go.YAxis(showticklabels=False))
         return fig
+
     
     else:
-        selectedExtendedDfs = toolz.dfSelector(toolz.dfSelector(toolz.dfSelector(usaData.dfsArray,'index',['AGE']),'state',states),"columns",["NUMBER OF DISABILITIES"])
+        selectedExtendedDfs = toolz.dfSelector(toolz.dfSelector(toolz.dfSelector(toolz.dfSelector(usaData.dfsArray,'index',['AGE']),'state',states),"columns",["NUMBER OF DISABILITIES"]), 'year',[year[0]])
         df = dfs_sum([df['dataFrame'] for df in selectedExtendedDfs])
         trace1=go.Bar( x=[index[:-1] for index in df.index.tolist()], y=df.iloc[:,0].tolist(),name=df.columns.tolist()[0].title(),
                            marker_color=my_colors[0],marker_line_color=my_line_colors[0],marker_line_width=1.5, opacity=0.6)
@@ -671,12 +655,14 @@ def updateFigEmplStatus(states,years):
 )
 
 def updateFigEducEnvir(envir,disType):
-    global layout
+    global layout,my_colors, my_line_colors
+    my_colors1 = ['rgb(136, 207, 241)', 'rgb(249, 215, 214)' , 'rgb(184, 235, 255)', 'rgb(255, 184, 199)']
     layout1  = copy.deepcopy(layout)
     layout1['title'] = "Niveau d'éducation dans le monde "+envir[0].lower()
     df= dfs_sum([educaEnvir[dis].df for dis in disType])
     if len(envir)==1:
-        trace = go.Pie(labels=df.index.values, values=df[envir[0]].tolist())
+        trace = go.Pie(labels=df.index.values, values=df[envir[0]].tolist()
+                       , marker_colors=my_colors1, hole=.3, opacity=0.7)
         return {
         'data':[trace],
         'layout':layout1
@@ -691,6 +677,9 @@ def updateFigEducEnvir(envir,disType):
             parents= ["" for i in range(len(envir))] + list(chain.from_iterable((env,env,env,env) for env in envir)),
             values= [df[env].sum() for env in envir] + [df.loc[level][env] for env in envir for level in df.index.values],
             branchvalues="total",
+            marker=dict(
+                colors=my_colors,
+                autocolorscale=True)
         )
         return {
         'data':[trace],
@@ -706,17 +695,18 @@ def updateFigEducEnvir(envir,disType):
 ])
 
 def updateFigAgeCateg(categories,sexe,disType):
-    global categToAgeCateg
-    global layout
+    global categToAgeCateg, layout, my_colors, my_line_colors
     layout1  = copy.deepcopy(layout)
     layout1['title'] = "Prévalence par catégories d'âge"
     df = dfs_sum([ageSexe04[dis].df[sexe] for dis in disType])
     start=df.index[0]
     end=categToAgeCateg[categories[1]]
     if len(sexe) == 1:
-        trace=go.Bar( x=df.index.tolist()[categories[0]:categories[1]],y=df[sexe[0]])
+        trace=go.Bar( x=df.index.tolist()[categories[0]:categories[1]],y=df[sexe[0]],
+                      marker_color=my_colors[0],marker_line_color=my_line_colors[0],marker_line_width=1.5, opacity=0.6)
     else:
-        trace=go.Bar( x=df.index.tolist()[categories[0]:categories[1]],y=df["Masculin"] + df["Féminin"])
+        trace=go.Bar( x=df.index.tolist()[categories[0]:categories[1]],y=df["Masculin"] + df["Féminin"],
+                      marker_color=my_colors[0],marker_line_color=my_line_colors[0],marker_line_width=1.5, opacity=0.6)
     return {
         'data':[trace],
         'layout':layout1
@@ -730,14 +720,17 @@ def updateFigAgeCateg(categories,sexe,disType):
     ])
 
 def updateFigMatri(statuses,sexe,disType):
-    global layout
+    global layout, my_colors, my_line_colors
+    my_colors1 = ['rgb(136, 207, 241)', 'rgb(255, 184, 199)', 'rgb(249, 215, 214)', 'rgb(184, 235, 255)']
     layout1  = copy.deepcopy(layout)
     layout1['title'] = "Prévalence selon la situation matrimoniale"
     df =dfs_sum([sexeMatri04[dis].df for dis in disType]).loc[statuses]
     if len(sexe) == 1:
-        trace  = go.Pie(labels=statuses, values=df[sexe[0]].tolist())
+        trace  = go.Pie(labels=statuses, values=df[sexe[0]].tolist()
+                        , marker_colors=my_colors1, hole=.3, opacity=0.7)
     else:
-        trace = go.Pie(labels=statuses, values=(df["Masculin"] + df["Féminin"]).tolist())
+        trace = go.Pie(labels=statuses, values=(df["Masculin"] + df["Féminin"]).tolist()
+                       , marker_colors=my_colors1, hole=.3, opacity=0.7)
     return {
         "data":[trace],
         'layout':layout1
@@ -751,21 +744,35 @@ def updateFigMatri(statuses,sexe,disType):
     ])
 
 def updateFigIllit(sexe,disType,envir):
-    global layout
+    global layout, my_colors, my_line_colors
+    my_colors1 = copy.deepcopy(my_colors)
+    my_colors1.append('rgb(199,255,184)')
     layout1  = copy.deepcopy(layout)
     layout1['title'] = "Analphabétisme par environnement "
     df= dfs_sum([illitSexeEnvir[dis].df for dis in disType]).loc[envir][sexe]
     if len(sexe)==1:
-        trace = go.Pie(labels=envir, values=df.loc[envir[0]].tolist() + df.loc[envir[1]].tolist())
+        if len(envir) == 2 :
+            trace = go.Pie(labels=envir, values=df.loc[envir[0]].tolist() + df.loc[envir[1]].tolist()
+                           , marker_colors=my_colors1, hole=.3, opacity=0.7)
+        else :
+            trace = trace = go.Pie(labels=sexe, values= df.loc[envir[0]].tolist()
+                                   , marker_colors=my_colors1, hole=.3, opacity=0.7)
     else:
-        trace = go.Sunburst(
-            ids= [env for env in envir]+[env+" - "+ sex for env in envir for sex in sexe],
-            labels=[env for env in envir]+[sex for sex in sexe]*2,
-            parents= ["" for i in range(len(envir))] + list(chain.from_iterable((env,env) for env in envir)),
-            values= [df.loc[env].sum() for env in envir] + [df.loc[env][sex] for env in envir for sex in sexe],
-            branchvalues="total",
-        )
-        
+        if len(envir) == 2 :
+            trace = go.Sunburst(
+                ids= [env for env in envir]+[env+" - "+ sex for env in envir for sex in sexe],
+                labels=[env for env in envir]+[sex for sex in sexe]*2,
+                parents= ["" for i in range(len(envir))] + list(chain.from_iterable((env,env) for env in envir)),
+                values= [df.loc[env].sum() for env in envir] + [df.loc[env][sex] for env in envir for sex in sexe],
+                branchvalues="total",
+                marker=dict(
+                    colors=my_colors,
+                    autocolorscale=True)
+            )
+        else:
+            layout1['title'] = "Analphabétisme dans le monde "+envir[0].lower()
+            trace = trace = go.Pie(labels=sexe, values=df.loc[envir[0]].tolist()
+                                   , marker_colors=my_colors1, hole=.3, opacity=0.7)
     return {
         'data' : [trace],
         'layout' : layout1
@@ -778,20 +785,27 @@ def updateFigIllit(sexe,disType,envir):
     [Input("sexe","value"),
     Input("disType","value")])
 def updateFigIllitAge(sexe,disType):
-    global layout
+    global layout, my_colors, my_line_colors
+    my_colors1 = copy.deepcopy(my_colors)
+    my_colors1.append('rgb(199,255,184)')
+    my_line_colors1 = copy.deepcopy(my_line_colors)
+    my_line_colors1.append('rgb(130,255,96)')
     layout1  = copy.deepcopy(layout)
     layout1['title'] = "Analphabétisme par catégories d'âge"
     layout1['barmode'] = 'stack'
     df = dfs_sum([illitAgeSexe[dis].df[sexe] for dis in disType])
     if len(sexe) == 1:
-        trace=go.Bar( x=df.index.tolist(),y=df[sexe[0]])
+        trace=go.Bar( x=df.index.tolist(),y=df[sexe[0]],
+                      marker_color=my_colors1[0],marker_line_color=my_line_colors1[0],marker_line_width=1.5, opacity=0.6)
         return {
         "data":[trace],
         "layout":layout1
     }
     else:
-        trace=[go.Bar(name="Masculin" , x=df.index.tolist(),y=df["Masculin"]),
-        go.Bar(name="Féminin", x=df.index.tolist(),y=df["Féminin"])]
+        trace=[go.Bar(name="Masculin" , x=df.index.tolist(),y=df["Masculin"],
+                      marker_color=my_colors1[0],marker_line_color=my_line_colors1[0],marker_line_width=1.5, opacity=0.6),
+        go.Bar(name="Féminin", x=df.index.tolist(),y=df["Féminin"],
+               marker_color=my_colors1[1], marker_line_color=my_line_colors1[1], marker_line_width=1.5, opacity=0.6)]
         return {
             "data":trace,
             "layout":layout1,
@@ -834,12 +848,14 @@ def updateFigActivityEnv(disType,envir):
 ])
 
 def updateFigGeneralDisType(fakeCallback):
-    global layout
+    global layout, my_colors, my_line_colors
     layout1  = copy.deepcopy(layout)
     layout1['title'] = "DISABILITY TYPES BY COUNTRY".title()
     layout1['margin']['t']=80
-    traces = [go.Scatterpolar(r=generalPolar["Usa"], theta=generalPolar.index,fill='toself',name='Maroc'),
-              go.Scatterpolar(r=generalPolar["Morocco"], theta=generalPolar.index,fill='toself',name='États-unis'),]
+    traces = [go.Scatterpolar(r=generalPolar["Usa"], theta=generalPolar.index,fill='toself',name='États-unis',
+                              line=dict(color=my_colors[0])),
+              go.Scatterpolar(r=generalPolar["Morocco"], theta=generalPolar.index,fill='toself',name='Maroc',
+                              line=dict(color=my_colors[1])),]
     return {
         'data':traces,
         'layout':layout1

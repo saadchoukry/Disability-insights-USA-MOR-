@@ -46,3 +46,20 @@ def dfSelector(dfsArray,metaDimension,metaOptions):
                 pass
     return seletedExtendedDfs
 
+
+def getRangeCastedNames(ageCategories):
+    newArray = []
+    for age in ageCategories:
+        if age == "Under 5 years" :
+            newArray.append("5-")
+        elif age =="5 to 17 years":
+            newArray.append("17")
+        elif age =="18 to 34 years":
+            newArray.append("34")
+        elif age =="35 to 64 years":
+            newArray.append("64")
+        elif age =="65 to 74 years":
+            newArray.append("74")
+        elif age =="75 years and over":
+            newArray.append("75+")
+    return newArray

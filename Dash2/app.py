@@ -43,9 +43,12 @@ usaData = None
 def ETL():
     global init,dfs,ageSexe04,categToAgeCateg,sexeMatri04,illitSexeEnvir,illitAgeSexe,educaEnvir,actEnv,actSexeEnv,usaData
     if not init :
-        print("--- RUNNING ETL ---")
+        print("--------------------------STARTING ETL--------------------------------")
         ETL = EtlHcp04()
+        print("--------------------------STARTING ETL [USA]--------------------------")
         usaData = loader()
+        print("--------------------------LOADING COMPLETE [USA]----------------------")
+        print("--------------------------STARTING ETL [MOR]--------------------------")
         ageSexe04 = ETL.extendedDataFrames[0]
         sexeMatri04 = ETL.extendedDataFrames[1]
         illitSexeEnvir = ETL.extendedDataFrames[2]
@@ -56,34 +59,23 @@ def ETL():
         sexeEnvDisType_HCP14 = SexeEnvDisType_HCP14()
         matrimonial_HCP14 = Matrimonial_HCP14()
         init=True
+        print("--------------------------LOADING COMPLETE [MOR]----------------------")
+        print("--------------------------LOADING COMPLETE----------------------------")
     else:
         print("Data has already been loaded")
         return usaData
 ETL()
 categToAgeCateg = {ageSexe04["Sensoriel"].df.index.values.tolist().index(categ): '{}'.format(categ[:2]) for categ in ageSexe04["Sensoriel"].df.index.values.tolist()[:-1]}
+castedAges = toolz.getRangeCastedNames([ageCateg for ageCateg in toolz.getAgeCategories(usaData.dfsArray)])
 
-print(categToAgeCateg)
-
+## Dash app Config
 app = dash.Dash(
     __name__, meta_tags=[{"name": "viewport", "content": "width=device-width"}]
 )
 server = app.server
+app.title = 'Disability Statistics'
 
-
-"""
-# Load data
-df = pd.read_csv(DATA_PATH.joinpath("wellspublic.csv"), low_memory=False)
-df["Date_Well_Completed"] = pd.to_datetime(df["Date_Well_Completed"])
-df = df[df["Date_Well_Completed"] > dt.datetime(1960, 1, 1)]
-
-trim = df[["API_WellNo", "Well_Type", "Well_Name"]]
-trim.index = trim["API_WellNo"]
-dataset = trim.to_dict(orient="index")
-
-points = pickle.load(open(DATA_PATH.joinpath("points.pkl"), "rb"))
-"""
-## General stats
-
+## General stats functions
 def getDisTypeGeneral():
     global ageSexe04, usaData
     df = pd.DataFrame(index=[disType for disType in ageSexe04.keys()], columns=['Morocco', 'Usa'])
@@ -139,7 +131,6 @@ def getSexGeneral():
 
 
 SexGeneral = getSexGeneral()
-
 generalPolar = getDisTypeGeneral()
 dfMorocco = pd.DataFrame(dict(r=generalPolar["Morocco"].tolist(), theta=generalPolar.index.tolist()))
 dfUsa = pd.DataFrame(dict(r=generalPolar["Usa"].tolist(), theta=generalPolar.index.tolist()))
@@ -175,7 +166,7 @@ app.layout = html.Div([
     ], id="header", className="row flex-display"),
 
     dcc.Tabs([
-        dcc.Tab(label='Statistiques générales', children=[
+        dcc.Tab(label='General statistics', children=[
             html.Div([
                 html.Div(
                     [dcc.Graph(id="generalSexe")],
@@ -189,7 +180,7 @@ app.layout = html.Div([
                 className="row flex-display",
             )
         ], className="row flex-display"),
-        dcc.Tab(label='Statistiques avancées (MAR)', children=[
+        dcc.Tab(label='Advanced stats (MOR)', children=[
             html.Div([
                 html.Div([
                     html.P(
@@ -304,7 +295,7 @@ app.layout = html.Div([
                 className="row flex-display",
             ),
         ]),
-        dcc.Tab(label='Statistiques avancées (USA)', children=[
+        dcc.Tab(label='Advanced stats (USA)', children=[
             html.Div([
                 html.Div([
                     html.P(
@@ -327,8 +318,7 @@ app.layout = html.Div([
                         id="ageUsa",
                         min=0,
                         max=len(toolz.getAgeCategories(usaData.dfsArray)) - 1,
-                        marks={toolz.getAgeCategories(usaData.dfsArray).index(ageCateg): '{}'.format(ageCateg) for
-                               ageCateg in toolz.getAgeCategories(usaData.dfsArray)},
+                        marks={castedAges.index(ageCategory): '{}'.format(ageCategory) for ageCategory in castedAges},
                         value=[1, 4],
                         className="dcc_control"
                     ),
@@ -461,7 +451,6 @@ def updateFigAge(ageCateg,states,sex,difTypes,year):
                 'layout':layout1
             }
     else:
-        
         selectedExtendedDfsForYear1 = toolz.dfSelector(toolz.dfSelector(toolz.dfSelector(toolz.dfSelector(usaData.dfsArray,'index',['SEX']),'state',states),'difficulty',difTypes),'year',[year[0]])
         selectedExtendedDfsForYear2 = toolz.dfSelector(toolz.dfSelector(toolz.dfSelector(toolz.dfSelector(usaData.dfsArray,'index',['SEX']),'state',states),'difficulty',difTypes),'year',[year[1]])
         dfYear1 = dfs_sum([df['dataFrame'] for df in selectedExtendedDfsForYear1])[toolz.getAgeOptions(usaData.dfsArray,ageCateg)]
@@ -482,9 +471,15 @@ def updateFigAge(ageCateg,states,sex,difTypes,year):
             'layout':layout1
         }
         else:
-            trace=go.Bar( x=df.columns.tolist(), y=df.loc[sex[0].title()].tolist(),name=sex[0].title())
+            traces=[go.Bar( x=dfYear1.columns.tolist(), y=dfYear1.loc[sex[0].title()].tolist(),name=sex[0].title()),
+                    go.Bar( x=dfYear1.columns.tolist(), y=dfYear2.loc[sex[0].title()].tolist(),name=sex[0].title())
+                    ]
+            traces = trace=[go.Bar(name="20"+year[0] , x=dfYear1.columns.tolist(),y=dfYear1.loc[sex[0].title()].tolist(),
+                      marker_color=my_colors[0],marker_line_color=my_line_colors[0],marker_line_width=1.5, opacity=0.6),
+        go.Bar(name="20"+year[1], x=dfYear1.columns.tolist(),y=dfYear2.loc[sex[0].title()],
+               marker_color=my_colors[1], marker_line_color=my_line_colors[1], marker_line_width=1.5, opacity=0.6)]
             return {
-                'data':[trace],
+                'data':traces,
                 'layout':layout1
             }
 
@@ -500,7 +495,6 @@ def updateFigWorkExp(states,years):
     global layout,my_colors
     layout1  = copy.deepcopy(layout)
     layout1['title'] = "WORK EXPERIENCE".title()
-    #layout['margin']=go.Margin(b=300)
 
     traces = []
     for year in years:
@@ -518,17 +512,6 @@ def updateFigWorkExp(states,years):
         'layout': layout1
     }
 
-    """
-    for year in years:
-        selectedExtendedDfs = toolz.dfSelector(toolz.dfSelector(toolz.dfSelector(usaData.dfsArray,'index',['WORK EXPERIENCE']),'state',states),'year',[year])
-        df = dfs_sum([df['dataFrame'] for df in selectedExtendedDfs])
-        traces.append(go.Bar( x=df.index.tolist(), y=df.iloc[:,0].tolist(),name="20"+year,width=0.4))
-    
-    return {
-        'data':traces,
-        'layout':layout1
-    }
-    """
 
 @app.callback(
     Output("healthIns","figure"),[
@@ -834,35 +817,6 @@ def updateFigIllitAge(sexe,disType):
         }
   
 
-"""
-@app.callback(
-    Output("activityEnv","figure"),[
-        Input("disType",'value'),
-        Input("envir",'value')
-    ]
-)
-def updateFigActivityEnv(disType,envir):
-    global layout
-    layout1  = copy.deepcopy(layout)
-    layout1['title'] = "MAZAL 3"
-    df = dfs_sum([actEnv[dis].df[envir] for dis in disType])
-    if len(envir) == 1:
-        trace=go.Bar( x=df.index.tolist(), y=df[envir[0]].tolist())
-        return {
-        'data':[trace],
-        'layout':layout1
-    }
-    else:
-        layout1  = copy.deepcopy(layout)
-        layout1['title'] = "MAZAL 3"
-        trace1=go.Bar(name="urbain",x=df.index.tolist(),y = df["urbain"] )
-        trace2=go.Bar(name="Rural",x=df.index.tolist(),y = df ["Rural"])
-        return {
-            'data':[trace1,trace2],
-            'layout':layout1
-        }
-
-"""
 @app.callback(
     Output('generalDisType','figure'),[
     Input("ageUsa",'value')
